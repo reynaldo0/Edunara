@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "./beranda/hero";
+import Kategori from "./beranda/Kategori";
 import Lokasi from "./beranda/lokasi";
 import Peta from "./beranda/peta";
 
@@ -10,6 +11,7 @@ export default function SiswaPage() {
             <Hero />
             <Lokasi />
             <Peta />
+            <Kategori />
         </main>
     );
 }
