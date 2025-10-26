@@ -3,6 +3,7 @@ import NavbarSiswa from "@/app/components/NavbarSiswa";
 import Jembatan from "./Jembatan";
 import Diskusi from "./Diskusi";
 import ForumSection from "./Forum";
+import ForumTanya from "./ForumTanya";
 
 export default function SiswaPage() {
     return (
@@ -11,6 +12,7 @@ export default function SiswaPage() {
             <HeroSiswa />
             <Jembatan />
             <Diskusi />
+            <ForumTanya />
             <ForumSection />
         </main>
     );

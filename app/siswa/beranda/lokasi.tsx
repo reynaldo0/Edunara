@@ -41,7 +41,7 @@ export default function Lokasi() {
 
                 {/* Peta kanan */}
                 <div
-                    className="bg-[#BEE3F8] rounded-[30px] p-8 w-full sm:w-[90%] md:w-[650px] 
+                    className="bg-siswa-primary-200 rounded-[30px] p-8 w-full sm:w-[90%] md:w-[650px] 
                      text-[#1A202C] shadow-md flex flex-col items-center justify-center space-y-4 
                      md:-ml-6 md:pl-12"
                 >
@@ -59,7 +59,7 @@ export default function Lokasi() {
 
                     <p className="text-sm text-gray-700">
                         Jelajahi Daerah Lainnya{" "}
-                        <button className="ml-1 px-3 py-1 rounded-full bg-white border border-gray-300 text-blue-600 hover:bg-blue-50 text-sm font-medium transition">
+                        <button className="ml-1 px-3 py-1 rounded-full bg-white border border-gray-300 text-siswa-primary-100 hover:bg-blue-50 text-sm font-medium transition">
                             disini
                         </button>
                     </p>

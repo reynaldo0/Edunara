@@ -27,7 +27,7 @@ const NavbarSiswa: React.FC = () => {
             <div
                 className="flex items-center justify-between 
         bg-white/80 backdrop-blur-lg
-        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-[#52C3FF] border-b-[20px]"
+        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-siswa-primary-100 border-b-[20px]"
             >
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
@@ -43,9 +43,9 @@ const NavbarSiswa: React.FC = () => {
                         <li key={item.name}>
                             <Link
                                 href={item.path}
-                                className="relative transition duration-300 hover:text-[#52C3FF] 
+                                className="relative transition duration-300 hover:text-siswa-primary-100 
                   after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                  after:h-[2px] after:w-0 after:bg-[#52C3FF] after:transition-all 
+                  after:h-[2px] after:w-0 after:bg-siswa-primary-100 after:transition-all 
                   after:duration-300 hover:after:w-full font-bold text-primary-200"
                             >
                                 {item.name}
@@ -54,29 +54,26 @@ const NavbarSiswa: React.FC = () => {
                     ))}
                 </ul>
 
-                {/* Tombol Dashboard Desktop */}
                 <Link
                     href="http://127.0.0.1:8000/admin/contents"
-                    className="hidden md:inline bg-[#A2DBF9] hover:bg-[#A2DBF9]/90 text-black font-bold 
+                    className="hidden md:inline bg-[#A2DBF9] hover:bg-[#A2DBF9]/90 text-black hover:text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun
                 </Link>
 
-                {/* Hamburger Button (Mobile) */}
                 <button
                     onClick={() => setIsOpen((prev) => !prev)}
                     className="md:hidden w-8 h-8 flex items-center justify-center text-gray-900 focus:outline-none"
                 >
                     {isOpen ? (
-                        <XMarkIcon className="h-7 w-7 text-[#52C3FF] transition duration-300" />
+                        <XMarkIcon className="h-7 w-7 text-siswa-primary-100 transition duration-300" />
                     ) : (
-                        <Bars3Icon className="h-7 w-7 text-[#52C3FF] transition duration-300" />
+                        <Bars3Icon className="h-7 w-7 text-siswa-primary-100 transition duration-300" />
                     )}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
             <div
                 className={`md:hidden fixed top-20 right-4 w-56 bg-white/80 backdrop-blur-md 
         shadow-lg rounded-xl px-6 py-4 flex flex-col items-center space-y-4 
@@ -91,7 +88,7 @@ const NavbarSiswa: React.FC = () => {
                         key={item.name}
                         href={item.path}
                         onClick={() => setIsOpen(false)}
-                        className="text-gray-900 font-medium hover:text-[#52C3FF] transition"
+                        className="text-gray-900 font-medium hover:text-siswa-primary-100 transition"
                     >
                         {item.name}
                     </Link>

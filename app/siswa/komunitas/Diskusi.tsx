@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Diskusi: React.FC = () => {
     return (
-        <section className="bg-[#D9F1FF] flex justify-center items-center py-12 px-6">
-            <div className="bg-white rounded-[32px] shadow-lg w-full max-w-6xl flex flex-col md:flex-row justify-between items-center p-8 md:px-12 md:py-4 gap-8">
+        <section className=" flex justify-center items-center py-24 px-6">
+            <div className="bg-white rounded-4xl shadow-lg w-full max-w-6xl flex flex-col md:flex-row justify-between items-center p-8 md:px-12 md:py-4 gap-8">
 
                 {/* Bagian teks */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2 space-y-6">

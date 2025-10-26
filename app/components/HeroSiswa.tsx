@@ -18,7 +18,7 @@ export default function HeroSiswa() {
     return (
         <main>
             {/* Bagian Hero */}
-            <div className="bg-[#A2DBF9] rounded-b-[450px] relative flex flex-col items-center overflow-hidden">
+            <div className="bg-siswa-primary-200 rounded-b-[450px] relative flex flex-col items-center overflow-hidden">
                 {/* Background Hero */}
                 <div
                     className="relative flex flex-col items-center justify-center w-full 

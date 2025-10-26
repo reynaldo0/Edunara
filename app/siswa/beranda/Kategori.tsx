@@ -165,7 +165,7 @@ export default function Kategori() {
                                                 className="w-full h-48 sm:h-52 object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500"
                                             />
                                         </div>
-                                        <p className="text-sm font-semibold text-sky-500 mt-3 mb-1">
+                                        <p className="text-sm font-semibold text-siswa-primary-100 mt-3 mb-1">
                                             Kursus
                                         </p>
                                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
@@ -179,7 +179,7 @@ export default function Kategori() {
                                                 <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
                                             ))}
                                         </div>
-                                        <button className="mt-5 bg-sky-500 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition">
+                                        <button className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition">
                                             Jelajahi
                                         </button>
                                     </div>
@@ -210,7 +210,7 @@ export default function Kategori() {
                                 key={i}
                                 onClick={() => setCurrentIndex(i * itemsPerSlide)}
                                 className={`w-3 h-3 rounded-full transition-all duration-300 ${Math.floor(currentIndex / itemsPerSlide) === i
-                                        ? "bg-sky-500 scale-110"
+                                        ? "bg-siswa-primary-100 scale-110"
                                         : "bg-gray-300 hover:bg-gray-400"
                                     }`}
                             ></button>

@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, ChangeEvent } from "react";
+import Link from "next/link";
+import { HiUserCircle } from "react-icons/hi2";
 import { FaReply, FaThumbsUp } from "react-icons/fa";
 
 // ===== Interface untuk tipe data =====
@@ -104,7 +106,7 @@ const ForumSection: React.FC = () => {
     };
 
     return (
-        <section className="relative bg-white py-20 min-h-screen">
+        <section className="relative py-20 min-h-screen">
             {/* Background */}
             <div
                 className="absolute inset-0 bg-[url('/wave/komunitas.png')] bg-cover bg-center opacity-10"
@@ -119,7 +121,7 @@ const ForumSection: React.FC = () => {
                 {/* Form Komentar */}
                 <div className="bg-white shadow-lg rounded-3xl p-6 mb-8 border border-gray-200 transition-transform hover:scale-[1.01] duration-300">
                     <textarea
-                        className="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-[#AEE3FF] outline-none bg-white resize-none"
+                        className="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-siswa-primary-100 outline-none bg-white resize-none"
                         rows={3}
                         placeholder="Tulis pendapatmu..."
                         value={newPost}
@@ -129,7 +131,7 @@ const ForumSection: React.FC = () => {
                     />
                     <button
                         onClick={addPost}
-                        className="mt-4 px-6 py-2 bg-[#AEE3FF] text-[#003B5C] rounded-xl font-semibold hover:bg-[#9AD8F5] transition-all shadow-md cursor-pointer"
+                        className="mt-4 px-6 py-2 bg-siswa-primary-100 text-[#003B5C] rounded-xl font-semibold hover:bg-[#9AD8F5] transition-all shadow-md cursor-pointer"
                     >
                         Kirim
                     </button>
@@ -144,11 +146,7 @@ const ForumSection: React.FC = () => {
                         >
                             {/* Header Post */}
                             <div className="flex items-center gap-3 mb-2">
-                                <img
-                                    src={`https://ui-avatars.com/api/?name=${post.author}`}
-                                    alt={post.author}
-                                    className="w-10 h-10 rounded-full"
-                                />
+                                <HiUserCircle className="text-4xl text-siswa-primary-100" />
                                 <span className="font-semibold text-[#003B5C]">
                                     {post.author}
                                 </span>
@@ -173,18 +171,19 @@ const ForumSection: React.FC = () => {
                             </button>
 
                             {/* List balasan */}
-                            <div className="ml-10 mt-4 space-y-4 border-l-2 border-[#AEE3FF] pl-4">
+                            <div className="ml-10 mt-4 space-y-4 border-l-2 border-siswa-primary-100 pl-4">
                                 {post.replies.map((reply) => (
                                     <div
                                         key={reply.id}
                                         className="bg-gray-50 p-3 rounded-xl border transition-transform hover:scale-[1.02] duration-300"
                                     >
                                         <div className="flex items-center gap-2 mb-1">
-                                            <img
-                                                src={`https://ui-avatars.com/api/?name=${reply.author}`}
-                                                alt={reply.author}
-                                                className="w-8 h-8 rounded-full"
-                                            />
+                                            <Link
+                                                href={`/siswa/profile/${reply.author}`}
+                                                className="shrink-0 hover:opacity-80 transition"
+                                            >
+                                                <HiUserCircle className="text-3xl text-siswa-primary-100" />
+                                            </Link>
                                             <span className="text-sm font-medium text-[#003B5C]">
                                                 {reply.author}
                                             </span>
@@ -204,7 +203,7 @@ const ForumSection: React.FC = () => {
                             {showReplyBox === post.id && (
                                 <div className="mt-4 ml-10 transition-all duration-300">
                                     <textarea
-                                        className="w-full border rounded-xl p-2 text-sm focus:ring-2 focus:ring-[#AEE3FF] outline-none bg-white resize-none"
+                                        className="w-full border rounded-xl p-2 text-sm focus:ring-2 focus:ring-siswa-primary-100 outline-none bg-white resize-none"
                                         rows={2}
                                         placeholder="Tulis balasanmu..."
                                         value={replyContent[post.id] || ""}
@@ -217,7 +216,7 @@ const ForumSection: React.FC = () => {
                                     />
                                     <button
                                         onClick={() => addReply(post.id)}
-                                        className="mt-2 px-4 py-1 bg-[#AEE3FF] text-[#003B5C] text-sm rounded-lg hover:bg-[#9AD8F5] transition shadow-md cursor-pointer"
+                                        className="mt-2 px-4 py-1 bg-siswa-primary-100 text-[#003B5C] text-sm rounded-lg hover:bg-[#9AD8F5] transition shadow-md cursor-pointer"
                                     >
                                         Kirim Balasan
                                     </button>

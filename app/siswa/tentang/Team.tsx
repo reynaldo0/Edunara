@@ -90,7 +90,7 @@ export default function Team() {
                 {teamData.map((member, i) => (
                     <div
                         key={member.id}
-                        className="relative group bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl border border-[#A2DBF9] p-10 flex flex-col items-center transform transition-all duration-700 ease-out hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                        className="relative group bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl border border-siswa-primary-200 p-10 flex flex-col items-center transform transition-all duration-700 ease-out hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
                         style={{
                             animation: animateCards ? `fadeInUp 0.8s ease forwards` : "none",
                             animationDelay: `${i * 0.3}s`,
@@ -98,7 +98,7 @@ export default function Team() {
                         }}
                     >
                         {/* Foto */}
-                        <div className="relative mb-6 w-40 h-44 md:w-48 md:h-52 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-[#A2DBF9] transition-all duration-500 mt-2 bg-white flex items-center justify-center">
+                        <div className="relative mb-6 w-40 h-44 md:w-48 md:h-52 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-siswa-primary-200 transition-all duration-500 mt-2 bg-white flex items-center justify-center">
                             <Image
                                 src={member.img}
                                 alt={member.name}
@@ -126,7 +126,7 @@ export default function Team() {
                                 href={member.socials.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-[#A2DBF9] text-[#003653] hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-md"
+                                className="p-3 rounded-full bg-siswa-primary-200 text-[#003653] hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-md"
                             >
                                 <FaGithub />
                             </a>
@@ -134,7 +134,7 @@ export default function Team() {
                                 href={member.socials.instagram}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-[#A2DBF9] text-black hover:bg-pink-600 hover:text-white transition-all duration-300 shadow-md"
+                                className="p-3 rounded-full bg-siswa-primary-200 text-black hover:bg-pink-600 hover:text-white transition-all duration-300 shadow-md"
                             >
                                 <FaInstagram />
                             </a>
@@ -142,7 +142,7 @@ export default function Team() {
                                 href={member.socials.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-[#A2DBF9] text-black hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
+                                className="p-3 rounded-full bg-siswa-primary-200 text-black hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
                             >
                                 <FaLinkedinIn />
                             </a>

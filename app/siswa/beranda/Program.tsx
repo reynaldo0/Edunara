@@ -55,18 +55,18 @@ export default function Program() {
                             />
                         </div>
 
-                        <h3 className="text-lg font-semibold text-[#2B6CB0] mb-2">
+                        <h3 className="text-lg font-semibold text-siswa-primary-100 mb-2">
                             {item.title}
                         </h3>
                         <p className="text-sm text-gray-600 mb-6">{item.desc}</p>
 
                         <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2 overflow-hidden">
                             <div
-                                className="bg-[#2B6CB0] h-2.5 rounded-full transition-all duration-700"
+                                className="bg-siswa-primary-100 h-2.5 rounded-full transition-all duration-700"
                                 style={{ width: `${item.progress}%` }}
                             ></div>
                         </div>
-                        <span className="text-sm font-medium text-[#2B6CB0]">
+                        <span className="text-sm font-medium text-siswa-primary-100">
                             Completed {item.progress}%
                         </span>
                     </div>
