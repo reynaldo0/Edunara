@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <main>
       {/* Bagian Hero */}
-      <div className="bg-[#3853A4] rounded-b-[450px] relative flex flex-col items-center overflow-hidden">
+      <div className="bg-pemilik-primary-100 rounded-b-[450px] relative flex flex-col items-center overflow-hidden">
         {/* Background Hero */}
         <div
           className="relative flex flex-col items-center justify-center w-full 
@@ -46,7 +46,8 @@ export default function Hero() {
 
       {/* Judul */}
       <h1 className="mt-16 md:mt-20 text-center text-lg sm:text-2xl md:text-5xl font-bold text-[#003653] leading-snug px-6">
-        Cari Khursus lebih mudah dengan UMKMAcademy
+        “Bangun Kursusmu,
+        sukseskan kelak nantinya”
       </h1>
     </main>
   );
