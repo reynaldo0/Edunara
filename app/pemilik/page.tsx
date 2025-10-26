@@ -1,5 +1,6 @@
 import NavbarPemilik from "../components/NavbarPemilik";
 import Hero from "./pelatihan/hero";
+import Panduan from "./pelatihan/Panduan";
 import Program from "./pelatihan/Program";
 import Strategy from "./pelatihan/Strategy";
 
@@ -12,6 +13,7 @@ export default function SiswaPage() {
             <Hero />
             <Program />
             <Strategy />
+            <Panduan />
         </main>
     );
 }
