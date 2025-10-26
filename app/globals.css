@@ -8,3 +8,7 @@
   /* 🎨 Warna untuk pemilik */
   --color-pemilik-primary-100: #f5a100;
 }
+
+html{
+    scroll-behavior: smooth;
+}

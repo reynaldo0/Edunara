@@ -90,13 +90,12 @@ export default function Team() {
                 {teamData.map((member, i) => (
                     <div
                         key={member.id}
-                        className="relative group bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl border border-siswa-primary-200 p-10 flex flex-col items-center transform transition-all duration-700 ease-out hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                        style={{
-                            animation: animateCards ? `fadeInUp 0.8s ease forwards` : "none",
-                            animationDelay: `${i * 0.3}s`,
-                            opacity: 0,
-                        }}
+                        className={`relative group bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl border border-siswa-primary-200 p-10 flex flex-col items-center transform transition-all duration-700 ease-out hover:scale-105 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]
+    ${animateCards ? "fade-in-up" : "opacity-0"}
+  `}
+                        style={{ animationDelay: `${i * 0.3}s` }}
                     >
+
                         {/* Foto */}
                         <div className="relative mb-6 w-40 h-44 md:w-48 md:h-52 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-siswa-primary-200 transition-all duration-500 mt-2 bg-white flex items-center justify-center">
                             <Image
@@ -104,8 +103,8 @@ export default function Team() {
                                 alt={member.name}
                                 fill // Membuat gambar menutupi parent div
                                 className={`transition-transform duration-500 transform ${member.id === 1
-                                        ? "object-contain group-hover:scale-[1.05]"
-                                        : "object-cover object-top group-hover:scale-[1.05]"
+                                    ? "object-contain group-hover:scale-[1.05]"
+                                    : "object-cover object-top group-hover:scale-[1.05]"
                                     }`}
                                 style={{ imageRendering: "auto" }}
                                 priority={member.id === 1} // Optional: prioritas loading untuk gambar utama

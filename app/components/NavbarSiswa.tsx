@@ -20,7 +20,7 @@ const NavbarSiswa: React.FC = () => {
 
     return (
         <nav
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[80%]"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-[999999] w-[90%] md:w-[80%]"
             data-aos="zoom-in-down"
             data-aos-duration="1500"
         >
