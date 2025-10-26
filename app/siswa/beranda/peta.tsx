@@ -3,13 +3,12 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
-// Dynamic import untuk komponen peta (non-SSR)
-const MapSection = dynamic(() => import("./PetaClient"), {
-    ssr: false,
-});
+const MapSection = dynamic(() => import("./PetaClient"), { ssr: false });
+
+const daerahList = ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"] as const;
 
 export default function Peta() {
-    const [selected, setSelected] = useState("Jakarta");
+    const [selected, setSelected] = useState<typeof daerahList[number]>("Jakarta");
 
     return (
         <section className="w-full min-h-screen flex flex-col items-center justify-center bg-[#EBF8FF] px-4 py-10">
@@ -17,9 +16,8 @@ export default function Peta() {
                 Kursus di Sekitar Kamu
             </h2>
 
-            {/* Pilihan Daerah */}
             <div className="flex flex-wrap justify-center gap-3 mb-6">
-                {["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"].map((daerah) => (
+                {daerahList.map((daerah) => (
                     <button
                         key={daerah}
                         onClick={() => setSelected(daerah)}
@@ -33,7 +31,6 @@ export default function Peta() {
                 ))}
             </div>
 
-            {/* Peta (Client Side Only) */}
             <div className="w-full max-w-5xl h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#CBD5E0]">
                 <MapSection selected={selected} />
             </div>
