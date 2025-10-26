@@ -34,7 +34,7 @@ const NavbarPemilik: React.FC = () => {
                 <div className="flex items-center space-x-2">
                     <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain" />
                     <span className="font-extrabold text-primary-200 drop-shadow-sm">
-                        Amerta
+                        GrowLab
                     </span>
                 </div>
 
