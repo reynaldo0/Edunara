@@ -1,7 +1,13 @@
-export default function PemilikPage() {
+import NavbarPemilik from "../components/NavbarPemilik";
+import Hero from "./pelatihan/hero";
+
+
+
+export default function SiswaPage() {
     return (
-        <div className="flex min-h-screen items-center justify-center bg-emerald-50 dark:bg-black text-black dark:text-white">
-            <h1 className="text-3xl font-semibold">Halaman Pemilik</h1>
-        </div>
+        <main className="bg-[#F0F9FF]">
+            <NavbarPemilik />
+            <Hero/>
+        </main>
     );
 }

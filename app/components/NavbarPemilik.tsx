@@ -9,13 +9,14 @@ interface MenuItem {
     path: string;
 }
 
-const Navbar: React.FC = () => {
+const NavbarPemilik: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const menuItems: MenuItem[] = [
-        { name: "Beranda", path: "/" },
-        { name: "Tentang", path: "/tentang" },
-        { name: "Komunitas", path: "/budaya" },
+        { name: "Beranda", path: "/pemilik" },
+        { name: "Mentor", path: "/pemilik/mentor" },
+        { name: "Tentang", path: "/pemilik/tentang" },
+        { name: "Komunitas", path: "/pemilik/komunitas" },
     ];
 
     return (
@@ -43,9 +44,9 @@ const Navbar: React.FC = () => {
                         <li key={item.name}>
                             <Link
                                 href={item.path}
-                                className="relative transition duration-300 hover:text-secondary-300 
+                                className="relative transition duration-300 hover:text-[#52C3FF] 
                   after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                  after:h-[2px] after:w-0 after:bg-secondary-300 after:transition-all 
+                  after:h-[2px] after:w-0 after:bg-[#52C3FF] after:transition-all 
                   after:duration-300 hover:after:w-full font-bold text-primary-200"
                             >
                                 {item.name}
@@ -69,9 +70,9 @@ const Navbar: React.FC = () => {
                     className="md:hidden w-8 h-8 flex items-center justify-center text-gray-900 focus:outline-none"
                 >
                     {isOpen ? (
-                        <XMarkIcon className="h-7 w-7 text-secondary-300 transition duration-300" />
+                        <XMarkIcon className="h-7 w-7 text-[#52C3FF] transition duration-300" />
                     ) : (
-                        <Bars3Icon className="h-7 w-7 text-secondary-300 transition duration-300" />
+                        <Bars3Icon className="h-7 w-7 text-[#52C3FF] transition duration-300" />
                     )}
                 </button>
             </div>
@@ -91,7 +92,7 @@ const Navbar: React.FC = () => {
                         key={item.name}
                         href={item.path}
                         onClick={() => setIsOpen(false)}
-                        className="text-gray-900 font-medium hover:text-secondary-300 transition"
+                        className="text-gray-900 font-medium hover:text-[#52C3FF] transition"
                     >
                         {item.name}
                     </Link>
@@ -111,4 +112,4 @@ const Navbar: React.FC = () => {
     );
 };
 
-export default Navbar;
+export default NavbarPemilik;

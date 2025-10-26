@@ -100,7 +100,7 @@ export default function Kategori() {
     };
 
     return (
-        <section className="bg-[#E9F6FF] min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
+        <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
             <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-800">
                 Kategori
             </h2>
