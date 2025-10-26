@@ -66,7 +66,7 @@ export default function Home() {
               {/* Kartu Pemilik Kursus */}
               <button
                 onClick={() => handleSelect("pemilik")}
-                className="group flex flex-col items-center justify-center bg-white border-8 border-[#FFD580] hover:border-[#FFC14D] rounded-2xl p-6 transition-all hover:scale-105 shadow-sm hover:shadow-md"
+                className="group flex flex-col items-center justify-center bg-white border-8 border-[#52C3FF] hover:border-blue-500 rounded-2xl p-6 transition-all hover:scale-105 shadow-sm hover:shadow-md"
               >
                 <div className="w-24 h-24 mb-4 relative">
                   <Image
