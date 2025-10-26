@@ -1,8 +1,20 @@
 "use client";
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { usePathname } from "next/navigation";
 
-export default function Hero() {
+export default function HeroSiswa() {
+    const pathname = usePathname();
+
+    // Tentukan background image berdasarkan path
+    const getBackgroundImage = () => {
+        if (pathname === "/siswa") return "/illustrasi/siswa/beranda/hero.png";
+        if (pathname === "/siswa/komunitas") return "/illustrasi/siswa/komunitas/hero.png";
+        if (pathname === "/siswa/tentang") return "/illustrasi/siswa/tentang/hero.png";
+        // Default image
+        return "/illustrasi/default/hero.png";
+    };
+
     return (
         <main>
             {/* Bagian Hero */}
@@ -14,7 +26,7 @@ export default function Hero() {
                      bg-bottom md:bg-center bg-no-repeat 
                      transition-all duration-500"
                     style={{
-                        backgroundImage: "url('/illustrasi/siswa/tentang/hero.png')",
+                        backgroundImage: `url('${getBackgroundImage()}')`,
                     }}
                 >
                     {/* Kolom pencarian */}
@@ -27,7 +39,7 @@ export default function Hero() {
                     >
                         <input
                             type="text"
-                            placeholder="Cari sesuatu... "
+                            placeholder="Cari sesuatu..."
                             className="flex-1 bg-transparent outline-none text-gray-700 
                          placeholder-gray-400 text-sm sm:text-base md:text-lg 
                          transition-all duration-300 group-hover:text-gray-900"
@@ -46,7 +58,7 @@ export default function Hero() {
 
             {/* Judul */}
             <h1 className="mt-16 md:mt-20 text-center text-lg sm:text-2xl md:text-5xl font-bold text-[#003653] leading-snug px-6">
-                Latar Belakang Pembuatan Website UMKMAcademy
+                Cari Khursus lebih mudah dengan UMKMAcademy
             </h1>
         </main>
     );
