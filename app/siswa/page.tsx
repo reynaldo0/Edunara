@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "./beranda/hero";
 import Lokasi from "./beranda/lokasi";
+import Peta from "./beranda/peta";
 
 export default function SiswaPage() {
     return (
@@ -8,6 +9,7 @@ export default function SiswaPage() {
             <Navbar />
             <Hero />
             <Lokasi />
+            <Peta />
         </main>
     );
 }
