@@ -8,8 +8,7 @@ const Values: React.FC = () => {
                 <div className="rounded-3xl p-12 bg-white text-center max-w-2xl shadow-xl transition-transform duration-300 hover:scale-105 my-5">
                     <h2 className="text-4xl font-extrabold text-[#003B5C] mb-6">Inovasi</h2>
                     <p className="text-[#003B5C] text-lg md:text-xl leading-relaxed font-medium">
-                        Menjadi jembatan digital bagi pelaku UMKM di Indonesia untuk belajar
-                        dan berkolaborasi
+                        Menjadi jembatan digital bagi penyedia kursus  untuk belajar dan meningkatkan kualitas kursusnya
                     </p>
                 </div>
 
@@ -17,8 +16,7 @@ const Values: React.FC = () => {
                 <div className="rounded-3xl p-12 bg-white text-center max-w-2xl shadow-xl transition-transform duration-300 hover:scale-105">
                     <h2 className="text-4xl font-extrabold text-[#003B5C] mb-6">Keberlanjutan</h2>
                     <p className="text-[#003B5C] text-lg md:text-xl leading-relaxed font-medium">
-                        Menjadi jembatan digital bagi pelaku UMKM di Indonesia untuk belajar
-                        dan berkolaborasi
+                        Menjadi website yang dapat diandalkan bagi 2 arah (siswa dan penyedia kursus)
                     </p>
                 </div>
             </div>

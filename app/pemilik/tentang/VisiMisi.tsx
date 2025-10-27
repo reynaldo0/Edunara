@@ -11,9 +11,8 @@ export default function VisiMisi() {
                     <h2 className="text-3xl font-bold text-[#01366A] mb-4 text-center md:text-left">
                         Visi
                     </h2>
-                    <p className="text-gray-700 leading-relaxed text-center md:text-left">
-                        Menjadi jembatan digital bagi pelaku <span className="font-semibold text-[#0056A1]">UMKM di Indonesia</span>
-                        untuk belajar dan berkolaborasi, menciptakan ekosistem bisnis yang tumbuh bersama di era digital.
+                    <p className="text-gray-700 leading-relaxed text-center text-3xl md:text-left">
+                        Menjadi penyedia layanan dan pengarah untuk penyedia kursus
                     </p>
                 </div>
 
@@ -23,11 +22,11 @@ export default function VisiMisi() {
                         Misi
                     </h2>
                     <ol className="list-decimal list-inside text-gray-700 space-y-2 leading-relaxed">
-                        <li>Meningkatkan literasi digital pelaku UMKM melalui pelatihan dan edukasi berkelanjutan.</li>
-                        <li>Membangun platform kolaborasi antar pelaku UMKM di berbagai sektor.</li>
-                        <li>Memberikan akses mudah terhadap informasi, mentor, dan teknologi terkini.</li>
-                        <li>Mendorong inovasi digital dalam operasional bisnis UMKM.</li>
-                        <li>Meningkatkan daya saing UMKM di pasar nasional maupun global.</li>
+                        <li>Menyediakan strategi untuk membangun kursus.</li>
+                        <li>Menyediakan pembelajaran mengenai penyedia kursus melalui mentor profesional</li>
+                        <li>Menyediakan inspirasi dan motivasi bagi penyedia kursus</li>
+                        <li>Menyediakan fitur untuk menjawab pertanyaan </li>
+                        <li>Menyediakan forum antarsiswa dan penyedia kursus</li>
                     </ol>
                 </div>
             </div>

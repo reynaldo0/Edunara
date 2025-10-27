@@ -56,7 +56,7 @@ const NavbarSiswa: React.FC = () => {
 
                 <Link
                     href="http://127.0.0.1:8000/admin/contents"
-                    className="hidden md:inline bg-[#A2DBF9] hover:bg-[#A2DBF9]/90 text-black hover:text-white font-bold 
+                    className="hidden md:inline bg-siswa-primary-100 hover:bg-siswa-primary-100/90 text-black hover:text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun

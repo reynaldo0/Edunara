@@ -6,13 +6,13 @@ import Image from "next/image";
 const Jembatan: React.FC = () => {
     return (
         <section className="flex justify-center items-center py-16 px-6">
-            <div className="bg-pemilik-primary-100 rounded-[32px] p-10 md:p-14 w-full max-w-6xl flex flex-col gap-10 md:gap-14">
+            <div className="bg-pemilik-primary-100 rounded-4xl p-10 md:p-14 w-full max-w-6xl flex flex-col gap-10 md:gap-14">
                 {/* Baris 1: teks kiri, gambar kanan */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-[#003B5C] text-lg md:text-3xl font-medium leading-relaxed md:w-1/2">
-                        Menjadi tempat untuk menanyakan pertanyaan yang kamu tidak mengerti
+                        Menjawab pertanyaan siswa, dapat meningkatkan kepercayaan siswa terhadap kursus.
                     </div>
-                    <div className="bg-white rounded-[16px] shadow-md w-[220px] h-[140px] md:w-[280px] md:h-[180px] flex justify-center items-center">
+                    <div className="bg-white rounded-2xl shadow-md w-[220px] h-[140px] md:w-[280px] md:h-[180px] flex justify-center items-center">
                         <Image
                             src="/illustrasi/siswa/komunitas/jembatan1.png" // ubah sesuai path gambar kamu
                             alt="Ilustrasi UMKM"
