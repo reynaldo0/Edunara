@@ -7,6 +7,7 @@ import {
     ChevronRightIcon,
     StarIcon,
 } from "@heroicons/react/24/solid";
+import { useSiswa } from "../../context/SiswaContext"; // ✅ gunakan context
 
 const categories = [
     { name: "Matematika", color: "bg-yellow-200 text-green-800" },
@@ -14,7 +15,9 @@ const categories = [
     { name: "Bahasa Jepang", color: "bg-indigo-300 text-indigo-900" },
     { name: "Bahasa Korea", color: "bg-sky-300 text-sky-900" },
     { name: "Pemrograman", color: "bg-amber-300 text-amber-900" },
-];
+] as const;
+
+type CategoryName = typeof categories[number]["name"];
 
 const courses = [
     {
@@ -66,19 +69,29 @@ const courses = [
 ];
 
 export default function Kategori() {
-    const [selectedCategory, setSelectedCategory] = useState("Bahasa Inggris");
+    const { siswa } = useSiswa(); // ✅ ambil data context
+    const [selectedCategory, setSelectedCategory] = useState<CategoryName>("Bahasa Inggris");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
-    // 🧠 Deteksi ukuran layar agar jumlah card sesuai device
+    // ✅ Set kategori awal dari context
+    useEffect(() => {
+        if (siswa.kategori && categories.some(c => c.name === siswa.kategori)) {
+            queueMicrotask(() => {
+                setSelectedCategory(siswa.kategori as CategoryName);
+            });
+        }
+    }, [siswa.kategori]);
+
+    // 🧠 Responsif: ubah jumlah card tergantung lebar layar
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 640) setItemsPerSlide(1); // Mobile
-            else if (window.innerWidth < 1024) setItemsPerSlide(2); // Tablet
-            else setItemsPerSlide(3); // Desktop
+            if (window.innerWidth < 640) setItemsPerSlide(1);
+            else if (window.innerWidth < 1024) setItemsPerSlide(2);
+            else setItemsPerSlide(3);
         };
 
-        handleResize(); // initial check
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -89,15 +102,8 @@ export default function Kategori() {
 
     const maxIndex = Math.max(0, filteredCourses.length - itemsPerSlide);
 
-    const nextSlide = () => {
-        setCurrentIndex((prev) =>
-            prev < maxIndex ? prev + 1 : maxIndex
-        );
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0));
-    };
+    const nextSlide = () => setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
+    const prevSlide = () => setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
 
     return (
         <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
@@ -105,7 +111,7 @@ export default function Kategori() {
                 Kategori
             </h2>
 
-            {/* Category Buttons */}
+            {/* Tombol Kategori */}
             <div className="flex flex-wrap justify-center gap-3 sm:gap-5 mb-10">
                 {categories.map((cat) => (
                     <button
@@ -124,7 +130,7 @@ export default function Kategori() {
                 ))}
             </div>
 
-            {/* Data kosong */}
+            {/* Jika belum ada data */}
             {filteredCourses.length === 0 ? (
                 <p className="text-gray-600 text-lg font-medium">
                     Belum ada data untuk kategori{" "}
@@ -142,12 +148,13 @@ export default function Kategori() {
                         <ChevronLeftIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
                     </button>
 
-                    {/* Slides */}
+                    {/* Card kursus */}
                     <div className="overflow-hidden w-full">
                         <div
                             className="flex transition-transform duration-500 ease-in-out"
                             style={{
-                                transform: `translateX(-${(currentIndex * 100) / itemsPerSlide}%)`,
+                                transform: `translateX(-${(currentIndex * 100) / itemsPerSlide
+                                    }%)`,
                             }}
                         >
                             {filteredCourses.map((course) => (
@@ -176,7 +183,10 @@ export default function Kategori() {
                                         </p>
                                         <div className="flex items-center mt-3">
                                             {[...Array(course.rating)].map((_, i) => (
-                                                <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
+                                                <StarIcon
+                                                    key={i}
+                                                    className="w-5 h-5 text-yellow-400"
+                                                />
                                             ))}
                                         </div>
                                         <button className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition">

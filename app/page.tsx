@@ -10,7 +10,7 @@ export default function Home() {
   const handleSelect = (role: string) => {
     setSelected(role);
     setTimeout(() => {
-      if (role === "siswa") router.push("/siswa");
+      if (role === "siswa") router.push("/siswa-form");
       if (role === "pemilik") router.push("/pemilik");
     }, 600);
   };
