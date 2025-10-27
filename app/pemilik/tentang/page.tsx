@@ -1,17 +1,17 @@
-import NavbarPemilik from "@/app/components/NavbarPemilik";
-import Profesional from "./Profesional";
-import Cerita from "./Cerita";
 import HeroPemilik from "@/app/components/HeroPemilik";
-
-
+import NavbarPemilik from "@/app/components/NavbarPemilik";
+import Team from "./Team";
+import Values from "./Values";
+import VisiMisi from "./VisiMisi";
 
 export default function SiswaPage() {
     return (
         <main className="bg-[#F0F9FF]">
             <NavbarPemilik />
             <HeroPemilik />
-            <Profesional />
-            <Cerita />
+            <VisiMisi />
+            <Values />
+            <Team />
         </main>
     );
 }

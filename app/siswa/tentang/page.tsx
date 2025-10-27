@@ -1,8 +1,8 @@
 import NavbarSiswa from "@/app/components/NavbarSiswa";
 import VisiMisi from "./VisiMisi";
-import TeamNutriverse from "./Team";
 import Values from "./Values";
 import HeroSiswa from "@/app/components/HeroSiswa";
+import Team from "./Team";
 
 export default function SiswaPage() {
     return (
@@ -11,7 +11,7 @@ export default function SiswaPage() {
             <HeroSiswa />
             <VisiMisi />
             <Values />
-            <TeamNutriverse />
+            <Team />
         </main>
     );
 }

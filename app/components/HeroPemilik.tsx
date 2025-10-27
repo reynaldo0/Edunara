@@ -3,30 +3,32 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { usePathname } from "next/navigation";
 
-export default function HeroSiswa() {
+export default function HeroPemilik() {
     const pathname = usePathname();
 
     // Tentukan background image berdasarkan path
     // Tentukan background image berdasarkan path
     const getBackgroundImage = () => {
-        if (pathname === "/siswa") return "/illustrasi/siswa/beranda/hero.png";
-        if (pathname === "/siswa/komunitas") return "/illustrasi/siswa/komunitas/hero.png";
-        if (pathname === "/siswa/tentang") return "/illustrasi/siswa/tentang/hero.png";
+        if (pathname === "/pemilik") return "/illustrasi/pemilik/beranda/hero.png";
+        if (pathname === "/pemilik/komunitas") return "/illustrasi/pemilik/komunitas/hero.png";
+        if (pathname === "/pemilik/tentang") return "/illustrasi/pemilik/tentang/hero.png";
+        if (pathname === "/pemilik/mentor") return "/illustrasi/pemilik/mentor/hero.png";
         return "/illustrasi/default/hero.png";
     };
 
     // Tentukan judul berdasarkan path
     const getTitle = () => {
-        if (pathname === "/siswa") return "Cari Kursus lebih mudah dengan UMKMAcademy";
-        if (pathname === "/siswa/komunitas") return "Bergabunglah bersama komunitas, cari teman seperjuanganmu!!";
-        if (pathname === "/siswa/tentang") return "Latar Belakang Pembuatan Website UMKMAcademy";
+        if (pathname === "/pemilik") return "Bangun Kursusmu, sukseskan kelak nantinya";
+        if (pathname === "/pemilik/komunitas") return "Bergabunglah bersama komunitas, cari teman seperjuanganmu!";
+        if (pathname === "/pemilik/tentang") return "Latar Belakang Pembuatan Website UMKMAcademy";
+        if (pathname === "/pemilik/mentor") return "TIngkatkan kualitas Kursus kamu dengan Mentor Profesional";
         return "Selamat Datang di UMKMAcademy";
     };
 
     return (
         <main>
             {/* Bagian Hero */}
-            <div className="bg-siswa-primary-200 rounded-b-[450px] relative flex flex-col items-center overflow-hidden">
+            <div className="bg-pemilik-primary-100 rounded-b-[450px] relative flex flex-col items-center overflow-hidden">
                 {/* Background Hero */}
                 <div
                     className="relative flex flex-col items-center justify-center w-full 
