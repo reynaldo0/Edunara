@@ -44,6 +44,126 @@ export default function SectionPanduan() {
             image: "/images/fasilitas-3.jpg",
         },
         {
+            title: "Cara memilih fasilitas yang baik",
+            description:
+                "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+            progress: 60,
+            category: "Fasilitas",
+            image: "/images/fasilitas-1.jpg",
+        },
+        {
+            title: "Menata ruang belajar yang nyaman",
+            description:
+                "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
+            progress: 75,
+            category: "Fasilitas",
+            image: "/images/fasilitas-2.jpg",
+        },
+        {
+            title: "Peralatan modern untuk kursus",
+            description:
+                "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
+            progress: 40,
+            category: "Fasilitas",
+            image: "/images/fasilitas-3.jpg",
+        },
+        {
+            title: "Cara memilih fasilitas yang baik",
+            description:
+                "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+            progress: 60,
+            category: "Fasilitas",
+            image: "/images/fasilitas-1.jpg",
+        },
+        {
+            title: "Menata ruang belajar yang nyaman",
+            description:
+                "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
+            progress: 75,
+            category: "Fasilitas",
+            image: "/images/fasilitas-2.jpg",
+        },
+        {
+            title: "Peralatan modern untuk kursus",
+            description:
+                "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
+            progress: 40,
+            category: "Fasilitas",
+            image: "/images/fasilitas-3.jpg",
+        },
+        {
+            title: "Cara memilih fasilitas yang baik",
+            description:
+                "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+            progress: 60,
+            category: "Fasilitas",
+            image: "/images/fasilitas-1.jpg",
+        },
+        {
+            title: "Menata ruang belajar yang nyaman",
+            description:
+                "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
+            progress: 75,
+            category: "Fasilitas",
+            image: "/images/fasilitas-2.jpg",
+        },
+        {
+            title: "Peralatan modern untuk kursus",
+            description:
+                "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
+            progress: 40,
+            category: "Fasilitas",
+            image: "/images/fasilitas-3.jpg",
+        },
+        {
+            title: "Cara memilih fasilitas yang baik",
+            description:
+                "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+            progress: 60,
+            category: "Fasilitas",
+            image: "/images/fasilitas-1.jpg",
+        },
+        {
+            title: "Menata ruang belajar yang nyaman",
+            description:
+                "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
+            progress: 75,
+            category: "Fasilitas",
+            image: "/images/fasilitas-2.jpg",
+        },
+        {
+            title: "Peralatan modern untuk kursus",
+            description:
+                "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
+            progress: 40,
+            category: "Fasilitas",
+            image: "/images/fasilitas-3.jpg",
+        },
+        {
+            title: "Cara memilih fasilitas yang baik",
+            description:
+                "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+            progress: 60,
+            category: "Fasilitas",
+            image: "/images/fasilitas-1.jpg",
+        },
+        {
+            title: "Menata ruang belajar yang nyaman",
+            description:
+                "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
+            progress: 75,
+            category: "Fasilitas",
+            image: "/images/fasilitas-2.jpg",
+        },
+        {
+            title: "Peralatan modern untuk kursus",
+            description:
+                "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
+            progress: 40,
+            category: "Fasilitas",
+            image: "/images/fasilitas-3.jpg",
+        },
+        {
             title: "Merancang kurikulum yang efektif",
             description:
                 "Kurikulum yang baik harus sesuai dengan kebutuhan siswa dan tujuan pembelajaran.",
