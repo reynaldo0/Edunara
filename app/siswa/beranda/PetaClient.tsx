@@ -25,8 +25,12 @@ type Course = {
     image: string;
 };
 
-// Perbaiki ikon bawaan Leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+// ✅ Hilangkan any dengan cara aman
+const DefaultIconPrototype = L.Icon.Default.prototype as unknown as {
+    _getIconUrl?: () => string;
+};
+delete DefaultIconPrototype._getIconUrl;
+
 L.Icon.Default.mergeOptions({
     iconRetinaUrl:
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -61,7 +65,7 @@ export default function PetaClient({ selected }: Props) {
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
-            .then((data) => setCourses(data))
+            .then((data: Course[]) => setCourses(data))
             .catch((err) => console.error("Gagal memuat data kursus:", err));
     }, []);
 
@@ -69,12 +73,11 @@ export default function PetaClient({ selected }: Props) {
         (course) => course.location.toLowerCase() === selected.toLowerCase()
     );
 
-    const mainLocation =
+    const mainLocation: [number, number] =
         filteredCourses.length > 0
             ? [filteredCourses[0].lat, filteredCourses[0].lng]
-            : [-6.2088, 106.8456]; // default Jakarta
+            : [-6.2088, 106.8456]; // Default Jakarta
 
-    // 🔹 Radius & zoom tiap kota (disesuaikan agar tampak profesional)
     const cityConfig: Record<
         string,
         { radius: number; zoom: number }
@@ -91,15 +94,13 @@ export default function PetaClient({ selected }: Props) {
 
     return (
         <MapContainer
-            center={mainLocation as [number, number]}
+            center={mainLocation}
             zoom={config.zoom}
             scrollWheelZoom
             style={{ height: "100%", width: "100%", borderRadius: "16px" }}
+            className="[&_.leaflet-control-container]:hidden"
         >
-            <ChangeView
-                center={mainLocation as [number, number]}
-                zoom={config.zoom}
-            />
+            <ChangeView center={mainLocation} zoom={config.zoom} />
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -107,7 +108,7 @@ export default function PetaClient({ selected }: Props) {
 
             {/* Lingkaran area utama */}
             <Circle
-                center={mainLocation as [number, number]}
+                center={mainLocation}
                 radius={config.radius}
                 pathOptions={{
                     color: "#2563EB",
@@ -121,7 +122,6 @@ export default function PetaClient({ selected }: Props) {
                 <Marker key={course.id} position={[course.lat, course.lng]}>
                     <Popup>
                         <div className="max-w-[200px]">
-
                             <Image
                                 src={course.image}
                                 alt={course.title}
@@ -132,7 +132,9 @@ export default function PetaClient({ selected }: Props) {
                             <strong className="text-sm text-siswa-primary-100 block mb-1">
                                 {course.title}
                             </strong>
-                            <p className="text-xs text-gray-600">{course.description}</p>
+                            <p className="text-xs text-gray-600">
+                                {course.description}
+                            </p>
                             <p className="text-xs text-yellow-500 mt-1">
                                 ⭐ {course.rating}/5
                             </p>

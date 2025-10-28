@@ -23,7 +23,7 @@ export default function Peta() {
     const handleSelectDaerah = (daerah: Daerah) => {
         setSelected(daerah);
 
-        setSiswa((prev: any) => ({
+        setSiswa((prev) => ({
             ...prev,
             lokasi: daerah,
         }));
@@ -35,7 +35,6 @@ export default function Peta() {
                 Kursus di Sekitar Kamu
             </h2>
 
-            {/* Tombol lokasi */}
             <div className="flex flex-wrap justify-center gap-3 mb-6">
                 {daerahList.map((daerah) => (
                     <button
@@ -51,7 +50,6 @@ export default function Peta() {
                 ))}
             </div>
 
-            {/* Peta */}
             <div className="w-full max-w-5xl h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#CBD5E0]">
                 <MapSection selected={selected} />
             </div>

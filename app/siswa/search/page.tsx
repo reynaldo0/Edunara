@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import HeroSiswa from "../../components/HeroSiswa";
 import Image from "next/image";
 import { useSiswa } from "@/app/context/SiswaContext";
@@ -12,7 +12,7 @@ type Course = {
     category: string;
     title: string;
     description: string;
-    rating: number; // 1–5
+    rating: number;
     location: string;
     image: string;
 };
@@ -20,34 +20,27 @@ type Course = {
 export default function SearchPage() {
     const { searchTerm } = useSiswa();
     const [courses, setCourses] = useState<Course[]>([]);
-    const [filtered, setFiltered] = useState<Course[]>([]);
 
+    // Ambil data
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
-            .then((data) => {
-                setCourses(data);
-                setFiltered(data);
-            });
+            .then((data) => setCourses(data))
+            .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
 
-    useEffect(() => {
-        if (searchTerm.trim()) {
-            const term = searchTerm.toLowerCase();
-            setFiltered(
-                courses.filter(
-                    (c) =>
-                        c.title.toLowerCase().includes(term) ||
-                        c.category.toLowerCase().includes(term) ||
-                        c.location.toLowerCase().includes(term)
-                )
-            );
-        } else {
-            setFiltered(courses);
-        }
+    const filtered = useMemo(() => {
+        if (!searchTerm.trim()) return courses;
+
+        const term = searchTerm.toLowerCase();
+        return courses.filter(
+            (c) =>
+                c.title.toLowerCase().includes(term) ||
+                c.category.toLowerCase().includes(term) ||
+                c.location.toLowerCase().includes(term)
+        );
     }, [searchTerm, courses]);
 
-    // 🔹 Komponen kecil untuk menampilkan bintang
     const RatingStars = ({ rating }: { rating: number }) => {
         const stars = Array.from({ length: 5 }, (_, i) => (
             <FaStar
@@ -150,7 +143,6 @@ export default function SearchPage() {
                     </section>
                 </div>
             </main>
-
         </>
     );
 }
