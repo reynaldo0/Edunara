@@ -1,11 +1,31 @@
 "use client";
 
-import { MapContainer, TileLayer, Circle, Marker, Popup, useMap } from "react-leaflet";
+import {
+    MapContainer,
+    TileLayer,
+    Circle,
+    Marker,
+    Popup,
+    useMap,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
-// Perbaikan ikon default Leaflet
+type Course = {
+    id: number;
+    category: string;
+    title: string;
+    description: string;
+    rating: number;
+    location: string;
+    lat: number;
+    lng: number;
+    image: string;
+};
+
+// Perbaiki ikon bawaan Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl:
@@ -16,103 +36,107 @@ L.Icon.Default.mergeOptions({
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-// Data lokasi
-const daerahData = {
-    Jakarta: {
-        lat: -6.2088,
-        lng: 106.8456,
-        radius: 12000,
-        kursus: [
-            { name: "Kursus Bahasa Inggris Jakarta", lat: -6.1905, lng: 106.8227 },
-            { name: "Kursus Coding Central", lat: -6.2146, lng: 106.8451 },
-            { name: "Kursus Desain Grafis Kemang", lat: -6.2607, lng: 106.8129 },
-        ],
-    },
-    Bogor: {
-        lat: -6.595,
-        lng: 106.816,
-        radius: 15000,
-        kursus: [
-            { name: "Kursus Musik Bogor", lat: -6.588, lng: 106.820 },
-            { name: "Kursus Matematika Cibinong", lat: -6.49, lng: 106.84 },
-            { name: "Kursus Komputer Dramaga", lat: -6.56, lng: 106.73 },
-        ],
-    },
-    Depok: {
-        lat: -6.4025,
-        lng: 106.7942,
-        radius: 10000,
-        kursus: [
-            { name: "Kursus Bahasa Depok", lat: -6.38, lng: 106.78 },
-            { name: "Kursus IT Margonda", lat: -6.41, lng: 106.82 },
-            { name: "Kursus Public Speaking", lat: -6.39, lng: 106.77 },
-        ],
-    },
-    Tangerang: {
-        lat: -6.1783,
-        lng: 106.6319,
-        radius: 15000,
-        kursus: [
-            { name: "Kursus Otomotif Tangerang", lat: -6.19, lng: 106.63 },
-            { name: "Kursus Menjahit Serpong", lat: -6.27, lng: 106.67 },
-            { name: "Kursus Digital Marketing", lat: -6.22, lng: 106.58 },
-        ],
-    },
-    Bekasi: {
-        lat: -6.2349,
-        lng: 106.9896,
-        radius: 12000,
-        kursus: [
-            { name: "Kursus Komputer Bekasi", lat: -6.23, lng: 106.98 },
-            { name: "Kursus Akuntansi Harapan Indah", lat: -6.20, lng: 107.00 },
-            { name: "Kursus Desain Pondok Ungu", lat: -6.25, lng: 107.01 },
-        ],
-    },
-};
-
-// Animasi pindah peta
-function ChangeView({ center, zoom }: { center: [number, number]; zoom: number }) {
+// Komponen bantu untuk animasi view
+function ChangeView({
+    center,
+    zoom,
+}: {
+    center: [number, number];
+    zoom: number;
+}) {
     const map = useMap();
     useEffect(() => {
-        map.flyTo(center, zoom, { duration: 1.5 });
+        map.flyTo(center, zoom, { duration: 1.2 });
     }, [center, zoom, map]);
     return null;
 }
 
 interface Props {
-    selected: keyof typeof daerahData;
+    selected: string;
 }
 
 export default function PetaClient({ selected }: Props) {
-    const lokasi = daerahData[selected];
+    const [courses, setCourses] = useState<Course[]>([]);
+
+    useEffect(() => {
+        fetch("/data/courses.json")
+            .then((res) => res.json())
+            .then((data) => setCourses(data))
+            .catch((err) => console.error("Gagal memuat data kursus:", err));
+    }, []);
+
+    const filteredCourses = courses.filter(
+        (course) => course.location.toLowerCase() === selected.toLowerCase()
+    );
+
+    const mainLocation =
+        filteredCourses.length > 0
+            ? [filteredCourses[0].lat, filteredCourses[0].lng]
+            : [-6.2088, 106.8456]; // default Jakarta
+
+    // 🔹 Radius & zoom tiap kota (disesuaikan agar tampak profesional)
+    const cityConfig: Record<
+        string,
+        { radius: number; zoom: number }
+    > = {
+        jakarta: { radius: 8000, zoom: 13 },
+        depok: { radius: 6000, zoom: 13 },
+        bogor: { radius: 9000, zoom: 12 },
+        tangerang: { radius: 10000, zoom: 12 },
+        bekasi: { radius: 9000, zoom: 12 },
+    };
+
+    const config =
+        cityConfig[selected.toLowerCase()] || { radius: 8000, zoom: 13 };
 
     return (
         <MapContainer
-            center={[lokasi.lat, lokasi.lng]}
-            zoom={12}
+            center={mainLocation as [number, number]}
+            zoom={config.zoom}
             scrollWheelZoom
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%", borderRadius: "16px" }}
         >
-            <ChangeView center={[lokasi.lat, lokasi.lng]} zoom={12} />
+            <ChangeView
+                center={mainLocation as [number, number]}
+                zoom={config.zoom}
+            />
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+
+            {/* Lingkaran area utama */}
             <Circle
-                center={[lokasi.lat, lokasi.lng]}
-                radius={lokasi.radius}
+                center={mainLocation as [number, number]}
+                radius={config.radius}
                 pathOptions={{
-                    color: "#F6AD55",
-                    fillColor: "#F6AD55",
-                    fillOpacity: 0.3,
+                    color: "#2563EB",
+                    fillColor: "#60A5FA",
+                    fillOpacity: 0.25,
                 }}
             />
-            {lokasi.kursus.map((kursus, i) => (
-                <Marker key={i} position={[kursus.lat, kursus.lng]}>
+
+            {/* Marker tiap kursus */}
+            {filteredCourses.map((course) => (
+                <Marker key={course.id} position={[course.lat, course.lng]}>
                     <Popup>
-                        <strong>{kursus.name}</strong>
-                        <br />
-                        {selected}
+                        <div className="max-w-[200px]">
+
+                            <Image
+                                src={course.image}
+                                alt={course.title}
+                                width={400}
+                                height={200}
+                                className="w-full h-24 object-cover rounded-md mb-2"
+                            />
+                            <strong className="text-sm text-siswa-primary-100 block mb-1">
+                                {course.title}
+                            </strong>
+                            <p className="text-xs text-gray-600">{course.description}</p>
+                            <p className="text-xs text-yellow-500 mt-1">
+                                ⭐ {course.rating}/5
+                            </p>
+                        </div>
                     </Popup>
                 </Marker>
             ))}

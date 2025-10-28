@@ -3,45 +3,77 @@
     "id": 1,
     "category": "Bahasa Inggris",
     "title": "Intermediate Kursus Bahasa Inggris",
-    "description": "Bukti kursus efektif bahasa Inggris. Bisa diakses dengan semua perangkat online-mu.",
+    "description": "Bukti kursus efektif bahasa Inggris di pusat kota Jakarta.",
     "rating": 5,
     "location": "Jakarta",
+    "lat": -6.1905,
+    "lng": 106.8227,
     "image": "https://images.unsplash.com/photo-1600195077909-46a765cbb3c9?auto=format&fit=crop&w=600&q=80"
   },
   {
     "id": 2,
     "category": "Bahasa Inggris",
-    "title": "Kelas Dasar Grammar",
-    "description": "Pelajari grammar dengan metode menyenangkan dan interaktif.",
+    "title": "English Conversation Hub",
+    "description": "Latihan speaking dan listening interaktif di Jakarta Barat.",
     "rating": 4,
-    "location": "Depok",
-    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3b?auto=format&fit=crop&w=600&q=80"
+    "location": "Jakarta",
+    "lat": -6.155,
+    "lng": 106.785,
+    "image": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=600&q=80"
   },
   {
     "id": 3,
     "category": "Bahasa Inggris",
-    "title": "Speaking Confidence Class",
-    "description": "Bangun kepercayaan diri berbicara dengan native speaker.",
-    "rating": 5,
-    "location": "Bogor",
-    "image": "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80"
+    "title": "Kelas Dasar Grammar",
+    "description": "Pelajari grammar dengan metode menyenangkan di Depok.",
+    "rating": 4,
+    "location": "Depok",
+    "lat": -6.41,
+    "lng": 106.82,
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3b?auto=format&fit=crop&w=600&q=80"
   },
   {
     "id": 4,
     "category": "Bahasa Inggris",
-    "title": "IELTS Preparation",
-    "description": "Persiapkan diri untuk ujian IELTS dengan mentor berpengalaman.",
+    "title": "Speaking Confidence Class",
+    "description": "Bangun kepercayaan diri berbicara dengan native speaker di Bogor.",
     "rating": 5,
-    "location": "Tangerang",
-    "image": "https://images.unsplash.com/photo-1584697964191-84b34f5b1b7b?auto=format&fit=crop&w=600&q=80"
+    "location": "Bogor",
+    "lat": -6.588,
+    "lng": 106.82,
+    "image": "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80"
   },
   {
     "id": 5,
     "category": "Bahasa Inggris",
+    "title": "IELTS Preparation",
+    "description": "Persiapkan diri untuk ujian IELTS dengan mentor berpengalaman di Tangerang.",
+    "rating": 5,
+    "location": "Tangerang",
+    "lat": -6.19,
+    "lng": 106.63,
+    "image": "https://images.unsplash.com/photo-1584697964191-84b34f5b1b7b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 6,
+    "category": "Bahasa Inggris",
     "title": "Kursus Vocabulary",
-    "description": "Perbanyak kosakata bahasa Inggris dengan latihan interaktif.",
+    "description": "Perbanyak kosakata bahasa Inggris dengan latihan interaktif di Bekasi.",
     "rating": 4,
     "location": "Bekasi",
+    "lat": -6.23,
+    "lng": 106.98,
     "image": "https://images.unsplash.com/photo-1581092160562-40aa08e788e1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 7,
+    "category": "Bahasa Inggris",
+    "title": "Fun English Kids Center",
+    "description": "Belajar bahasa Inggris menyenangkan untuk anak-anak di Bekasi.",
+    "rating": 5,
+    "location": "Bekasi",
+    "lat": -6.25,
+    "lng": 107.0,
+    "image": "https://images.unsplash.com/photo-1613545325226-72a709c7dc89?auto=format&fit=crop&w=600&q=80"
   }
 ]
