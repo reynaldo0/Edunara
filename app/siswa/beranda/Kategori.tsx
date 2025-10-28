@@ -10,11 +10,11 @@ import {
 import { useSiswa } from "../../context/SiswaContext";
 
 const categories = [
-    { name: "Matematika"},
-    { name: "Bahasa Inggris"},
-    { name: "Bahasa Jepang"},
-    { name: "Bahasa Korea"},
-    { name: "Pemrograman"},
+    { name: "Matematika" },
+    { name: "Bahasa Inggris" },
+    { name: "Bahasa Jepang" },
+    { name: "Bahasa Korea" },
+    { name: "Pemrograman" },
 ] as const;
 
 type CategoryName = typeof categories[number]["name"];
@@ -27,6 +27,7 @@ export default function Kategori() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
+    // 🔹 Ambil data kursus dari JSON
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
@@ -34,6 +35,7 @@ export default function Kategori() {
             .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
 
+    // 🔹 Set kategori awal sesuai context siswa
     useEffect(() => {
         if (siswa.kategori && categories.some((c) => c.name === siswa.kategori)) {
             queueMicrotask(() => {
@@ -42,6 +44,7 @@ export default function Kategori() {
         }
     }, [siswa.kategori]);
 
+    // 🔹 Responsif: jumlah card per slide
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) setItemsPerSlide(1);
@@ -53,12 +56,14 @@ export default function Kategori() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const filteredCourses = courses.filter(
-        (course) =>
-            course.category === selectedCategory &&
-            (!siswa.lokasi ||
-                course.lokasi.toLowerCase() === siswa.lokasi.toLowerCase())
-    );
+    // 🔹 Filter data kursus sesuai kategori & lokasi dari context
+    const filteredCourses = courses.filter((course) => {
+        const cocokKategori = course.category === selectedCategory;
+        const cocokLokasi =
+            !siswa.lokasi ||
+            course.location.toLowerCase() === siswa.lokasi.toLowerCase();
+        return cocokKategori && cocokLokasi;
+    });
 
     const maxIndex = Math.max(0, filteredCourses.length - itemsPerSlide);
     const nextSlide = () =>
@@ -66,14 +71,12 @@ export default function Kategori() {
     const prevSlide = () =>
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
 
-    // 🔹 Komponen kecil untuk menampilkan bintang rating dinamis
+    // 🔹 Komponen bintang rating
     const RatingStars = ({ rating }: { rating: number }) => {
         const stars = Array.from({ length: 5 }, (_, i) => (
             <StarIcon
                 key={i}
-                className={`w-5 h-5 ${i < Math.round(rating)
-                        ? "text-yellow-400"
-                        : "text-gray-300"
+                className={`w-5 h-5 ${i < Math.round(rating) ? "text-yellow-400" : "text-gray-300"
                     }`}
             />
         ));
@@ -107,7 +110,7 @@ export default function Kategori() {
 
             {/* Jika belum ada data */}
             {filteredCourses.length === 0 ? (
-                <p className="text-gray-600 text-lg font-medium">
+                <p className="text-gray-600 text-lg font-medium text-center">
                     Tidak ada kursus untuk kategori{" "}
                     <span className="font-semibold">{selectedCategory}</span>
                     {siswa.lokasi && ` di ${siswa.lokasi}`}.
@@ -118,9 +121,7 @@ export default function Kategori() {
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
-                        className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex === 0
-                                ? "opacity-50 cursor-not-allowed"
-                                : ""
+                        className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         <ChevronLeftIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
@@ -141,7 +142,6 @@ export default function Kategori() {
                                     className="w-full sm:w-1/2 md:w-1/3 shrink-0 p-3"
                                 >
                                     <div className="bg-white rounded-3xl shadow-lg p-5 sm:p-6 hover:scale-[1.03] transition-transform duration-300 cursor-pointer group h-full flex flex-col">
-                                        {/* Gambar */}
                                         <div className="overflow-hidden rounded-2xl">
                                             <Image
                                                 src={course.image}
@@ -152,9 +152,8 @@ export default function Kategori() {
                                             />
                                         </div>
 
-                                        {/* Konten */}
                                         <p className="text-sm font-semibold text-siswa-primary-100 mt-3 mb-1">
-                                            {course.lokasi}
+                                            {course.location}
                                         </p>
                                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
                                             {course.title}
@@ -163,7 +162,6 @@ export default function Kategori() {
                                             {course.description}
                                         </p>
 
-                                        {/* Bintang rating */}
                                         <div className="flex items-center mt-3">
                                             <RatingStars rating={course.rating} />
                                             <span className="ml-2 text-sm text-gray-500">

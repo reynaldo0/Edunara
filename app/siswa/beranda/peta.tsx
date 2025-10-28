@@ -6,22 +6,28 @@ import { useSiswa } from "../../context/SiswaContext";
 
 const MapSection = dynamic(() => import("./PetaClient"), { ssr: false });
 
-// definisikan tipe literal untuk daerah
 const daerahList = ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"] as const;
 type Daerah = typeof daerahList[number];
 
 export default function Peta() {
-    const { siswa } = useSiswa();
+    const { siswa, setSiswa } = useSiswa();
     const [selected, setSelected] = useState<Daerah>("Jakarta");
 
-    // set default lokasi berdasarkan context hanya sekali di mount
     useEffect(() => {
         const lokasiSiswa = siswa.lokasi as Daerah | undefined;
         if (lokasiSiswa && daerahList.includes(lokasiSiswa)) {
-            // Gunakan microtask agar tidak sinkron dalam render cycle
             queueMicrotask(() => setSelected(lokasiSiswa));
         }
     }, [siswa.lokasi]);
+
+    const handleSelectDaerah = (daerah: Daerah) => {
+        setSelected(daerah);
+
+        setSiswa((prev: any) => ({
+            ...prev,
+            lokasi: daerah,
+        }));
+    };
 
     return (
         <section className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-10">
@@ -34,8 +40,8 @@ export default function Peta() {
                 {daerahList.map((daerah) => (
                     <button
                         key={daerah}
-                        onClick={() => setSelected(daerah)}
-                        className={`px-4 py-2 rounded-full font-medium transition-all ${selected === daerah
+                        onClick={() => handleSelectDaerah(daerah)}
+                        className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selected === daerah
                                 ? "bg-siswa-primary-100 text-white shadow-lg scale-105"
                                 : "bg-white text-[#1A202C] border border-gray-300 hover:bg-gray-100"
                             }`}
