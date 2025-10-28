@@ -32,7 +32,7 @@ export default function Program() {
 
     return (
         <section className="w-full py-16 flex flex-col items-center">
-            <h2 className="text-2xl font-bold text-[#1A202C] mb-10">
+            <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
                 Program Unggulan
             </h2>
 

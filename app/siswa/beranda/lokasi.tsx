@@ -13,7 +13,7 @@ export default function Lokasi() {
     return (
         <section className="py-16 px-6 flex flex-col items-center text-center">
             {/* Judul */}
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A202C] mb-10">
+            <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
                 Lokasi Kamu
             </h2>
 

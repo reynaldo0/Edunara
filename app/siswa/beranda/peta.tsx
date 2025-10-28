@@ -30,8 +30,8 @@ export default function Peta() {
     };
 
     return (
-        <section className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A202C] mb-6">
+        <section className="w-full min-h-screen flex flex-col items-center justify-center px-4">
+            <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
                 Kursus di Sekitar Kamu
             </h2>
 
@@ -42,8 +42,8 @@ export default function Peta() {
                         key={daerah}
                         onClick={() => handleSelectDaerah(daerah)}
                         className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selected === daerah
-                                ? "bg-siswa-primary-100 text-white shadow-lg scale-105"
-                                : "bg-white text-[#1A202C] border border-gray-300 hover:bg-gray-100"
+                            ? "bg-siswa-primary-100 text-white shadow-lg scale-105"
+                            : "bg-white text-[#1A202C] border border-gray-300 hover:bg-gray-100"
                             }`}
                     >
                         {daerah}

@@ -85,8 +85,8 @@ export default function Kategori() {
 
     return (
         <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-800">
-                Kategori Kursus
+            <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
+                Kategori
             </h2>
 
             {/* Tombol kategori */}
@@ -99,8 +99,8 @@ export default function Kategori() {
                             setCurrentIndex(0);
                         }}
                         className={`px-5 py-2 sm:px-6 sm:py-2.5 rounded-full font-medium shadow-md transition-all duration-300 ${selectedCategory === cat.name
-                                ? `bg-siswa-primary-200 text-black scale-105`
-                                : "bg-white border-2 border-siswa-primary-200 text-gray-600 hover:bg-gray-100"
+                            ? `bg-siswa-primary-200 text-black scale-105`
+                            : "bg-white border-2 border-siswa-primary-200 text-gray-600 hover:bg-gray-100"
                             }`}
                     >
                         {cat.name}
@@ -183,8 +183,8 @@ export default function Kategori() {
                         onClick={nextSlide}
                         disabled={currentIndex >= maxIndex}
                         className={`absolute -right-3 sm:-right-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex >= maxIndex
-                                ? "opacity-50 cursor-not-allowed"
-                                : ""
+                            ? "opacity-50 cursor-not-allowed"
+                            : ""
                             }`}
                     >
                         <ChevronRightIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
