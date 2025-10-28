@@ -12,6 +12,8 @@ type SiswaData = {
 type SiswaContextType = {
     siswa: SiswaData;
     setSiswa: React.Dispatch<React.SetStateAction<SiswaData>>;
+    searchTerm: string; // 🔍 Tambahan untuk pencarian
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>; // 🔍 Setter-nya
 };
 
 const SiswaContext = createContext<SiswaContextType | undefined>(undefined);
@@ -24,8 +26,11 @@ export const SiswaProvider = ({ children }: { children: React.ReactNode }) => {
         kategori: "",
     });
 
+    // 🔍 State baru untuk pencarian
+    const [searchTerm, setSearchTerm] = useState("");
+
     return (
-        <SiswaContext.Provider value={{ siswa, setSiswa }}>
+        <SiswaContext.Provider value={{ siswa, setSiswa, searchTerm, setSearchTerm }}>
             {children}
         </SiswaContext.Provider>
     );

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "category": "Bahasa Inggris",
+    "title": "Intermediate Kursus Bahasa Inggris",
+    "description": "Bukti kursus efektif bahasa Inggris. Bisa diakses dengan semua perangkat online-mu.",
+    "rating": 5,
+    "location": "Jakarta",
+    "image": "https://images.unsplash.com/photo-1600195077909-46a765cbb3c9?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 2,
+    "category": "Bahasa Inggris",
+    "title": "Kelas Dasar Grammar",
+    "description": "Pelajari grammar dengan metode menyenangkan dan interaktif.",
+    "rating": 4,
+    "location": "Depok",
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 3,
+    "category": "Bahasa Inggris",
+    "title": "Speaking Confidence Class",
+    "description": "Bangun kepercayaan diri berbicara dengan native speaker.",
+    "rating": 5,
+    "location": "Bogor",
+    "image": "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 4,
+    "category": "Bahasa Inggris",
+    "title": "IELTS Preparation",
+    "description": "Persiapkan diri untuk ujian IELTS dengan mentor berpengalaman.",
+    "rating": 5,
+    "location": "Tangerang",
+    "image": "https://images.unsplash.com/photo-1584697964191-84b34f5b1b7b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 5,
+    "category": "Bahasa Inggris",
+    "title": "Kursus Vocabulary",
+    "description": "Perbanyak kosakata bahasa Inggris dengan latihan interaktif.",
+    "rating": 4,
+    "location": "Bekasi",
+    "image": "https://images.unsplash.com/photo-1581092160562-40aa08e788e1?auto=format&fit=crop&w=600&q=80"
+  }
+]
