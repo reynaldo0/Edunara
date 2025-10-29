@@ -15,6 +15,7 @@ export default function HeroSiswa() {
         if (pathname === "/siswa") return "/illustrasi/siswa/beranda/hero.png";
         if (pathname === "/siswa/komunitas") return "/illustrasi/siswa/komunitas/hero.png";
         if (pathname === "/siswa/tentang") return "/illustrasi/siswa/tentang/hero.png";
+        if (pathname === "/siswa/kursus") return "/illustrasi/siswa/beranda/kursus.png";
         if (pathname.startsWith("/siswa/search")) return "/illustrasi/siswa/beranda/hero.png";
         return "/illustrasi/default/hero.png";
     };
@@ -23,6 +24,7 @@ export default function HeroSiswa() {
         if (pathname === "/siswa") return "Cari Kursus lebih mudah dengan UMKMAcademy";
         if (pathname === "/siswa/komunitas") return "Bergabunglah bersama komunitas, cari teman seperjuanganmu!!";
         if (pathname === "/siswa/tentang") return "Latar Belakang Pembuatan Website UMKMAcademy";
+        if (pathname === "/siswa/kursus") return "Jelajahi kursus menarik untuk Berkembang";
         if (pathname.startsWith("/siswa/search")) return "Hasil Pencarian Kursus";
         return "Selamat Datang di UMKMAcademy";
     };
@@ -66,7 +68,7 @@ export default function HeroSiswa() {
                         />
                         <button
                             type="submit"
-                            className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 
+                            className="bg-siswa-primary-100 hover:bg-siswa-primary-100/80 transition-all duration-300 
                             text-white rounded-full p-2 sm:p-3 flex items-center justify-center 
                             shadow-md hover:scale-105 active:scale-95"
                         >

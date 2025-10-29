@@ -14,20 +14,21 @@ const NavbarSiswa: React.FC = () => {
 
     const menuItems: MenuItem[] = [
         { name: "Beranda", path: "/siswa" },
+        { name: "Kursus", path: "/siswa/kursus" },
         { name: "Tentang", path: "/siswa/tentang" },
         { name: "Komunitas", path: "/siswa/komunitas" },
     ];
 
     return (
         <nav
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-[999999] w-[90%] md:w-[80%]"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-999999 w-[90%] md:w-[80%]"
             data-aos="zoom-in-down"
             data-aos-duration="1500"
         >
             <div
                 className="flex items-center justify-between 
         bg-white/80 backdrop-blur-lg
-        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-siswa-primary-100 border-b-[20px]"
+        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-siswa-primary-100 border-b-20"
             >
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
@@ -45,7 +46,7 @@ const NavbarSiswa: React.FC = () => {
                                 href={item.path}
                                 className="relative transition duration-300 hover:text-siswa-primary-100 
                   after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                  after:h-[2px] after:w-0 after:bg-siswa-primary-100 after:transition-all 
+                  after:h-0.5 after:w-0 after:bg-siswa-primary-100 after:transition-all 
                   after:duration-300 hover:after:w-full font-bold text-primary-200"
                             >
                                 {item.name}
@@ -56,7 +57,7 @@ const NavbarSiswa: React.FC = () => {
 
                 <Link
                     href="http://127.0.0.1:8000/admin/contents"
-                    className="hidden md:inline bg-siswa-primary-100 hover:bg-siswa-primary-100/90 text-black hover:text-white font-bold 
+                    className="hidden md:inline bg-siswa-primary-100 hover:bg-siswa-primary-100/80 text-white hover:text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun
