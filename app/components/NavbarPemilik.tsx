@@ -57,7 +57,7 @@ const NavbarPemilik: React.FC = () => {
 
                 {/* Tombol Dashboard Desktop */}
                 <Link
-                    href="http://127.0.0.1:8000/admin/contents"
+                    href="register"
                     className="hidden md:inline bg-pemilik-primary-200 hover:bg-pemilik-primary-200/90 text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
@@ -100,7 +100,7 @@ const NavbarPemilik: React.FC = () => {
 
                 {/* Tombol Dashboard (Mobile) */}
                 <Link
-                    href="/dashboard"
+                    href="/register"
                     onClick={() => setIsOpen(false)}
                     className="bg-[#594537] hover:bg-[#6e3717] text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
