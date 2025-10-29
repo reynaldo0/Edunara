@@ -41,7 +41,7 @@ const StrategySection: React.FC = () => {
     ];
 
     return (
-        <section className="py-20 px-6 bg-[#EAF7FF] flex flex-col items-center relative">
+        <section className="py-20 px-6 bg-[#EAF7FF] flex flex-col items-center relative" id="strategi">
             {/* Judul */}
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#003B5C] mb-14 text-center">
                 Strategi Kursus untukmu

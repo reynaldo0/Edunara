@@ -2,24 +2,24 @@
 import React from "react";
 import Image from "next/image";
 
-const Program: React.FC = () => {
+const Daftar: React.FC = () => {
     return (
         <section className="flex flex-col items-center justify-center py-16 px-6 bg-[#EAF7FF]">
             {/* Title */}
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#003B5C] mb-10">
-                Program Unggulan UMKM-mu
+                Daftarkan Kursus kamu, di maps kami
             </h2>
 
             {/* Card */}
-            <div className="bg-white w-full max-w-5xl rounded-3xl shadow-xl flex flex-col md:flex-row-reverse items-center justify-between p-10 md:px-14 border border-[#D6E9F9]">
+            <div className="bg-white w-full max-w-5xl rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between p-10 md:px-14 border border-[#D6E9F9]">
                 {/* Text Section */}
                 <div className="flex-1 space-y-6">
                     <h3 className="text-3xl md:text-5xl font-extrabold text-[#003B5C] leading-snug">
-                        Membuat strategi untuk Kursus kamu
+                        Segera daftarkan kursusmu disini
                     </h3>
 
-                    <a href="#strategi" className="bg-pemilik-primary-100 hover:bg-pemilik-primary-200 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
-                        Jelajahi
+                    <a href="/pemilik/daftar" className="bg-pemilik-primary-100 hover:bg-pemilik-primary-100/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
+                        Daftar Sekarang
                     </a>
                 </div>
 
@@ -39,4 +39,4 @@ const Program: React.FC = () => {
     );
 };
 
-export default Program;
+export default Daftar;
