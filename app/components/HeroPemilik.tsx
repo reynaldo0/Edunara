@@ -56,7 +56,7 @@ export default function HeroPemilik() {
                         />
                         <button
                             type="button"
-                            className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 
+                            className="bg-pemilik-primary-200 hover:bg-pemilik-primary-200 transition-all duration-300 
                      text-white rounded-full p-2 sm:p-3 flex items-center justify-center 
                      shadow-md hover:scale-105 active:scale-95"
                         >

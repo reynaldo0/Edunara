@@ -28,7 +28,7 @@ const NavbarPemilik: React.FC = () => {
             <div
                 className="flex items-center justify-between 
         bg-white/80 backdrop-blur-lg
-        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-[#52C3FF] border-b-[20px]"
+        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-pemilik-primary-200 border-b-20"
             >
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
@@ -44,9 +44,9 @@ const NavbarPemilik: React.FC = () => {
                         <li key={item.name}>
                             <Link
                                 href={item.path}
-                                className="relative transition duration-300 hover:text-[#52C3FF] 
+                                className="relative transition duration-300 hover:text-pemilik-primary-200 
                   after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                  after:h-[2px] after:w-0 after:bg-[#52C3FF] after:transition-all 
+                  after:h-0.5 after:w-0 after:bg-pemilik-primary-200 after:transition-all 
                   after:duration-300 hover:after:w-full font-bold text-primary-200"
                             >
                                 {item.name}
@@ -58,7 +58,7 @@ const NavbarPemilik: React.FC = () => {
                 {/* Tombol Dashboard Desktop */}
                 <Link
                     href="http://127.0.0.1:8000/admin/contents"
-                    className="hidden md:inline bg-[#A2DBF9] hover:bg-[#A2DBF9]/90 text-black font-bold 
+                    className="hidden md:inline bg-pemilik-primary-200 hover:bg-pemilik-primary-200/90 text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun
@@ -70,9 +70,9 @@ const NavbarPemilik: React.FC = () => {
                     className="md:hidden w-8 h-8 flex items-center justify-center text-gray-900 focus:outline-none"
                 >
                     {isOpen ? (
-                        <XMarkIcon className="h-7 w-7 text-[#52C3FF] transition duration-300" />
+                        <XMarkIcon className="h-7 w-7 text-pemilik-primary-200 transition duration-300" />
                     ) : (
-                        <Bars3Icon className="h-7 w-7 text-[#52C3FF] transition duration-300" />
+                        <Bars3Icon className="h-7 w-7 text-pemilik-primary-200 transition duration-300" />
                     )}
                 </button>
             </div>
@@ -92,7 +92,7 @@ const NavbarPemilik: React.FC = () => {
                         key={item.name}
                         href={item.path}
                         onClick={() => setIsOpen(false)}
-                        className="text-gray-900 font-medium hover:text-[#52C3FF] transition"
+                        className="text-gray-900 font-medium hover:text-pemilik-primary-200 transition"
                     >
                         {item.name}
                     </Link>

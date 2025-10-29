@@ -48,7 +48,7 @@ export default function Profesional() {
         );
 
     return (
-        <section className="bg-[#E9F6FF] py-12 flex flex-col items-center px-4">
+        <section className="py-12 flex flex-col items-center px-4">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0D1B2A] mb-10 text-center">
                 Diajarkan oleh mentor profesional
             </h2>
@@ -71,10 +71,10 @@ export default function Profesional() {
                         {mentors.map((mentor, i) => (
                             <div
                                 key={i}
-                                className="flex-shrink-0 w-full flex flex-col-reverse md:flex-row bg-white rounded-3xl shadow-lg overflow-hidden"
+                                className="shrink-0 w-full flex flex-col-reverse md:flex-row rounded-3xl overflow-hidden"
                             >
                                 {/* Grid produk */}
-                                <div className="md:w-1/2 grid grid-cols-2 gap-2 p-4 md:p-6 bg-white">
+                                <div className="md:w-1/2 grid grid-cols-2 gap-2 p-4 md:p-6">
                                     {mentor.products.map((src, j) => (
                                         <div
                                             key={j}
@@ -92,7 +92,7 @@ export default function Profesional() {
                                 </div>
 
                                 {/* Info mentor */}
-                                <div className="md:w-1/2 flex flex-col justify-center items-center text-center p-8 bg-[#F8FBFF]">
+                                <div className="md:w-1/2 flex flex-col justify-center items-center text-center m-20 bg-[#F8FBFF] rounded-2xl">
                                     <div className="w-40 h-40 relative mb-4 rounded-2xl overflow-hidden shadow-md hover:scale-105 transition-transform duration-300">
                                         <Image
                                             src={mentor.image}

@@ -15,28 +15,28 @@ const StrategySection: React.FC = () => {
             title: "Promosi di media sosial",
             description:
                 "Promosi ke media sosial seperti tiktok, instagram, facebook dan lainnya adalah langkah yang baik dalam mengenalkan kursus.",
-            color: "bg-[#FFEFD1]",
+            color: "bg-pemilik-primary-100/40",
         },
         {
             id: 2,
             title: "Daftarkan kursus ke maps",
             description:
                 "Kebanyakan tempat kursus dikenal melalui maps, segera daftarkan kursusmu di maps ini dan google maps!",
-            color: "bg-[#FFCA63]",
+            color: "bg-pemilik-primary-100/50",
         },
         {
             id: 3,
             title: "Fasilitas yang nyaman",
             description:
                 "Fasilitas yang nyaman, membuat siswa fokus untuk belajar dan produktif dalam pembelajaran, pastikan siswa tidak bosan!",
-            color: "bg-[#FFCA63]",
+            color: "bg-pemilik-primary-100/60",
         },
         {
             id: 4,
             title: "Pengajar yang baik",
             description:
                 "Terkadang bukan hanya promosi dan fasilitas saja yang perlu ditingkatkan. Pengajar yang baik adalah kunci utama meningkatnya kursus kamu!",
-            color: "bg-[#FFEFD1]",
+            color: "bg-pemilik-primary-100/70",
         },
     ];
 
@@ -72,7 +72,7 @@ const StrategySection: React.FC = () => {
                             <h3 className="text-[#003B5C] font-extrabold text-xl mb-3 leading-snug">
                                 {item.title}
                             </h3>
-                            <p className="text-[#003B5C] text-base font-medium leading-relaxed">
+                            <p className="text-[#003B5C] text-base font-bold leading-relaxed">
                                 {item.description}
                             </p>
 

@@ -125,7 +125,7 @@ export default function Team() {
                                 href={member.socials.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-pemilik-primary-100 text-[#003653] hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-md"
+                                className="p-3 rounded-full bg-pemilik-primary-100 text-white hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-md"
                             >
                                 <FaGithub />
                             </a>
@@ -133,7 +133,7 @@ export default function Team() {
                                 href={member.socials.instagram}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-pemilik-primary-100 text-black hover:bg-pink-600 hover:text-white transition-all duration-300 shadow-md"
+                                className="p-3 rounded-full bg-pemilik-primary-100 text-white hover:bg-pink-600 hover:text-white transition-all duration-300 shadow-md"
                             >
                                 <FaInstagram />
                             </a>
@@ -141,7 +141,7 @@ export default function Team() {
                                 href={member.socials.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full bg-pemilik-primary-100 text-black hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
+                                className="p-3 rounded-full bg-pemilik-primary-100 text-white hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
                             >
                                 <FaLinkedinIn />
                             </a>

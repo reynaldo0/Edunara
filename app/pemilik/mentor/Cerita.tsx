@@ -58,11 +58,11 @@ const InspirationalStory: React.FC = () => {
 
     return (
         <section className="flex flex-col items-center justify-center min-h-screen bg-[#E6F1FF] px-4 py-10">
-            <h1 className="text-xl md:text-2xl font-semibold text-[#0A2E56] mb-6 text-center">
+            <h1 className="text-xl md:text-2xl font-semibold text-pemilik-primary-200 mb-6 text-center">
                 Cerita Inspiratif Pemilik Kursus
             </h1>
 
-            <div className="bg-[#FFB84C] rounded-3xl p-6 md:p-10 w-full max-w-5xl shadow-lg transition-all duration-300">
+            <div className="bg-pemilik-primary-100 rounded-3xl p-6 md:p-10 w-full max-w-5xl shadow-lg transition-all duration-300">
                 {/* Top Section */}
                 <div className="grid md:grid-cols-2 gap-6 items-center">
                     <div>
@@ -91,9 +91,9 @@ const InspirationalStory: React.FC = () => {
                             <div className="relative w-full h-40 rounded-xl overflow-hidden mb-4">
                                 <Image src={story.image} alt={story.name} fill className="object-cover" />
                             </div>
-                            <p className="text-sm text-[#0A2E56] font-semibold mb-1">{story.name}</p>
-                            <p className="text-sm text-[#0A2E56] opacity-80 mb-3">{story.description}</p>
-                            <button className="bg-[#0A2E56] text-white text-sm py-2 px-3 rounded-lg w-fit hover:bg-[#0c396d] transition-colors">
+                            <p className="text-sm text-pemilik-primary-200 font-semibold mb-1">{story.name}</p>
+                            <p className="text-sm text-pemilik-primary-200 opacity-80 mb-3">{story.description}</p>
+                            <button className="bg-pemilik-primary-200 text-white text-sm py-2 px-3 rounded-lg w-fit hover:bg-[#0c396d] transition-colors">
                                 Selengkapnya
                             </button>
                         </div>
@@ -108,11 +108,11 @@ const InspirationalStory: React.FC = () => {
                             onClick={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
                             disabled={currentPage === 1}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${currentPage === 1
-                                    ? "bg-white/50 text-gray-400 cursor-not-allowed"
-                                    : "bg-white text-[#0A2E56] hover:bg-[#0A2E56] hover:text-white shadow-md"
+                                    ? "bg-white/50 text-white cursor-not-allowed"
+                                    : "bg-white text-pemilik-primary-200 hover:bg-pemilik-primary-200 hover:text-white shadow-md"
                                 }`}
                         >
-                            Prev
+                            Sebelum
                         </button>
                     )}
 
@@ -123,14 +123,14 @@ const InspirationalStory: React.FC = () => {
                                 key={i}
                                 onClick={() => handlePageClick(page)}
                                 className={`w-9 h-9 rounded-full text-sm font-medium transition-all duration-300 flex items-center justify-center ${currentPage === page
-                                        ? "bg-[#0A2E56] text-white shadow-md scale-105"
-                                        : "bg-white text-[#0A2E56] hover:bg-[#0A2E56] hover:text-white"
+                                        ? "bg-pemilik-primary-200 text-white shadow-md scale-105"
+                                        : "bg-white text-pemilik-primary-200 hover:bg-pemilik-primary-200 hover:text-white"
                                     }`}
                             >
                                 {page}
                             </button>
                         ) : (
-                            <span key={i} className="w-9 h-9 flex items-center justify-center text-[#0A2E56] text-sm">
+                            <span key={i} className="w-9 h-9 flex items-center justify-center text-pemilik-primary-200 text-sm">
                                 {page}
                             </span>
                         )
@@ -141,11 +141,11 @@ const InspirationalStory: React.FC = () => {
                             onClick={() => setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev))}
                             disabled={currentPage === totalPages}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${currentPage === totalPages
-                                    ? "bg-white/50 text-gray-400 cursor-not-allowed"
-                                    : "bg-white text-[#0A2E56] hover:bg-[#0A2E56] hover:text-white shadow-md"
+                                    ? "bg-white/50 text-white cursor-not-allowed"
+                                    : "bg-white text-pemilik-primary-200 hover:bg-pemilik-primary-200 hover:text-white shadow-md"
                                 }`}
                         >
-                            Next
+                            Selanjutnya
                         </button>
                     )}
                 </div>

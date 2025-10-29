@@ -131,7 +131,7 @@ const ForumSection: React.FC = () => {
                     />
                     <button
                         onClick={addPost}
-                        className="mt-4 px-6 py-2 bg-pemilik-primary-100 text-[#003B5C] rounded-xl font-semibold hover:bg-pemilik-primary-100/80 transition-all shadow-md cursor-pointer"
+                        className="mt-4 px-6 py-2 bg-pemilik-primary-100 text-white rounded-xl font-semibold hover:bg-pemilik-primary-100/80 transition-all shadow-md cursor-pointer"
                     >
                         Kirim
                     </button>

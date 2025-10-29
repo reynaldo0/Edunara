@@ -251,7 +251,7 @@ export default function SectionPanduan() {
                             key={idx}
                             onClick={() => setCurrentPage(p)}
                             className={`w-8 h-8 rounded-full text-sm font-medium transition-all ${currentPage === p
-                                    ? "bg-yellow-400 text-slate-900"
+                                    ? "bg-pemilik-primary-100 text-slate-900"
                                     : "text-slate-600 hover:bg-yellow-100"
                                 }`}
                         >
@@ -280,8 +280,8 @@ export default function SectionPanduan() {
                         key={tab}
                         onClick={() => handleTabChange(tab)}
                         className={`px-5 py-2 rounded-full border font-medium transition-all ${activeTab === tab
-                                ? "bg-yellow-400 text-slate-900 border-yellow-400"
-                                : "bg-white text-slate-600 border-slate-300 hover:bg-slate-100"
+                                ? "bg-pemilik-primary-100 text-white border-pemilik-primary-100"
+                                : "bg-white text-pemilik-primary-200 border-slate-300 hover:bg-slate-100"
                             }`}
                     >
                         {tab}
@@ -314,14 +314,14 @@ export default function SectionPanduan() {
                             <div className="mt-auto">
                                 <div className="w-full bg-slate-200 h-2 rounded-full mb-2">
                                     <div
-                                        className="bg-yellow-400 h-2 rounded-full transition-all"
+                                        className="bg-pemilik-primary-100 h-2 rounded-full transition-all"
                                         style={{ width: `${g.progress}%` }}
                                     ></div>
                                 </div>
                                 <div className="text-right text-sm text-slate-600 mb-2">
                                     Selesai {g.progress}%
                                 </div>
-                                <button className="bg-yellow-400 text-slate-800 font-semibold rounded-full px-4 py-2 hover:bg-yellow-500 transition-all">
+                                <button className="bg-pemilik-primary-100 text-white font-semibold rounded-full px-4 py-2 hover:bg-pemilik-primary-100/90 transition-all">
                                     selengkapnya
                                 </button>
                             </div>

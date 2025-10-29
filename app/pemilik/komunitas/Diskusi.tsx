@@ -13,7 +13,7 @@ const Diskusi: React.FC = () => {
                     <h2 className="text-[#003B5C] font-bold text-3xl md:text-5xl leading-tight">
                         Diskusikan <br /> pertanyaanmu
                     </h2>
-                    <button className="bg-pemilik-primary-100 hover:bg-pemilik-primary-100/80 text-[#003B5C] font-semibold px-8 py-3 rounded-full text-base md:text-lg transition-transform transform hover:scale-105">
+                    <button className="bg-pemilik-primary-100 hover:bg-pemilik-primary-100/80 text-white font-semibold px-8 py-3 rounded-full text-base md:text-lg transition-transform transform hover:scale-105">
                         Jelajahi
                     </button>
                 </div>
