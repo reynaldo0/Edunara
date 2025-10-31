@@ -9,6 +9,7 @@ import TestimonialsSection from "./Testimonials";
 import ProspekKarirSection from "./Prospek";
 import DaftarKursusSection from "./Daftar";
 import PertanyaanSection from "./Pertaanyaan";
+import NavbarSiswa from "@/app/components/NavbarSiswa";
 
 type Mentor = {
     name: string;
@@ -73,6 +74,7 @@ export default function DetailKursusPage() {
             <div className="absolute inset-0 bg-[#F0F9FF]/70 backdrop-blur-[1px]" />
 
             <div className="relative z-10">
+                <NavbarSiswa />
                 <HeroDetailKursus />
 
                 {course && (

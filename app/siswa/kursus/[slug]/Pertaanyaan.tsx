@@ -27,21 +27,23 @@ type Question = {
 };
 
 export default function PertanyaanSection({ courseId }: { courseId: string }) {
-    const [questions, setQuestions] = useState<Question[]>(() => {
-        if (typeof window === "undefined") return [];
-        const saved = localStorage.getItem(`questions_${courseId}`);
-        return saved ? JSON.parse(saved) : [];
-    });
-
+    const [questions, setQuestions] = useState<Question[]>([]);
     const [newQuestion, setNewQuestion] = useState("");
     const [replyingTo, setReplyingTo] = useState<string | null>(null);
     const [replyText, setReplyText] = useState("");
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [imageFile, setImageFile] = useState<File | null>(null);
+    const [isClient, setIsClient] = useState(false);
 
-    // 🔹 Tambahkan dummy data jika kosong
+    // ✅ Pastikan hanya jalan di client
     useEffect(() => {
-        if (questions.length === 0) {
+        setIsClient(true);
+
+        const saved = localStorage.getItem(`questions_${courseId}`);
+        if (saved) {
+            setQuestions(JSON.parse(saved));
+        } else {
+            // dummy data hanya dimasukkan 1x di client
             const dummy: Question[] = [
                 {
                     id: crypto.randomUUID(),
@@ -75,12 +77,13 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
             setQuestions(dummy);
             localStorage.setItem(`questions_${courseId}`, JSON.stringify(dummy));
         }
-    }, [courseId, questions.length]);
+    }, [courseId]);
 
-    // 🔹 Simpan pertanyaan ke localStorage
     const saveQuestions = (updated: Question[]) => {
         setQuestions(updated);
-        localStorage.setItem(`questions_${courseId}`, JSON.stringify(updated));
+        if (isClient) {
+            localStorage.setItem(`questions_${courseId}`, JSON.stringify(updated));
+        }
     };
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,17 +102,20 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
             author: "Kamu",
             content: newQuestion.trim(),
             image: previewUrl || undefined,
-            time: new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }),
+            time: new Date().toLocaleTimeString("id-ID", {
+                hour: "2-digit",
+                minute: "2-digit",
+            }),
             replies: [],
         };
 
-        saveQuestions([newItem, ...questions]);
+        const updated = [newItem, ...questions];
+        saveQuestions(updated);
         setNewQuestion("");
         setPreviewUrl(null);
         setImageFile(null);
     };
 
-    // 💬 Kirim balasan
     const handleReply = (questionId: string) => {
         if (!replyText.trim()) return;
 
@@ -117,17 +123,24 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
             id: crypto.randomUUID(),
             author: "Kamu",
             content: replyText.trim(),
-            time: new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }),
+            time: new Date().toLocaleTimeString("id-ID", {
+                hour: "2-digit",
+                minute: "2-digit",
+            }),
         };
 
         const updated = questions.map((q) =>
-            q.id === questionId ? { ...q, replies: [...(q.replies || []), newReply] } : q
+            q.id === questionId
+                ? { ...q, replies: [...(q.replies || []), newReply] }
+                : q
         );
 
         saveQuestions(updated);
         setReplyText("");
         setReplyingTo(null);
     };
+
+    if (!isClient) return null;
 
     return (
         <section className="flex flex-col items-center py-16 px-4 md:px-8">
@@ -148,7 +161,12 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
 
                     <label className="cursor-pointer text-[#0077B6] hover:opacity-80">
                         <HiCamera className="text-2xl" />
-                        <input type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
+                        <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={handleImageChange}
+                        />
                     </label>
 
                     <button
@@ -164,7 +182,14 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
                     <div className="mb-6">
                         <p className="text-sm text-gray-500 mb-1">Preview gambar:</p>
                         <div className="relative w-full max-h-64 aspect-video border border-[#BCE0FD] rounded-xl overflow-hidden">
-                            <Image src={previewUrl} alt="Preview" fill className="object-contain" />
+                            {/* ✅ Gunakan unoptimized agar blob URL bisa ditampilkan */}
+                            <Image
+                                src={previewUrl}
+                                alt="Preview"
+                                fill
+                                unoptimized
+                                className="object-contain"
+                            />
                         </div>
                     </div>
                 )}
@@ -172,8 +197,10 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
                 {/* Daftar pertanyaan */}
                 <div className="space-y-6">
                     {questions.map((q) => (
-                        <div key={q.id} className="bg-white border border-[#CBE7FF] rounded-2xl p-4 shadow-sm">
-                            {/* Header */}
+                        <div
+                            key={q.id}
+                            className="bg-white border border-[#CBE7FF] rounded-2xl p-4 shadow-sm"
+                        >
                             <div className="flex items-center gap-3 mb-3">
                                 <HiUserCircle className="text-3xl text-[#0077B6]" />
                                 <div>
@@ -182,31 +209,35 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
                                 </div>
                             </div>
 
-                            {/* Konten */}
                             <div className="bg-gray-100 rounded-xl text-gray-600 p-4 break-words whitespace-pre-wrap">
                                 <p>{q.content}</p>
                                 {q.image && (
                                     <div className="relative w-full max-h-64 aspect-video mt-3 border border-gray-200 rounded-lg overflow-hidden">
-                                        <Image src={q.image} alt="Gambar Pertanyaan" fill className="object-contain" />
+                                        <Image
+                                            src={q.image}
+                                            alt="Gambar Pertanyaan"
+                                            fill
+                                            unoptimized
+                                            className="object-contain"
+                                        />
                                     </div>
                                 )}
                             </div>
 
-
-                            {/* Aksi */}
                             <div className="flex items-center gap-4 mt-3 text-gray-500 text-sm">
                                 <div className="flex items-center gap-1 cursor-pointer hover:text-[#0077B6] transition">
                                     <HiEye /> <span>Lihat</span>
                                 </div>
                                 <div
                                     className="flex items-center gap-1 cursor-pointer hover:text-[#0077B6] transition"
-                                    onClick={() => setReplyingTo(q.id === replyingTo ? null : q.id)}
+                                    onClick={() =>
+                                        setReplyingTo(q.id === replyingTo ? null : q.id)
+                                    }
                                 >
                                     <HiChatBubbleOvalLeft /> <span>Balas</span>
                                 </div>
                             </div>
 
-                            {/* Form balasan */}
                             {replyingTo === q.id && (
                                 <div className="mt-3 flex items-center gap-2">
                                     <input
@@ -225,18 +256,25 @@ export default function PertanyaanSection({ courseId }: { courseId: string }) {
                                 </div>
                             )}
 
-                            {/* Balasan */}
                             {q.replies && q.replies.length > 0 && (
                                 <div className="mt-4 space-y-3 pl-6 border-l-2 border-[#CBE7FF]">
                                     {q.replies.map((r) => (
-                                        <div key={r.id} className="bg-[#F8FCFF] rounded-xl p-3">
+                                        <div
+                                            key={r.id}
+                                            className="bg-[#F8FCFF] rounded-xl p-3"
+                                        >
                                             <div className="flex items-center gap-2 mb-1">
                                                 <HiUserCircle className="text-xl text-[#0077B6]" />
-                                                <p className="font-semibold text-sm text-[#003B5C]">{r.author}</p>
-                                                <span className="text-xs text-gray-500">{r.time}</span>
+                                                <p className="font-semibold text-sm text-[#003B5C]">
+                                                    {r.author}
+                                                </p>
+                                                <span className="text-xs text-gray-500">
+                                                    {r.time}
+                                                </span>
                                             </div>
-                                            <p className="text-sm text-gray-700 break-words whitespace-pre-wrap">{r.content}</p>
-
+                                            <p className="text-sm text-gray-700 break-words whitespace-pre-wrap">
+                                                {r.content}
+                                            </p>
                                         </div>
                                     ))}
                                 </div>

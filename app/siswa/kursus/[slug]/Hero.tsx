@@ -4,6 +4,7 @@ import { useSiswa } from "@/app/context/SiswaContext";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Mentor = {
     name: string;
@@ -32,7 +33,6 @@ export default function HeroDetailKursus() {
 
     const [course, setCourse] = useState<Course | null>(null);
     const [input, setInput] = useState("");
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (!id) return;
@@ -43,8 +43,7 @@ export default function HeroDetailKursus() {
                 const found = data.find((item) => item.id === Number(id));
                 setCourse(found || null);
             })
-            .catch((err) => console.error("Gagal memuat detail hero:", err))
-            .finally(() => setLoading(false));
+            .catch((err) => console.error("Gagal memuat detail hero:", err));
     }, [id]);
 
     const handleSearch = (e?: React.FormEvent) => {
@@ -55,19 +54,8 @@ export default function HeroDetailKursus() {
         }
     };
 
-    if (loading)
-        return (
-            <div className="flex justify-center items-center min-h-[60vh] text-gray-600">
-                Memuat data hero kursus...
-            </div>
-        );
-
-    if (!course)
-        return (
-            <div className="flex justify-center items-center min-h-[60vh] text-gray-600">
-                Data kursus tidak ditemukan.
-            </div>
-        );
+    // Jika belum ada data, jangan tampilkan apa pun
+    if (!course) return null;
 
     return (
         <main>
@@ -111,36 +99,37 @@ export default function HeroDetailKursus() {
             </div>
 
             <div className="mt-16 md:mt-20 text-center px-6">
-                {/* Logo kursus */}
                 {course.logo && (
                     <div className="flex justify-center mb-6">
-                        <img
+                        <Image
                             src={course.logo}
                             alt="Logo kursus"
+                            width={96}
+                            height={96}
                             className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-full border-2 border-siswa-primary-100 shadow-lg"
                         />
                     </div>
                 )}
 
-                {/* Judul */}
+                {/* ✅ Judul */}
                 <h1 className="text-lg sm:text-2xl md:text-6xl font-bold text-pemilik-primary-200 leading-snug">
                     {course.title}
                 </h1>
 
-                {/* Deskripsi */}
+                {/* ✅ Deskripsi */}
                 <p className="mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     {course.description}
                 </p>
 
-                {/* Kategori, Lokasi, Rating */}
+                {/* ✅ Kategori, Lokasi, Rating */}
                 <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm sm:text-base text-pemilik-primary-200/80">
-                    <span className="bg-siswa-primary-200/30 px-5 py-2 rounded-full">
+                    <span className="bg-siswa-primary-200/70 px-5 py-2 rounded-full">
                         {course.category}
                     </span>
-                    <span className="bg-siswa-primary-200/30 px-5 py-2 rounded-full">
+                    <span className="bg-siswa-primary-200/70 px-5 py-2 rounded-full">
                         {course.location}
                     </span>
-                    <span className="bg-siswa-primary-200/30 px-5 py-2 rounded-full">
+                    <span className="bg-siswa-primary-200/70 px-5 py-2 rounded-full">
                         ⭐ {course.rating}/5
                     </span>
                 </div>
