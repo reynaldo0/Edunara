@@ -2,6 +2,7 @@
 
 import { useSiswa } from "@/app/context/SiswaContext";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -99,10 +100,11 @@ export default function HeroDetailKursus() {
                 {/* Logo kursus */}
                 {course?.logo && (
                     <div className="flex justify-center mb-6">
-                        <img
+                        <Image
                             src={course.logo}
                             alt="Logo kursus"
-                            className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-full shadow-lg"
+                            fill
+                            className="object-contain rounded-full shadow-lg"
                         />
                     </div>
                 )}

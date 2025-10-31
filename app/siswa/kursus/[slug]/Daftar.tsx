@@ -10,7 +10,6 @@ type DaftarKursusSectionProps = {
 
 export default function DaftarKursusSection({
     title,
-    image,
     whatsapp,
 }: DaftarKursusSectionProps) {
     const handleWhatsAppClick = () => {
