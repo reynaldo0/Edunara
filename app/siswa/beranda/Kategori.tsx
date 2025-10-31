@@ -7,6 +7,7 @@ import {
     ChevronRightIcon,
     StarIcon,
 } from "@heroicons/react/24/solid";
+import { useRouter } from "next/navigation";
 import { useSiswa } from "../../context/SiswaContext";
 
 const categories = [
@@ -24,22 +25,21 @@ type Course = {
     category: string;
     title: string;
     description: string;
-    rating: number; 
+    rating: number;
     location: string;
     image: string;
 };
 
 export default function Kategori() {
+    const router = useRouter();
     const { siswa } = useSiswa();
 
-    // Gunakan tipe Course[] alih-alih any[]
     const [courses, setCourses] = useState<Course[]>([]);
     const [selectedCategory, setSelectedCategory] =
         useState<CategoryName>("Bahasa Inggris");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
-    // 🔹 Ambil data kursus dari JSON
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
@@ -47,7 +47,6 @@ export default function Kategori() {
             .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
 
-    // 🔹 Set kategori awal sesuai context siswa
     useEffect(() => {
         if (siswa.kategori && categories.some((c) => c.name === siswa.kategori)) {
             queueMicrotask(() => {
@@ -56,7 +55,6 @@ export default function Kategori() {
         }
     }, [siswa.kategori]);
 
-    // 🔹 Responsif: jumlah card per slide
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) setItemsPerSlide(1);
@@ -68,7 +66,6 @@ export default function Kategori() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // 🔹 Filter data kursus sesuai kategori & lokasi dari context
     const filteredCourses = courses.filter((course) => {
         const cocokKategori = course.category === selectedCategory;
         const cocokLokasi =
@@ -83,25 +80,34 @@ export default function Kategori() {
     const prevSlide = () =>
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
 
-    // 🔹 Komponen bintang rating
     const RatingStars = ({ rating }: { rating: number }) => {
         const stars = Array.from({ length: 5 }, (_, i) => (
             <StarIcon
                 key={i}
-                className={`w-5 h-5 ${i < Math.round(rating) ? "text-yellow-400" : "text-gray-300"
+                className={`w-5 h-5 ${i < Math.round(rating)
+                    ? "text-yellow-400"
+                    : "text-gray-300"
                     }`}
             />
         ));
         return <div className="flex items-center">{stars}</div>;
     };
 
+    const handleExplore = (id: number, title: string) => {
+        const slug = toSlug(title);
+        router.push(`/siswa/kursus/${slug}?id=${id}`);
+    };
+
+    const toSlug = (text: string) =>
+        text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+
+
     return (
         <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
-            <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
+            <h2 className="text-2xl md:text-5xl font-bold text-center text-pemilik-primary-200 mb-10">
                 Kategori
             </h2>
 
-            {/* Tombol kategori */}
             <div className="flex flex-wrap justify-center gap-3 sm:gap-5 mb-10">
                 {categories.map((cat) => (
                     <button
@@ -111,8 +117,8 @@ export default function Kategori() {
                             setCurrentIndex(0);
                         }}
                         className={`px-5 py-2 sm:px-6 sm:py-2.5 rounded-full font-medium shadow-md transition-all duration-300 ${selectedCategory === cat.name
-                                ? `bg-siswa-primary-200 text-black scale-105`
-                                : "bg-white border-2 border-siswa-primary-200 text-gray-600 hover:bg-gray-100"
+                            ? `bg-siswa-primary-200 text-black scale-105`
+                            : "bg-white border-2 border-siswa-primary-200 text-gray-600 hover:bg-gray-100"
                             }`}
                     >
                         {cat.name}
@@ -120,28 +126,25 @@ export default function Kategori() {
                 ))}
             </div>
 
-            {/* Jika belum ada data */}
             {filteredCourses.length === 0 ? (
                 <p className="text-gray-600 text-lg font-medium text-center">
                     Tidak ada kursus untuk kategori{" "}
                     <span className="font-semibold">{selectedCategory}</span>
-                    {siswa.lokasi && ` di ${siswa.lokasi}`}.
+                    {siswa.lokasi && ` di ${siswa.lokasi}`} .
                 </p>
             ) : (
                 <div className="relative w-full max-w-6xl flex items-center justify-center">
-                    {/* Tombol kiri */}
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
                         className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex === 0
-                                ? "opacity-50 cursor-not-allowed"
-                                : ""
+                            ? "opacity-50 cursor-not-allowed"
+                            : ""
                             }`}
                     >
                         <ChevronLeftIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
                     </button>
 
-                    {/* Card kursus */}
                     <div className="overflow-hidden w-full">
                         <div
                             className="flex transition-transform duration-500 ease-in-out"
@@ -162,9 +165,10 @@ export default function Kategori() {
                                                 alt={course.title}
                                                 width={400}
                                                 height={300}
-                                                className="w-full h-48 sm:h-52 object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500"
+                                                className="w-full h-48 sm:h-52 object-cover object-top rounded-2xl group-hover:scale-110 transition-transform duration-500"
                                             />
                                         </div>
+
 
                                         <p className="text-sm font-semibold text-siswa-primary-100 mt-3 mb-1">
                                             {course.location}
@@ -183,7 +187,11 @@ export default function Kategori() {
                                             </span>
                                         </div>
 
-                                        <button className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition">
+                                        {/* Tombol Jelajahi berdasarkan title */}
+                                        <button
+                                            onClick={() => handleExplore(course.id, course.title)}
+                                            className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition"
+                                        >
                                             Jelajahi
                                         </button>
                                     </div>
@@ -192,13 +200,12 @@ export default function Kategori() {
                         </div>
                     </div>
 
-                    {/* Tombol kanan */}
                     <button
                         onClick={nextSlide}
                         disabled={currentIndex >= maxIndex}
                         className={`absolute -right-3 sm:-right-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex >= maxIndex
-                                ? "opacity-50 cursor-not-allowed"
-                                : ""
+                            ? "opacity-50 cursor-not-allowed"
+                            : ""
                             }`}
                     >
                         <ChevronRightIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />

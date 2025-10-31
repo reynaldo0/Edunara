@@ -79,7 +79,7 @@ export default function HeroSiswa() {
             </div>
 
             {/* Judul dinamis */}
-            <h1 className="mt-16 md:mt-20 text-center text-lg sm:text-2xl md:text-6xl font-bold text-[#003653] leading-snug px-6">
+            <h1 className="mt-16 md:mt-20 text-center text-lg sm:text-2xl md:text-6xl font-bold text-pemilik-primary-200 leading-snug px-6">
                 {getTitle()}
             </h1>
         </main>
