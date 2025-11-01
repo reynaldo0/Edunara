@@ -3,14 +3,14 @@
 import {
     MapContainer,
     TileLayer,
-    Circle,
     Marker,
     Popup,
+    GeoJSON,
     useMap,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
 
 type Course = {
@@ -25,12 +25,8 @@ type Course = {
     image: string;
 };
 
-// ✅ Hilangkan any dengan cara aman
-const DefaultIconPrototype = L.Icon.Default.prototype as unknown as {
-    _getIconUrl?: () => string;
-};
-delete DefaultIconPrototype._getIconUrl;
-
+// Hilangkan warning default icon
+delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl:
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -40,82 +36,94 @@ L.Icon.Default.mergeOptions({
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-// Komponen bantu untuk animasi view
-function ChangeView({
-    center,
-    zoom,
-}: {
-    center: [number, number];
-    zoom: number;
-}) {
-    const map = useMap();
-    useEffect(() => {
-        map.flyTo(center, zoom, { duration: 1.2 });
-    }, [center, zoom, map]);
-    return null;
-}
-
 interface Props {
-    selected: string;
+    selected: string; // contoh: "Jakarta Timur"
 }
 
 export default function PetaClient({ selected }: Props) {
     const [courses, setCourses] = useState<Course[]>([]);
+    const [geoJsonMap, setGeoJsonMap] = useState<Record<string, any>>({}); // preload semua geojson
 
+    const daerahList = [
+        "Jakarta Pusat",
+        "Jakarta Selatan",
+        "Jakarta Timur",
+        "Jakarta Barat",
+        "Jakarta Utara",
+    ];
+
+    // Load semua GeoJSON di awal
+    useEffect(() => {
+        daerahList.forEach((daerah) => {
+            const path = `/data/${daerah.toLowerCase().replace(/\s/g, "_")}.json`;
+            fetch(path)
+                .then((res) => res.json())
+                .then((data) =>
+                    setGeoJsonMap((prev) => ({ ...prev, [daerah]: data }))
+                )
+                .catch((err) => console.error(err));
+        });
+    }, []);
+
+    // Load courses
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
             .then((data: Course[]) => setCourses(data))
-            .catch((err) => console.error("Gagal memuat data kursus:", err));
+            .catch((err) => console.error(err));
     }, []);
 
+    // Filter courses
     const filteredCourses = courses.filter(
         (course) => course.location.toLowerCase() === selected.toLowerCase()
     );
 
-    const mainLocation: [number, number] =
-        filteredCourses.length > 0
-            ? [filteredCourses[0].lat, filteredCourses[0].lng]
-            : [-6.2088, 106.8456]; // Default Jakarta
+    const currentGeo = geoJsonMap[selected];
 
-    const cityConfig: Record<
-        string,
-        { radius: number; zoom: number }
-    > = {
-        jakarta: { radius: 8000, zoom: 13 },
-        depok: { radius: 6000, zoom: 13 },
-        bogor: { radius: 9000, zoom: 12 },
-        tangerang: { radius: 10000, zoom: 12 },
-        bekasi: { radius: 9000, zoom: 12 },
+    // FlyToBounds ketika GeoJSON berubah
+    const FitBounds = ({ geo }: { geo: any }) => {
+        const map = useMap();
+        const bounds = useMemo(() => {
+            if (!geo) return null;
+            const layer = L.geoJSON(geo);
+            return layer.getBounds();
+        }, [geo]);
+
+        useEffect(() => {
+            if (bounds) map.flyToBounds(bounds, { duration: 1.2 });
+        }, [bounds, map]);
+
+        return null;
     };
-
-    const config =
-        cityConfig[selected.toLowerCase()] || { radius: 8000, zoom: 13 };
 
     return (
         <MapContainer
-            center={mainLocation}
-            zoom={config.zoom}
+            center={[-6.2088, 106.8456]}
+            zoom={13}
             scrollWheelZoom
             style={{ height: "100%", width: "100%", borderRadius: "16px" }}
-            className="[&_.leaflet-control-container]:hidden"
         >
-            <ChangeView center={mainLocation} zoom={config.zoom} />
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            {/* Lingkaran area utama */}
-            <Circle
-                center={mainLocation}
-                radius={config.radius}
-                pathOptions={{
-                    color: "#2563EB",
-                    fillColor: "#60A5FA",
-                    fillOpacity: 0.25,
-                }}
-            />
+            {/* GeoJSON area */}
+            {currentGeo && (
+                <>
+                    <GeoJSON
+                        key={selected}
+                        data={currentGeo}
+                        style={{
+                            color: "#2563EB",
+                            fillColor: "#60A5FA",
+                            fillOpacity: 0.25,
+                            weight: 2,
+                        }}
+                    />
+                    <FitBounds geo={currentGeo} />
+                </>
+            )}
 
             {/* Marker tiap kursus */}
             {filteredCourses.map((course) => (
@@ -132,9 +140,7 @@ export default function PetaClient({ selected }: Props) {
                             <strong className="text-sm text-siswa-primary-100 block mb-1">
                                 {course.title}
                             </strong>
-                            <p className="text-xs text-gray-600">
-                                {course.description}
-                            </p>
+                            <p className="text-xs text-gray-600">{course.description}</p>
                             <p className="text-xs text-yellow-500 mt-1">
                                 ⭐ {course.rating}/5
                             </p>

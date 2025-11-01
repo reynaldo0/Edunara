@@ -7,12 +7,18 @@ import { useSiswa } from "../context/SiswaContext";
 
 export default function SiswaFormPage() {
     const router = useRouter();
-    const { setSiswa } = useSiswa(); 
+    const { setSiswa } = useSiswa();
     const [selectedKursus, setSelectedKursus] = useState<string | null>(null);
     const [selectedDomisili, setSelectedDomisili] = useState<string | null>(null);
 
     const kursusList = ["Matematika", "Bahasa Inggris", "Bahasa Jepang", "Bahasa Korea", "Pemrograman"];
-    const domisiliList = ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"];
+    const domisiliList = [
+        "Jakarta Pusat",
+        "Jakarta Selatan",
+        "Jakarta Timur",
+        "Jakarta Barat",
+        "Jakarta Utara",
+    ];
 
     const handleSave = () => {
         if (!selectedKursus || !selectedDomisili) {
@@ -74,8 +80,8 @@ export default function SiswaFormPage() {
                                 key={kursus}
                                 onClick={() => setSelectedKursus(kursus)}
                                 className={`px-5 py-2 rounded-xl font-medium border transition-all duration-200 ${selectedKursus === kursus
-                                        ? "bg-[#4DB7FF] text-white border-[#4DB7FF]"
-                                        : "bg-white text-[#003B5C] border-[#AEE3FF] hover:border-[#4DB7FF]"
+                                    ? "bg-[#4DB7FF] text-white border-[#4DB7FF]"
+                                    : "bg-white text-[#003B5C] border-[#AEE3FF] hover:border-[#4DB7FF]"
                                     }`}
                             >
                                 {kursus}
@@ -95,8 +101,8 @@ export default function SiswaFormPage() {
                                 key={kota}
                                 onClick={() => setSelectedDomisili(kota)}
                                 className={`px-5 py-2 rounded-xl font-medium border transition-all duration-200 ${selectedDomisili === kota
-                                        ? "bg-[#3853A4] text-white border-[#3853A4]"
-                                        : "bg-white text-[#003B5C] border-[#BFD4FF] hover:border-[#3853A4]"
+                                    ? "bg-[#3853A4] text-white border-[#3853A4]"
+                                    : "bg-white text-[#003B5C] border-[#BFD4FF] hover:border-[#3853A4]"
                                     }`}
                             >
                                 {kota}

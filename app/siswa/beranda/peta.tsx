@@ -6,12 +6,19 @@ import { useSiswa } from "../../context/SiswaContext";
 
 const MapSection = dynamic(() => import("./PetaClient"), { ssr: false });
 
-const daerahList = ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"] as const;
+const daerahList = [
+    "Jakarta Pusat",
+    "Jakarta Selatan",
+    "Jakarta Timur",
+    "Jakarta Barat",
+    "Jakarta Utara",
+] as const;
+
 type Daerah = typeof daerahList[number];
 
 export default function Peta() {
     const { siswa, setSiswa } = useSiswa();
-    const [selected, setSelected] = useState<Daerah>("Jakarta");
+    const [selected, setSelected] = useState<Daerah>("Jakarta Pusat");
 
     useEffect(() => {
         const lokasiSiswa = siswa.lokasi as Daerah | undefined;

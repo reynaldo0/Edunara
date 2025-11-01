@@ -66,7 +66,7 @@ export default function Home() {
           <button
             onClick={() => handleSelect("pemilik")}
             className={`group flex flex-col items-center justify-center bg-white border-[6px] rounded-2xl p-6 md:p-8 w-52 hover:scale-105 transition-all duration-300 ${selected === "pemilik"
-                ? "border-[#3853A4] shadow-lg"
+                ? "border-pemilik-primary-200 shadow-lg"
                 : "border-[#BFD4FF] hover:border-[#1E2F6E]"
               }`}
           >
