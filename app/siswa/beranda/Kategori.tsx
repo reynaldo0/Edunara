@@ -66,13 +66,10 @@ export default function Kategori() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const filteredCourses = courses.filter((course) => {
-        const cocokKategori = course.category === selectedCategory;
-        const cocokLokasi =
-            !siswa.lokasi ||
-            course.location.toLowerCase() === siswa.lokasi.toLowerCase();
-        return cocokKategori && cocokLokasi;
-    });
+    const filteredCourses = courses.filter(
+        (course) => course.category === selectedCategory
+    );
+
 
     const maxIndex = Math.max(0, filteredCourses.length - itemsPerSlide);
     const nextSlide = () =>

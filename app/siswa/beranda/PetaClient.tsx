@@ -101,6 +101,7 @@ export default function PetaClient({ selected }: Props) {
             center={[-6.2088, 106.8456]}
             zoom={13}
             scrollWheelZoom
+            className="[&_.leaflet-control-container]:hidden"
             style={{ height: "100%", width: "100%", borderRadius: "16px" }}
         >
             <TileLayer
