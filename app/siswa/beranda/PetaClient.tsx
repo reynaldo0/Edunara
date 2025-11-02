@@ -12,6 +12,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
+import type { FeatureCollection } from "geojson";
 
 type Course = {
     id: number;
@@ -25,7 +26,16 @@ type Course = {
     image: string;
 };
 
-// Hilangkan warning default icon
+// ✅ Pindahkan ke luar komponen agar tidak masuk dependency
+const daerahList = [
+    "Jakarta Pusat",
+    "Jakarta Selatan",
+    "Jakarta Timur",
+    "Jakarta Barat",
+    "Jakarta Utara",
+] as const;
+
+// Hilangkan warning default icon leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl:
@@ -37,35 +47,51 @@ L.Icon.Default.mergeOptions({
 });
 
 interface Props {
-    selected: string; // contoh: "Jakarta Timur"
+    selected: string;
+}
+
+function FitBounds({ geo }: { geo: FeatureCollection | undefined }) {
+    const map = useMap();
+
+    useEffect(() => {
+        if (!geo) return;
+        const layer = L.geoJSON(geo);
+        const bounds = layer.getBounds();
+        if (bounds.isValid()) {
+            map.flyToBounds(bounds, { duration: 1.2, easeLinearity: 0.25 });
+        }
+    }, [geo, map]);
+
+    return null;
 }
 
 export default function PetaClient({ selected }: Props) {
     const [courses, setCourses] = useState<Course[]>([]);
-    const [geoJsonMap, setGeoJsonMap] = useState<Record<string, any>>({}); // preload semua geojson
+    const [geoJsonMap, setGeoJsonMap] = useState<
+        Record<string, FeatureCollection>
+    >({});
 
-    const daerahList = [
-        "Jakarta Pusat",
-        "Jakarta Selatan",
-        "Jakarta Timur",
-        "Jakarta Barat",
-        "Jakarta Utara",
-    ];
-
-    // Load semua GeoJSON di awal
+    // ✅ Load semua GeoJSON sekali saja
     useEffect(() => {
-        daerahList.forEach((daerah) => {
-            const path = `/data/${daerah.toLowerCase().replace(/\s/g, "_")}.json`;
-            fetch(path)
-                .then((res) => res.json())
-                .then((data) =>
-                    setGeoJsonMap((prev) => ({ ...prev, [daerah]: data }))
-                )
-                .catch((err) => console.error(err));
-        });
-    });
+        const loadAllGeo = async () => {
+            const dataMap: Record<string, FeatureCollection> = {};
+            await Promise.all(
+                daerahList.map(async (daerah) => {
+                    const path = `/data/${daerah.toLowerCase().replace(/\s/g, "_")}.json`;
+                    try {
+                        const res = await fetch(path);
+                        const json: FeatureCollection = await res.json();
+                        dataMap[daerah] = json;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                })
+            );
+            setGeoJsonMap(dataMap);
+        };
+        loadAllGeo();
+    }, []); // ✅ daerahList tidak perlu lagi
 
-    // Load courses
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
@@ -73,33 +99,20 @@ export default function PetaClient({ selected }: Props) {
             .catch((err) => console.error(err));
     }, []);
 
-    // Filter courses
-    const filteredCourses = courses.filter(
-        (course) => course.location.toLowerCase() === selected.toLowerCase()
+    const filteredCourses = useMemo(
+        () =>
+            courses.filter(
+                (course) => course.location.toLowerCase() === selected.toLowerCase()
+            ),
+        [courses, selected]
     );
 
     const currentGeo = geoJsonMap[selected];
 
-    // FlyToBounds ketika GeoJSON berubah
-    const FitBounds = ({ geo }: { geo: any }) => {
-        const map = useMap();
-        const bounds = useMemo(() => {
-            if (!geo) return null;
-            const layer = L.geoJSON(geo);
-            return layer.getBounds();
-        }, [geo]);
-
-        useEffect(() => {
-            if (bounds) map.flyToBounds(bounds, { duration: 1.2 });
-        }, [bounds, map]);
-
-        return null;
-    };
-
     return (
         <MapContainer
             center={[-6.2088, 106.8456]}
-            zoom={13}
+            zoom={12}
             scrollWheelZoom
             className="[&_.leaflet-control-container]:hidden"
             style={{ height: "100%", width: "100%", borderRadius: "16px" }}
@@ -109,7 +122,6 @@ export default function PetaClient({ selected }: Props) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            {/* GeoJSON area */}
             {currentGeo && (
                 <>
                     <GeoJSON
@@ -126,7 +138,6 @@ export default function PetaClient({ selected }: Props) {
                 </>
             )}
 
-            {/* Marker tiap kursus */}
             {filteredCourses.map((course) => (
                 <Marker key={course.id} position={[course.lat, course.lng]}>
                     <Popup>

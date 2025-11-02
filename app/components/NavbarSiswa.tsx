@@ -32,10 +32,7 @@ const NavbarSiswa: React.FC = () => {
             >
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
-                    <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain" />
-                    <span className="font-extrabold text-primary-200 drop-shadow-sm">
-                        GrowLab
-                    </span>
+                    <img src="/illustrasi/logo.webp" alt="Logo" className="w-26 h-12 object-contain" />
                 </div>
 
                 {/* Menu Desktop */}
@@ -99,7 +96,7 @@ const NavbarSiswa: React.FC = () => {
                 <Link
                     href="/register"
                     onClick={() => setIsOpen(false)}
-                    className="bg-[#594537] hover:bg-[#6e3717] text-white font-bold 
+                    className="bg-siswa-primary-100 hover:bg-siswa-primary-100/80 text-white font-bold 
             px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun

@@ -2,16 +2,20 @@
 
 import { useSiswa } from "@/app/context/SiswaContext";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Lokasi() {
     const { siswa } = useSiswa();
+    const [imgLoaded, setImgLoaded] = useState(false);
 
-    // Ambil nama kota dan ubah ke lowercase agar sesuai dengan nama file
-    const kota = siswa.lokasi ? siswa.lokasi.toLowerCase() : "default";
-    const petaSrc = `/illustrasi/siswa/beranda/${kota}.svg`;
+    // Lokasi default
+    const lokasiDefault = "Jakarta Timur";
+    const lokasiSekarang = siswa.lokasi || lokasiDefault;
+    const kota = lokasiSekarang.toLowerCase().replace(/\s+/g, "-");
+    const petaSrc = `/illustrasi/peta/${kota}.webp`;
 
     return (
-        <section className="py-16 px-6 flex flex-col items-center text-center">
+        <section className="py-16 px-6 flex flex-col items-center text-center overflow-hidden">
             {/* Judul */}
             <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
                 Lokasi Kamu
@@ -22,19 +26,19 @@ export default function Lokasi() {
                 {/* Kartu kiri */}
                 <div
                     className="bg-[#F8AF3C] text-left rounded-[30px] p-6 md:p-8 w-full sm:w-[80%] md:w-[350px]
-          shadow-md flex flex-col justify-between min-h-[200px]
-          md:translate-x-20 z-10 relative"
+                    shadow-md flex flex-col justify-between min-h-[200px]
+                    md:translate-x-20 z-10 relative"
                 >
                     <div className="flex items-start gap-4">
                         <div className="bg-white rounded-[20px] w-14 h-14 md:w-16 md:h-16 shrink-0" />
                         <div>
                             <h3 className="text-[#1A202C] font-bold text-lg sm:text-xl">
-                                Hai {siswa.nama || "Siswa"}
+                                Hai Pelajar!
                             </h3>
                             <p className="text-[#1A202C] text-sm sm:text-base leading-snug">
                                 Kami bisa membantumu mencarikan kursus{" "}
                                 {siswa.kategori?.toLowerCase() || "terdekat"} di sekitar{" "}
-                                {siswa.lokasi || "kota kamu"}.
+                                {lokasiSekarang}.
                             </p>
                         </div>
                     </div>
@@ -49,24 +53,29 @@ export default function Lokasi() {
                 {/* Peta kanan */}
                 <div
                     className="bg-[#AEE3FF] rounded-[30px] p-8 w-full sm:w-[90%] md:w-[650px]
-          text-[#1A202C] shadow-md flex flex-col items-center justify-center space-y-4
-          md:-ml-6 md:pl-12"
+                    text-[#1A202C] shadow-md flex flex-col items-center justify-center space-y-4
+                    md:-ml-6 md:pl-12 relative overflow-hidden"
                 >
-                    <Image
-                        src={petaSrc}
-                        alt={`Peta ${siswa.lokasi || "Default"}`}
-                        width={320}
-                        height={220}
-                        className="object-contain w-[80%] md:w-[60%]"
-                        onError={(e) => {
-                            // Jika file peta tidak ditemukan, fallback ke default
-                            (e.target as HTMLImageElement).src = "/illustrasi/siswa/beranda/peta.svg";
-                        }}
-                    />
+                    {/* Wrapper gambar dengan tinggi tetap */}
+                    <div className="relative w-full max-w-[600px] h-[350px] flex items-center justify-center">
+                        <Image
+                            src={petaSrc}
+                            alt={`Peta ${lokasiSekarang}`}
+                            fill
+                            className={`object-contain transition-opacity duration-500 ${imgLoaded ? "opacity-100" : "opacity-0"
+                                }`}
+                            sizes="(max-width: 768px) 90vw, 600px"
+                            onLoad={() => setImgLoaded(true)}
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src =
+                                    "/illustrasi/peta/jakarta-timur.webp";
+                            }}
+                        />
+                    </div>
 
                     <p className="text-sm sm:text-base">
                         Kamu berada di{" "}
-                        <span className="font-semibold">{siswa.lokasi || "Tangerang Utara"}</span>
+                        <span className="font-semibold">{lokasiSekarang}</span>
                     </p>
                 </div>
             </div>
