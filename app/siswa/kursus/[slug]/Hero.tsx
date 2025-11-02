@@ -5,6 +5,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { FaWhatsapp, FaGlobe } from "react-icons/fa";
 
 type Mentor = {
     name: string;
@@ -23,6 +24,8 @@ type Course = {
     logo?: string;
     mentor?: Mentor;
     details?: string[];
+    whatsapp?: string;
+    website?: string; // ✅ tambahkan properti website
 };
 
 export default function HeroDetailKursus() {
@@ -54,8 +57,12 @@ export default function HeroDetailKursus() {
         }
     };
 
-    // Jika belum ada data, jangan tampilkan apa pun
     if (!course) return null;
+
+    // ✅ Format link WhatsApp
+    const whatsappLink = course.whatsapp
+        ? `https://wa.me/${course.whatsapp.replace(/[^0-9]/g, "")}`
+        : null;
 
     return (
         <main>
@@ -98,6 +105,7 @@ export default function HeroDetailKursus() {
                 </div>
             </div>
 
+            {/* ✅ Detail Kursus */}
             <div className="mt-16 md:mt-20 text-center px-6">
                 {course.logo && (
                     <div className="flex justify-center mb-6">
@@ -111,17 +119,14 @@ export default function HeroDetailKursus() {
                     </div>
                 )}
 
-                {/* ✅ Judul */}
                 <h1 className="text-lg sm:text-2xl md:text-6xl font-bold text-pemilik-primary-200 leading-snug">
                     {course.title}
                 </h1>
 
-                {/* ✅ Deskripsi */}
                 <p className="mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     {course.description}
                 </p>
 
-                {/* ✅ Kategori, Lokasi, Rating */}
                 <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm sm:text-base text-pemilik-primary-200/80">
                     <span className="bg-siswa-primary-200/70 px-5 py-2 rounded-full">
                         {course.category}
@@ -132,6 +137,39 @@ export default function HeroDetailKursus() {
                     <span className="bg-siswa-primary-200/70 px-5 py-2 rounded-full">
                         ⭐ {course.rating}/5
                     </span>
+                </div>
+
+                {/* ✅ Tombol Kontak */}
+                <div className="mt-10 flex flex-wrap justify-center gap-4">
+                    {/* Tombol WhatsApp */}
+                    {whatsappLink && (
+                        <a
+                            href={whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white 
+                            font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 
+                            hover:scale-105 active:scale-95"
+                        >
+                            <FaWhatsapp className="text-xl" />
+                            Hubungi via WhatsApp
+                        </a>
+                    )}
+
+                    {/* Tombol Website Resmi */}
+                    {course.website && (
+                        <a
+                            href={course.website.startsWith("http") ? course.website : `https://${course.website}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 bg-blue-500 hover:bg-blue-600 text-white 
+                            font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 
+                            hover:scale-105 active:scale-95"
+                        >
+                            <FaGlobe className="text-xl" />
+                            Kunjungi Website Resmi
+                        </a>
+                    )}
                 </div>
             </div>
         </main>

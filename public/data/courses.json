@@ -446,5 +446,264 @@
         "description": "Mempromosikan produk dan layanan ke pasar internasional melalui media sosial, kampanye iklan digital, dan strategi pemasaran berbahasa Inggris."
       }
     ]
+  },
+  {
+    "id": 8,
+    "category": "Bahasa Jepang",
+    "title": "Kanrin Edukasi Indonesia",
+    "description": "Kami Menyambut Perusahaan Kami dengan alat yang didukung AI, dengan ini anggota kami dapat unggul ke depan tanpa ada batasan",
+    "rating": 5,
+    "location": "Jakarta Barat",
+    "lat": -6.1579700237364285,
+    "lng": 106.72663798123436,
+    "image": "/kursus/jepang/kanrin/berita.webp",
+    "logo": "/kursus/jepang/kanrin/logo.webp",
+    "whatsapp": "6282227023023",
+    "website": "https://www.youtube.com/@kanrin.edu.indonesia",
+    "mentor": {
+      "name": "Hanif Thamrin",
+      "position": "Founder",
+      "photo": "/kursus/jepang/kanrin/founder.webp"
+    },
+    "details": [
+      "Pengajaran oleh pengajar bersertifikat JLPT N1/N2 dengan pengalaman internasional",
+      "Kelas interaktif berbasis percakapan untuk pemula hingga mahir",
+      "Program persiapan ujian JLPT (N5–N1) dengan latihan intensif",
+      "Pendekatan pembelajaran terpadu: membaca, menulis, mendengar, berbicara"
+    ],
+    "testimonials": [
+      {
+        "name": "Ken Takura",
+        "role": "Pelajar Bahasa Jepang",
+        "message": "Semenjak saya les di Kanrin Edukasi Indonesia, saya lebih mudah untuk berbicara kepada orang Jepang",
+        "image": "/kursus/jepang/kanrin/ken.webp"
+      },
+      {
+        "name": "Ali Habsihtiani",
+        "role": "Mahasiswa",
+        "message": "Kanrin Edukasi Indonesia benar benar membantu saya dalam mencari pekerjaan di Jepang",
+        "image": "/kursus/jepang/kanrin/ali.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Jepang",
+        "description": "Menerjemahkan dokumen, kontrak, atau konten dari Bahasa Jepang ke Bahasa Indonesia dan sebaliknya untuk perusahaan atau lembaga internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa)",
+        "description": "Menjadi penghubung komunikasi langsung antara pihak Jepang dan Indonesia dalam rapat bisnis, konferensi, atau acara resmi."
+      },
+      {
+        "title": "Staf Perusahaan Jepang",
+        "description": "Bekerja di perusahaan Jepang di Indonesia atau di Jepang, dengan kemampuan komunikasi dan pemahaman budaya yang baik."
+      },
+      {
+        "title": "Pengajar Bahasa Jepang",
+        "description": "Mengajar Bahasa Jepang di lembaga kursus, sekolah, atau universitas, serta membantu siswa mempersiapkan ujian JLPT."
+      },
+      {
+        "title": "Pemandu Wisata Jepang",
+        "description": "Mendampingi wisatawan Jepang atau Indonesia dalam perjalanan wisata, menjelaskan informasi budaya dan tempat wisata dengan lancar."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Jepang dalam bidang bisnis, pendidikan, atau kebudayaan."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Bahasa Jepang",
+    "title": "Daruma Nihogo Koshu",
+    "description": "Program sekolah Bahasa Jepang memiliki peran yang sangat penting dalam membantu siapapun yang ingin mencapai tujuannya untuk masuk ke Universitas program S2, program S1, Akademi, maupun Sekolah Tinggi Kejuruan lainnya, juga untuk memasuki dunia kerja di Jepang.",
+    "rating": 5,
+    "location": "Jakarta Utara",
+    "lat": -6.136983589767282,
+    "lng": 106.78378245033986,
+    "image": "/kursus/jepang/daruma/berita.webp",
+    "logo": "/kursus/jepang/daruma/logo.webp",
+    "whatsapp": "622166678836",
+    "website": "https://www.darumanihongokoshu.com/",
+    "mentor": {
+      "name": "Mr Han",
+      "position": "Founder",
+      "photo": "/kursus/jepang/daruma/founder.webp"
+    },
+    "details": [
+      "Pengajaran oleh pengajar bersertifikat JLPT N1/N2 dengan pengalaman internasional",
+      "Kelas interaktif berbasis percakapan untuk pemula hingga mahir",
+      "Program persiapan ujian JLPT (N5–N1) dengan latihan intensif",
+      "Pendekatan pembelajaran terpadu: membaca, menulis, mendengar, berbicara"
+    ],
+    "testimonials": [
+      {
+        "name": "Risa Sarah",
+        "role": "Pelajar",
+        "message": "Keinginan saya untuk masuk ke Universitas Jepang tercapai dan bisa berkomunikasi dengan orang Jepang disana",
+        "image": "/kursus/jepang/daruma/risa.webp"
+      },
+      {
+        "name": "Melvin Marzuki",
+        "role": "Developer",
+        "message": "Mengikuti program sekolah bahasa Jepang selama 3 bulan, membuat saya fasih berbahasa jepang",
+        "image": "/kursus/jepang/daruma/melvin.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Jepang",
+        "description": "Menerjemahkan dokumen, kontrak, atau konten dari Bahasa Jepang ke Bahasa Indonesia dan sebaliknya untuk perusahaan atau lembaga internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa)",
+        "description": "Menjadi penghubung komunikasi langsung antara pihak Jepang dan Indonesia dalam rapat bisnis, konferensi, atau acara resmi."
+      },
+      {
+        "title": "Staf Perusahaan Jepang",
+        "description": "Bekerja di perusahaan Jepang di Indonesia atau di Jepang, dengan kemampuan komunikasi dan pemahaman budaya yang baik."
+      },
+      {
+        "title": "Pengajar Bahasa Jepang",
+        "description": "Mengajar Bahasa Jepang di lembaga kursus, sekolah, atau universitas, serta membantu siswa mempersiapkan ujian JLPT."
+      },
+      {
+        "title": "Pemandu Wisata Jepang",
+        "description": "Mendampingi wisatawan Jepang atau Indonesia dalam perjalanan wisata, menjelaskan informasi budaya dan tempat wisata dengan lancar."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Jepang dalam bidang bisnis, pendidikan, atau kebudayaan."
+      }
+    ]
+  },
+
+  {
+    "id": 10,
+    "category": "Bahasa Jepang",
+    "title": "YOKO Japanese Education Center",
+    "description": "Kursus Bahasa Jepang di Jakarta Barat. Sistem semi-privat, pengajar lulusan Jepang, dan fokus persiapan ujian JLPT hingga N1.",
+    "rating": 4.9,
+    "location": "Jakarta Barat",
+    "lat": -6.177095998215521,
+    "lng": 106.78323896254396,
+    "image": "/kursus/jepang/yoko/kelas.webp",
+    "logo": "/kursus/jepang/yoko/logo.webp",
+    "whatsapp": "62811862918",
+    "website": "https://www.yokonihongo.com/",
+    "mentor": {
+      "name": "Yoko Moskowitz",
+      "position": "Founder",
+      "photo": "/kursus/jepang/yoko/mentor.webp"
+    },
+    "details": [
+      "Pengajar berpengalaman dan lulusan universitas di Jepang.",
+      "Sistem belajar semi-privat untuk komunikasi langsung dan perhatian maksimal.",
+      "Kurikulum diarahkan untuk lulus ujian JLPT (N5 hingga N1). ",
+      "Waktu fleksibel: hari kerja hingga malam dan Sabtu."
+    ],
+    "testimonials": [
+      {
+        "name": "Adi Wijaya",
+        "role": "Profesional",
+        "message": "Setelah belajar di YOKO, saya berhasil naik ke level N2 dan mulai proyek kerja sama dengan Jepang."
+      },
+      {
+        "name": "Siti Zahra",
+        "role": "Mahasiswa",
+        "message": "Kelas di sini sangat membantu saya dalam persiapan beasiswa ke Jepang — materi lengkap dan pengajar sabar."
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Jepang",
+        "description": "Menerjemahkan dokumen dan konten dari/ke Bahasa Jepang di perusahaan internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa)",
+        "description": "Menjadi penghubung dalam rapat bisnis atau konferensi antara Indonesia dan Jepang."
+      },
+      {
+        "title": "Staf Perusahaan Jepang",
+        "description": "Bekerja di perusahaan Jepang di Indonesia atau Jepang dengan kemampuan bahasa dan budaya Jepang."
+      },
+      {
+        "title": "Pengajar Bahasa Jepang",
+        "description": "Mengajar Bahasa Jepang di lembaga kursus atau sekolah, serta membantu persiapan JLPT."
+      },
+      {
+        "title": "Pemandu Wisata Jepang",
+        "description": "Mendampingi wisatawan Jepang/Indonesia dalam perjalanan wisata dengan Bahasa Jepang lancar."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Jepang dalam bisnis, pendidikan, atau budaya."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Bahasa Jepang",
+    "title": "Evergreen Japanese Course",
+    "description": "Lembaga kursus Bahasa Jepang di Jakarta Pusat dengan Program Reguler & Intensif persiapan JLPT dan studi ke Jepang.",
+    "rating": 4.8,
+    "location": "Jakarta Pusat",
+    "lat": -6.15852939699486,
+    "lng": 106.83648883868936,
+    "image": "/kursus/jepang/evergreen/berita.webp",
+    "logo": "/kursus/jepang/evergreen/logo.webp",
+    "whatsapp": "6287888666692",
+    "website": "https://www.kursus-jepang-evergreen.com/",
+    "mentor": {
+      "name": "Kame Sensei",
+      "position": "Founder/Chief Instructor",
+      "photo": "/kursus/jepang/evergreen/founder.webp"
+    },
+    "details": [
+      "Alamat utama: Jalan Kartini II No.34B, Jakarta Pusat.",
+      "Program reguler hingga intensif: N5, N4, N3 (online & offline).",
+      "Kelas kecil, modul tersendiri untuk setiap level, sistem kenaikan tingkatan jelas.",
+      "Fokus pada kesiapan bahasa untuk studi ke Jepang dan kehidupan profesional."
+    ],
+    "testimonials": [
+      {
+        "name": "Rina Lestari",
+        "role": "Calon Mahasiswa Jepang",
+        "message": "Evergreen sangat membantu persiapan saya ke Jepang – modul, simulasi, dan dukungan sangat lengkap.",
+        "image": "/kursus/jepang/evergreen/testi1.webp"
+      },
+      {
+        "name": "Bambang Suharto",
+        "role": "Karyawan Multinasional",
+        "message": "Dengan kursus di Evergreen saya sudah bisa melakukan presentasi dalam Bahasa Jepang di perusahaan global.",
+        "image": "/kursus/jepang/evergreen/testi2.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Jepang",
+        "description": "Menerjemahkan dokumen dan konten dari/ke Bahasa Jepang di perusahaan internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa)",
+        "description": "Menjadi penghubung dalam rapat bisnis atau konferensi antara Indonesia dan Jepang."
+      },
+      {
+        "title": "Staf Perusahaan Jepang",
+        "description": "Bekerja di perusahaan Jepang di Indonesia atau Jepang dengan kemampuan bahasa dan budaya Jepang."
+      },
+      {
+        "title": "Pengajar Bahasa Jepang",
+        "description": "Mengajar Bahasa Jepang di lembaga kursus atau sekolah, serta membantu persiapan JLPT."
+      },
+      {
+        "title": "Pemandu Wisata Jepang",
+        "description": "Mendampingi wisatawan Jepang/Indonesia dalam perjalanan wisata dengan Bahasa Jepang lancar."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Jepang dalam bisnis, pendidikan, atau budaya."
+      }
+    ]
   }
 ]

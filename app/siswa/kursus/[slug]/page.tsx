@@ -44,6 +44,7 @@ type Course = {
     testimonials?: Testimonial[];
     careers?: Career[];
     whatsapp?: string;
+    website?: string;
 };
 
 export default function DetailKursusPage() {
