@@ -705,5 +705,266 @@
         "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Jepang dalam bisnis, pendidikan, atau budaya."
       }
     ]
+  },
+  {
+    "id": 12,
+    "category": "Bahasa Korea",
+    "title": "Palem Training Center",
+    "description": "Lembaga kursus dan pelatihan bahasa Korea di Jakarta, Lembaga kursus persiapan ujian EPS TOPIK Korean Training and Course in Jakarta Training Center Preparation for EPS TOPIK exam",
+    "rating": 5,
+    "location": "Jakarta Barat",
+    "lat": -6.154332760985776,
+    "lng": 106.82717017917479,
+    "image": "/kursus/korea/palem/berita.webp",
+    "logo": "/kursus/korea/palem/logo.webp",
+    "whatsapp": "6282260222287",
+    "website": "https://pendaftaran.lkppalem.com/",
+    "mentor": {
+      "name": "Sari Novita",
+      "position": "Founder",
+      "photo": "/kursus/korea/palem/founder.webp"
+    },
+    "details": [
+      "Pengajar native speaker dan instruktur bersertifikat TOPIK dengan pengalaman mengajar internasional",
+      "Kelas dari level dasar (Hangul) hingga mahir dengan fokus komunikasi aktif",
+      "Program persiapan ujian TOPIK I & II (Test of Proficiency in Korean)",
+      "Pendekatan pembelajaran 4 aspek: membaca, menulis, mendengar, berbicara",
+      "Materi dan metode mengikuti kurikulum universitas ternama di Korea",
+      "Kelas online dan offline fleksibel sesuai kebutuhan peserta"
+    ],
+    "testimonials": [
+      {
+        "name": "Lilis Dewi",
+        "role": "Mahasiswa",
+        "message": "Saya menjadi lebih siap untuk mengadapi Ujian EPS Topik Korean.",
+        "image": "/kursus/korea/palem/lilis.webp"
+      },
+      {
+        "name": "Bayu Setiawan",
+        "role": "Karyawan",
+        "message": "Bahasa Korea yang awalnya asing bagi saya, sekarang sudah terdengar familiar bagi saya",
+        "image": "/kursus/korea/palem/bayu.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Korea",
+        "description": "Menerjemahkan dokumen, kontrak, dan konten media dari Bahasa Korea ke Bahasa Indonesia dan sebaliknya untuk perusahaan atau lembaga internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa Korea)",
+        "description": "Menjadi penghubung komunikasi antara pihak Korea dan Indonesia dalam rapat bisnis, seminar, atau konferensi."
+      },
+      {
+        "title": "Staf Perusahaan Korea",
+        "description": "Bekerja di perusahaan Korea di Indonesia atau di Korea Selatan dengan kemampuan komunikasi dan pemahaman budaya Korea."
+      },
+      {
+        "title": "Pengajar Bahasa Korea",
+        "description": "Mengajar Bahasa Korea di lembaga kursus, sekolah, atau universitas, serta membantu siswa mempersiapkan ujian TOPIK."
+      },
+      {
+        "title": "Pemandu Wisata Korea",
+        "description": "Mendampingi wisatawan Korea atau Indonesia dalam perjalanan wisata, menjelaskan informasi budaya dan tempat wisata."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Korea dalam bidang bisnis, pendidikan, atau kebudayaan."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Bahasa Korea",
+    "title": "Hanguko Kursus Korea",
+    "description": "FUN, EASY, AFFORDABLE, AND HAPPY STUDYING! WHY NOT? Kursus Bahasa Korea Online yang Efektif dan Interaktif",
+    "rating": 5,
+    "location": "Jakarta Barat",
+    "lat": -6.111882939462485,
+    "lng": 106.74718186199031,
+    "image": "/kursus/korea/hanguko/berita.webp",
+    "logo": "/kursus/korea/hanguko/logo.webp",
+    "whatsapp": "6287780000952",
+    "website": "https://hanguko.com/",
+    "mentor": {
+      "name": "Laurence Jehezquiell",
+      "position": "Founder",
+      "photo": "/kursus/korea/hanguko/founder.webp"
+    },
+    "details": [
+      "Pengajar native speaker dan instruktur bersertifikat TOPIK dengan pengalaman mengajar internasional",
+      "Kelas dari level dasar (Hangul) hingga mahir dengan fokus komunikasi aktif",
+      "Program persiapan ujian TOPIK I & II (Test of Proficiency in Korean)",
+      "Pendekatan pembelajaran 4 aspek: membaca, menulis, mendengar, berbicara",
+      "Materi dan metode mengikuti kurikulum universitas ternama di Korea",
+      "Kelas online dan offline fleksibel sesuai kebutuhan peserta"
+    ],
+    "testimonials": [
+      {
+        "name": "Rizqia Bunga Amalia",
+        "role": "Mahasiswa",
+        "message": "Ini pertama kalinya saya belajar bahasa Kora secara resmi dan pengealaman saya bareng Hanguko luar biasa banget!",
+        "image": "/kursus/korea/hanguko/rizkia.webp"
+      },
+      {
+        "name": "Mustika Sari",
+        "role": "Mahasiswa",
+        "message": "Tempat terbaik buat belajar bahasa Korea di Jakarta versi aku. Aku sudah mulai belajar dari 2018 dan rencananya mau terus kursus disini.",
+        "image": "/kursus/korea/hanguko/mustika.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Korea",
+        "description": "Menerjemahkan dokumen, kontrak, dan konten media dari Bahasa Korea ke Bahasa Indonesia dan sebaliknya untuk perusahaan atau lembaga internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa Korea)",
+        "description": "Menjadi penghubung komunikasi antara pihak Korea dan Indonesia dalam rapat bisnis, seminar, atau konferensi."
+      },
+      {
+        "title": "Staf Perusahaan Korea",
+        "description": "Bekerja di perusahaan Korea di Indonesia atau di Korea Selatan dengan kemampuan komunikasi dan pemahaman budaya Korea."
+      },
+      {
+        "title": "Pengajar Bahasa Korea",
+        "description": "Mengajar Bahasa Korea di lembaga kursus, sekolah, atau universitas, serta membantu siswa mempersiapkan ujian TOPIK."
+      },
+      {
+        "title": "Pemandu Wisata Korea",
+        "description": "Mendampingi wisatawan Korea atau Indonesia dalam perjalanan wisata, menjelaskan informasi budaya dan tempat wisata."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Korea dalam bidang bisnis, pendidikan, atau kebudayaan."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Bahasa Korea",
+    "title": "Oppa Akademi – Kursus Bahasa Korea Jakarta",
+    "description": "Institusi kursus Bahasa Korea terpadu dengan kurikulum berkualitas, pengajar native serta jalur persiapan studi & kerja ke Korea.",
+    "rating": 5,
+    "location": "Jakarta Selatan",
+    "lat": -6.298290646612539,
+    "lng": 106.82072119325241,
+    "image": "/kursus/korea/oppa/berita.webp",
+    "logo": "/kursus/korea/oppa/logo.webp",
+    "whatsapp": "6281399779742",
+    "website": "https://www.oppaakademi.com/",
+    "mentor": {
+      "name": "Ali Ssaem",
+      "position": "Guru",
+      "photo": "/kursus/korea/oppa/guru.webp"
+    },
+    "details": [
+      "Pengajar native speaker Korea Selatan dan instructor berpengalaman.",
+      "Materi dan metode mengikuti kurikulum universitas ternama di Korea",
+      "Kelas tatap muka dan online untuk semua level dari Hangeul hingga mahir.",
+      "Program persiapan ujian & jalur ke Korea, tersedia juga konsultan studi ke Korea."
+    ],
+    "testimonials": [
+      {
+        "name": "Rizqia Bunga Amalia",
+        "role": "Mahasiswa",
+        "message": "Ini pertama kalinya saya belajar Bahasa Korea secara resmi dan pengalaman saya bersama Oppa Akademi luar biasa banget!"
+      },
+      {
+        "name": "Mustika Sari",
+        "role": "Mahasiswa",
+        "message": "Tempat terbaik buat belajar Bahasa Korea di Jakarta versi saya. Saya sudah mulai belajar dari 2018 dan rencananya mau terus di sini."
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Korea",
+        "description": "Menerjemahkan dokumen dan konten dari/ke Bahasa Korea untuk perusahaan atau lembaga internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa Korea)",
+        "description": "Menjadi penghubung komunikasi antara pihak Korea dan Indonesia dalam rapat bisnis, seminar, atau konferensi."
+      },
+      {
+        "title": "Staf Perusahaan Korea",
+        "description": "Bekerja di perusahaan Korea di Indonesia atau Korea Selatan dengan kemampuan komunikasi dan pemahaman budaya Korea."
+      },
+      {
+        "title": "Pengajar Bahasa Korea",
+        "description": "Mengajar Bahasa Korea di lembaga kursus, sekolah, atau universitas, serta membantu siswa mempersiapkan ujian TOPIK."
+      },
+      {
+        "title": "Pemandu Wisata Korea",
+        "description": "Mendampingi wisatawan Korea atau Indonesia dalam perjalanan wisata, menjelaskan informasi budaya dan tempat wisata."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Korea dalam bidang bisnis, pendidikan, atau kebudayaan."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Bahasa Korea",
+    "title": "Namsan Korean Course – Jakarta",
+    "description": "Lembaga kursus & konsultasi Bahasa Korea yang memiliki program reguler, privat dan persiapan EPS-TOPIK di Jakarta.",
+    "rating": 4.7,
+    "location": "Jakarta Selatan",
+    "lat": -6.2168511166923865,
+    "lng": 106.81880416014565,
+    "image": "/kursus/korea/namsan/berita.webp",
+    "logo": "/kursus/korea/namsan/logo.webp",
+    "whatsapp": "0851-0612-3684",
+    "website": "https://www.namsankoreancourse.com/",
+    "mentor": {
+      "name": "Lembayung Embun Cintaning Numa",
+      "position": "Pengajar",
+      "photo": "/kursus/korea/namsan/guru.webp"
+    },
+    "details": [
+      "Materi dan metode mengikuti kurikulum universitas ternama di Korea",
+      "Kelas tatap muka dan online untuk semua level dari Hangeul hingga mahir.",
+      "Program reguler terdiri dari 12 level yang relevan dengan ujian TOPIK.",
+      "Kelas privat & reguler tersedia, juga kelas persiapan EPS-TOPIK untuk kerja ke Korea.",
+      "Lokasi pusat di Plaza Blok M, lantai 3 — kampus dan kelas tatap muka."
+    ],
+    "testimonials": [
+      {
+        "name": "Fajar Alfarizi",
+        "role": "Siswa",
+        "message": "Program di Namsan Course membantu saya persiapan TOPIK dan ekspor karir ke Korea."
+      },
+      {
+        "name": "Setio Nugruho",
+        "role": "Mahasiswa",
+        "message": "Materi dan fasilitasnya bagus, pengajar profesional dan suasana kelas nyaman."
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah Bahasa Korea",
+        "description": "Menerjemahkan dokumen dan konten dari/ke Bahasa Korea untuk perusahaan atau lembaga internasional."
+      },
+      {
+        "title": "Interpreter (Juru Bahasa Korea)",
+        "description": "Menjadi penghubung komunikasi antara pihak Korea dan Indonesia dalam rapat bisnis, seminar atau konferensi."
+      },
+      {
+        "title": "Staf Perusahaan Korea",
+        "description": "Bekerja di perusahaan Korea di Indonesia atau Korea Selatan dengan kemampuan bahasa dan budaya Korea."
+      },
+      {
+        "title": "Pengajar Bahasa Korea",
+        "description": "Mengajar Bahasa Korea di lembaga kursus atau sekolah, serta membantu siswa mempersiapkan ujian TOPIK."
+      },
+      {
+        "title": "Pemandu Wisata Korea",
+        "description": "Mendampingi wisatawan Korea/Indonesia dalam perjalanan wisata dengan Bahasa Korea lancar."
+      },
+      {
+        "title": "Spesialis Hubungan Internasional",
+        "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Korea dalam bidang bisnis, pendidikan atau budaya."
+      }
+    ]
   }
 ]
