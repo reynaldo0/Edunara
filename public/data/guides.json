@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "cara-memilih-fasilitas",
+    "title": "Cara memilih fasilitas yang baik",
+    "description": "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+    "progress": 60,
+    "category": "Fasilitas",
+    "image": "/images/fasilitas-1.jpg",
+    "details": [
+      "Pastikan ruangan bersih dan nyaman",
+      "Gunakan peralatan yang memadai",
+      "Pertimbangkan pencahayaan dan ventilasi"
+    ]
+  },
+  {
+    "slug": "menata-ruang-belajar",
+    "title": "Menata ruang belajar yang nyaman",
+    "description": "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
+    "progress": 75,
+    "category": "Fasilitas",
+    "image": "/images/fasilitas-2.jpg",
+    "details": [
+      "Gunakan meja dan kursi ergonomis",
+      "Tambahkan dekorasi yang menenangkan",
+      "Sediakan papan tulis atau media interaktif"
+    ]
+  },
+  {
+    "slug": "peralatan-modern",
+    "title": "Peralatan modern untuk kursus",
+    "description": "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
+    "progress": 40,
+    "category": "Fasilitas",
+    "image": "/images/fasilitas-3.jpg",
+    "details": [
+      "Laptop atau komputer untuk peserta",
+      "Proyektor atau layar interaktif",
+      "Software pembelajaran terbaru"
+    ]
+  }
+]

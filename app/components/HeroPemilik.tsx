@@ -9,10 +9,10 @@ export default function HeroPemilik() {
     // Tentukan background image berdasarkan path
     // Tentukan background image berdasarkan path
     const getBackgroundImage = () => {
-        if (pathname === "/pemilik") return "/illustrasi/pemilik/beranda/hero.png";
-        if (pathname === "/pemilik/komunitas") return "/illustrasi/pemilik/komunitas/hero.png";
-        if (pathname === "/pemilik/tentang") return "/illustrasi/pemilik/tentang/hero.png";
-        if (pathname === "/pemilik/mentor") return "/illustrasi/pemilik/mentor/hero.png";
+        if (pathname === "/pemilik") return "/illustrasi/pemilik/hero/beranda.webp";
+        if (pathname === "/pemilik/komunitas") return "/illustrasi/pemilik/hero/komunitas.webp";
+        if (pathname === "/pemilik/tentang") return "/illustrasi/pemilik/hero/tentang.webp";
+        if (pathname === "/pemilik/mentor") return "/illustrasi/pemilik/hero/mentor.webp";
         return "/illustrasi/default/hero.png";
     };
 

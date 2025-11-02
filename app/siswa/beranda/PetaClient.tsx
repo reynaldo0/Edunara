@@ -63,7 +63,7 @@ export default function PetaClient({ selected }: Props) {
                 )
                 .catch((err) => console.error(err));
         });
-    }, []);
+    });
 
     // Load courses
     useEffect(() => {
