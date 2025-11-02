@@ -914,7 +914,7 @@
     "lng": 106.81880416014565,
     "image": "/kursus/korea/namsan/berita.webp",
     "logo": "/kursus/korea/namsan/logo.webp",
-    "whatsapp": "0851-0612-3684",
+    "whatsapp": "6285106123684",
     "website": "https://www.namsankoreancourse.com/",
     "mentor": {
       "name": "Lembayung Embun Cintaning Numa",
@@ -964,6 +964,206 @@
       {
         "title": "Spesialis Hubungan Internasional",
         "description": "Menjadi jembatan kerja sama antara institusi Indonesia dan Korea dalam bidang bisnis, pendidikan atau budaya."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "category": "Pemrograman",
+    "title": "ONETWOCODE Indonesia",
+    "description": "Di Era Digital terutama dengan adanya teknologi AI seperti saat ini, kemampuan untuk coding telah menjadi kemampuan yang akan memberikan nilai lebih.Untuk itu ONETWOCODE Indonesia hadir!",
+    "rating": 5,
+    "location": "Jakarta Barat",
+    "lat": -6.146715628246467,
+    "lng": 106.71407227805841,
+    "image": "/kursus/pemrograman/one/berita.webp",
+    "logo": "/kursus/pemrograman/one/logo.webp",
+    "whatsapp": "6282182838889",
+    "website": "https://onetwocode.id/kursus/",
+    "mentor": {
+      "name": "Dody Suprayogo",
+      "position": "Founder",
+      "photo": "/kursus/pemrograman/one/founder.webp"
+    },
+    "details": [
+      "Program pembelajaran interaktif dari dasar hingga lanjutan untuk berbagai bahasa pemrograman (Python, JavaScript, dan lainnya).",
+      "Kelas Intro to Programming yang dirancang agar pemula cepat memahami logika dan alur berpikir pemrograman.",
+      "Pendekatan belajar berbasis proyek nyata sehingga peserta memiliki portofolio yang bisa digunakan untuk melamar kerja.",
+      "Instruktur berpengalaman dari industri teknologi yang siap membimbing peserta secara langsung.",
+      "Materi disusun mengikuti perkembangan teknologi terkini termasuk pengenalan konsep Artificial Intelligence (AI).",
+      "Fasilitas mentoring personal, diskusi komunitas, dan dukungan karier pasca-pelatihan."
+    ],
+    "testimonials": [
+      {
+        "name": "Dzikri Mansyursyah",
+        "role": "Peserta Kelas Intro to Programming",
+        "message": "Untuk kelas intro to programming, enak fun, belajarnya juga jadi mudah dipahami, cocok buat yang baru atau lagi kuliah, dan cocok juga buat yang mau mulai perjalanan karir menuju programmer.",
+        "image": "/kursus/pemrograman/one/dzikri.webp"
+      },
+      {
+        "name": "Zikri Akbar",
+        "role": "Alumni",
+        "message": "Pengalaman training yang sangat menyenangkan dan dipandu oleh trainer yang berpengalaman di bidangnya.",
+        "image": "/kursus/pemrograman/one/zikri.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Junior Web Developer",
+        "description": "Mengembangkan dan memelihara situs web menggunakan HTML, CSS, dan JavaScript dengan bimbingan dari tim senior developer."
+      },
+      {
+        "title": "Backend Developer",
+        "description": "Membangun dan mengelola server, database, serta API untuk mendukung aplikasi berbasis web dan mobile."
+      },
+      {
+        "title": "Frontend Developer",
+        "description": "Merancang antarmuka pengguna (UI) interaktif menggunakan framework seperti React atau Vue.js."
+      },
+      {
+        "title": "Software Engineer",
+        "description": "Merancang, mengembangkan, dan menguji aplikasi perangkat lunak menggunakan bahasa pemrograman modern."
+      },
+      {
+        "title": "Quality Assurance (QA) Engineer",
+        "description": "Melakukan pengujian perangkat lunak untuk memastikan performa dan kualitas produk sesuai standar industri."
+      },
+      {
+        "title": "Data Engineer",
+        "description": "Membangun sistem pengolahan dan penyimpanan data yang efisien untuk mendukung analisis dan pengambilan keputusan berbasis data."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Pemrograman",
+    "title": "Sekolah Programming Indonesia Jakarta",
+    "description": "Kami hadir dengan pengalaman belajar yang menyenangkan dan bermanfaat untuk masa depannya. Ayo daftarkan anak Anda di Sekolah Programming Indonesia!",
+    "rating": 5,
+    "location": "Jakarta Barat",
+    "lat": -6.1362457502576975,
+    "lng": 106.71002882699028,
+    "image": "/kursus/pemrograman/sekolah/berita.webp",
+    "logo": "/kursus/pemrograman/sekolah/logo.webp",
+    "whatsapp": "6282182838889",
+    "website": "https://sekolahprogrammingindonesia.com/",
+    "mentor": {
+      "name": "Dina Munawan",
+      "position": "Founder",
+      "photo": "/kursus/pemrograman/sekola/founder.webp"
+    },
+    "details": [
+      "Program pembelajaran interaktif dari dasar hingga lanjutan untuk berbagai bahasa pemrograman (Python, JavaScript, dan lainnya).",
+      "Kelas Intro to Programming yang dirancang agar pemula cepat memahami logika dan alur berpikir pemrograman.",
+      "Pendekatan belajar berbasis proyek nyata sehingga peserta memiliki portofolio yang bisa digunakan untuk melamar kerja.",
+      "Instruktur berpengalaman dari industri teknologi yang siap membimbing peserta secara langsung.",
+      "Materi disusun mengikuti perkembangan teknologi terkini termasuk pengenalan konsep Artificial Intelligence (AI).",
+      "Fasilitas mentoring personal, diskusi komunitas, dan dukungan karier pasca-pelatihan."
+    ],
+    "testimonials": [
+      {
+        "name": "Orang tua Kenward",
+        "role": "Orang Tua",
+        "message": "Sudah 2 tahunan Kenward belajar robotic di SPI. Kesan yang di dapat selama belajar adalah sangat senang, dimana anak-anak dapat berkreatifitas sesuai keinginan sendiri membuat robot dan bisa mengoperasikan robotnya sendiri.",
+        "image": "/kursus/pemrograman/one/dzikri.webp"
+      },
+      {
+        "name": "Orang Tua Clarisse Nicolee",
+        "role": "Orang Tua",
+        "message": "Terima kasih SPI,berkat les di SPI anak-anak menjadi lebih kreatif dalam berbagai hal,guru-guru di spi juga sangat sabar dalam mengajar,sehingga anak-anak mudah dalam memahami teori yang di berikan oleh guru.",
+        "image": "/kursus/pemrograman/one/zikri.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Junior Web Developer",
+        "description": "Mengembangkan dan memelihara situs web menggunakan HTML, CSS, dan JavaScript dengan bimbingan dari tim senior developer."
+      },
+      {
+        "title": "Backend Developer",
+        "description": "Membangun dan mengelola server, database, serta API untuk mendukung aplikasi berbasis web dan mobile."
+      },
+      {
+        "title": "Frontend Developer",
+        "description": "Merancang antarmuka pengguna (UI) interaktif menggunakan framework seperti React atau Vue.js."
+      },
+      {
+        "title": "Software Engineer",
+        "description": "Merancang, mengembangkan, dan menguji aplikasi perangkat lunak menggunakan bahasa pemrograman modern."
+      },
+      {
+        "title": "Quality Assurance (QA) Engineer",
+        "description": "Melakukan pengujian perangkat lunak untuk memastikan performa dan kualitas produk sesuai standar industri."
+      },
+      {
+        "title": "Data Engineer",
+        "description": "Membangun sistem pengolahan dan penyimpanan data yang efisien untuk mendukung analisis dan pengambilan keputusan berbasis data."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Pemrograman",
+    "title": "Timedoor Academy – Kelapa Gading",
+    "description": "Sekolah pemrograman & coding di Kelapa Gading, Jakarta Utara untuk anak-anak hingga dewasa. Mempelajari coding, website, AI dan robotika dalam lingkungan yang menyenangkan.",
+    "rating": 4.8,
+    "location": "Jakarta Utara",
+    "lat": -6.15561905958954,
+    "lng": 106.898184358301,
+    "image": "/kursus/pemrograman/timedoor/berita.webp",
+    "logo": "/kursus/pemrograman/timedoor/logo.webp",
+    "whatsapp": "6285159774292",
+    "website": "https://timedooracademy.com/",
+    "mentor": {
+      "name": "Lead Instructor Timedoor Academy",
+      "position": "Lead Instructor",
+      "photo": "/kursus/pemrograman/timedoor/instructor.webp"
+    },
+    "details": [
+      "Program dirancang untuk usia 5 hingga 22 tahun — dari anak-anak hingga dewasa.",
+      "Kurikulum mencakup JavaScript, Block Coding, IoT Robot Programming, Drone Programming, Website Development dan Artificial Intelligence untuk Teens.",
+      "Pembelajaran berbasis proyek dengan metode interaktif dan instruktur berpengalaman di bidang teknologi.",
+      "Tersedia kelas tatap muka di Kelapa Gading dan opsi online untuk fleksibilitas peserta.",
+      "Lingkungan belajar yang mendukung kreativitas dan pemecahan masalah teknologi modern."
+    ],
+    "testimonials": [
+      {
+        "name": "Orang tua Kenward",
+        "role": "Orang Tua",
+        "message": "Sudah 2 tahunan Kenward belajar robotic di SPI. Kesan yang di dapat selama belajar adalah sangat senang, dimana anak-anak dapat berkreatifitas sesuai keinginan sendiri membuat robot dan bisa mengoperasikan robotnya sendiri.",
+        "image": "/kursus/pemrograman/one/dzikri.webp"
+      },
+      {
+        "name": "Orang Tua Clarisse Nicolee",
+        "role": "Orang Tua",
+        "message": "Terima kasih SPI,berkat les di SPI anak-anak menjadi lebih kreatif dalam berbagai hal,guru-guru di spi juga sangat sabar dalam mengajar,sehingga anak-anak mudah dalam memahami teori yang di berikan oleh guru.",
+        "image": "/kursus/pemrograman/one/zikri.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Web Developer",
+        "description": "Membangun dan mengembangkan situs web menggunakan HTML, CSS, JavaScript dan framework modern."
+      },
+      {
+        "title": "Frontend Developer",
+        "description": "Mendesain dan mengimplementasikan antarmuka pengguna (UI) interaktif dengan library/framework seperti React atau Vue.js."
+      },
+      {
+        "title": "Backend Developer",
+        "description": "Mengelola server, database dan API untuk mendukung aplikasi web atau mobile."
+      },
+      {
+        "title": "Mobile App Developer",
+        "description": "Membuat aplikasi mobile untuk Android/iOS menggunakan teknologi seperti React Native, Flutter atau Kotlin."
+      },
+      {
+        "title": "AI/ML Engineer",
+        "description": "Mengembangkan model pembelajaran mesin (machine learning) dan kecerdasan buatan (AI) untuk aplikasi nyata."
+      },
+      {
+        "title": "IoT Developer",
+        "description": "Mengembangkan sistem Internet of Things (IoT) dan robotika yang terhubung dengan perangkat cerdas dan jaringan."
       }
     ]
   }

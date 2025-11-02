@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useSiswa } from "@/app/context/SiswaContext";
 import NavbarSiswa from "@/app/components/NavbarSiswa";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useRouter } from "next/navigation"; // ✅ router import
 
 type Course = {
     id: number;
@@ -15,9 +16,11 @@ type Course = {
     rating: number;
     location: string;
     image: string;
+    slug: string; // ✅ tambahkan slug
 };
 
 export default function HeroKursus() {
+    const router = useRouter(); // ✅
     const { searchTerm } = useSiswa();
     const [courses, setCourses] = useState<Course[]>([]);
     const [itemsPerPage, setItemsPerPage] = useState(3);
@@ -31,7 +34,6 @@ export default function HeroKursus() {
             .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
 
-    // Responsif jumlah item per halaman + deteksi mobile
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) {
@@ -87,6 +89,10 @@ export default function HeroKursus() {
         setCurrentPage((prev) => ({ ...prev, [location]: page }));
     };
 
+    const handleNavigate = (slug: string, id: number) => {
+        router.push(`/siswa/kursus/${slug}?id=${id}`);
+    };
+
     return (
         <>
             <NavbarSiswa />
@@ -120,7 +126,6 @@ export default function HeroKursus() {
                                                 Daerah {location}
                                             </h3>
 
-                                            {/* Pagination Desktop (angka) */}
                                             {!isMobile && totalPages > 1 && (
                                                 <div className="flex gap-2 justify-end">
                                                     {Array.from({ length: totalPages }, (_, i) => (
@@ -128,8 +133,8 @@ export default function HeroKursus() {
                                                             key={i}
                                                             onClick={() => handlePageChange(location, i + 1)}
                                                             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${current === i + 1
-                                                                    ? "bg-siswa-primary-100 text-white scale-105"
-                                                                    : "bg-white border border-siswa-primary-100 text-siswa-primary-100 hover:bg-siswa-primary-100 hover:text-white"
+                                                                ? "bg-siswa-primary-100 text-white scale-105"
+                                                                : "bg-white border border-siswa-primary-100 text-siswa-primary-100 hover:bg-siswa-primary-100 hover:text-white"
                                                                 }`}
                                                         >
                                                             {i + 1}
@@ -155,7 +160,10 @@ export default function HeroKursus() {
                                                             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                                                         />
                                                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                                            <button className="bg-white border-2 border-siswa-primary-100 text-siswa-primary-100 px-5 py-2 rounded-full font-semibold text-sm hover:bg-siswa-primary-100 hover:text-white transition-all duration-300 shadow-md">
+                                                            <button
+                                                                onClick={() => handleNavigate(course.slug, course.id)} // ✅ lihat detail
+                                                                className="bg-white border-2 border-siswa-primary-100 text-siswa-primary-100 px-5 py-2 rounded-full font-semibold text-sm hover:bg-siswa-primary-100 hover:text-white transition-all duration-300 shadow-md"
+                                                            >
                                                                 Lihat Detail
                                                             </button>
                                                         </div>
@@ -186,7 +194,10 @@ export default function HeroKursus() {
                                                                     {course.rating}/5
                                                                 </span>
                                                             </div>
-                                                            <button className="bg-siswa-primary-100 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-siswa-primary-200 hover:text-black transition-all duration-300 hover:scale-105">
+                                                            <button
+                                                                onClick={() => handleNavigate(course.slug, course.id)} // ✅ daftar sekarang
+                                                                className="bg-siswa-primary-100 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-siswa-primary-200 hover:text-black transition-all duration-300 hover:scale-105"
+                                                            >
                                                                 Daftar Sekarang
                                                             </button>
                                                         </div>
@@ -195,7 +206,7 @@ export default function HeroKursus() {
                                             ))}
                                         </div>
 
-                                        {/* Pagination Mobile (ikon panah di bawah grid) */}
+                                        {/* Pagination Mobile */}
                                         {isMobile && totalPages > 1 && (
                                             <div className="flex justify-center items-center gap-6 mt-8">
                                                 <button
@@ -204,8 +215,8 @@ export default function HeroKursus() {
                                                     }
                                                     disabled={current === 1}
                                                     className={`p-3 rounded-full shadow-md transition-all duration-300 ${current === 1
-                                                            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                                                            : "bg-siswa-primary-100 text-white hover:bg-siswa-primary-200"
+                                                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                                                        : "bg-siswa-primary-100 text-white hover:bg-siswa-primary-200"
                                                         }`}
                                                 >
                                                     <FaChevronLeft size={16} />
@@ -221,8 +232,8 @@ export default function HeroKursus() {
                                                     }
                                                     disabled={current === totalPages}
                                                     className={`p-3 rounded-full shadow-md transition-all duration-300 ${current === totalPages
-                                                            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                                                            : "bg-siswa-primary-100 text-white hover:bg-siswa-primary-200"
+                                                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                                                        : "bg-siswa-primary-100 text-white hover:bg-siswa-primary-200"
                                                         }`}
                                                 >
                                                     <FaChevronRight size={16} />
