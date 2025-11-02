@@ -36,9 +36,6 @@ const NavbarPemilik: React.FC = () => {
                     <div className="flex items-center space-x-2">
                         <img src="/illustrasi/logo.webp" alt="Logo" className="w-28 md:w-26 h-12 object-contain" />
                     </div>
-                    <span className="font-extrabold text-primary-200 drop-shadow-sm">
-                        GrowLab
-                    </span>
                 </div>
 
                 {/* Menu Desktop */}
