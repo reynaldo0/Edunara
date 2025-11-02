@@ -141,16 +141,16 @@
     "logo": "/kursus/matematika/gurumatematika/logo.webp",
     "whatsapp": "6287799122273",
     "mentor": {
-      "name": "Gracia Monalisa, S.Si., M.Si.",
+      "name": "Gracia Monalisa, S.Si., M.Si.",
       "position": "Founder",
       "photo": "/kursus/matematika/gurumatematika/founder.webp"
     },
     "details": [
-      "Program dari SD hingga mahasiswa, online & offline home‑visit di Jabodetabek",
-      "Tutor berkualifikasi dan berpengalaman",
+      "Program dari SD hingga mahasiswa, online & offline home-visit di Jabodetabek",
+      "Tutor berkualifikasi dan berpengalaman dari universitas ternama",
       "Kelas reguler dan intensif untuk persiapan Olimpiade dan UTBK",
-      "Modul & laporan perkembangan rutin untuk siswa",
-      "Fasilitas WhatsApp Group (WA Grup)"
+      "Modul & laporan perkembangan rutin untuk siswa dan orang tua",
+      "Fasilitas WhatsApp Group (WA Grup) untuk konsultasi cepat dengan tutor"
     ],
     "testimonials": [
       {
@@ -158,6 +158,12 @@
         "role": "Alumni",
         "message": "Melalui GuruMatematika, saya berhasil masuk kampus impian dengan bantuan materi matematika intensif.",
         "image": "/kursus/matematika/gurumatematika/testi1.webp"
+      },
+      {
+        "name": "Budi Santoso",
+        "role": "Orang Tua Siswa SMP",
+        "message": "Anak saya yang dulu kurang percaya diri dalam pelajaran matematika kini mampu mendapat nilai 95 di sekolah. Terima kasih GuruMatematika!",
+        "image": "/kursus/matematika/gurumatematika/testi2.webp"
       }
     ],
     "careers": [
@@ -168,18 +174,35 @@
       {
         "title": "Spesialis Statistik",
         "description": "Membuat, menganalisis, dan menafsirkan data statistik untuk berbagai keperluan riset dan pengambilan keputusan."
+      },
+      {
+        "title": "Data Scientist",
+        "description": "Mengolah dan menganalisis data besar menggunakan algoritma dan model matematika untuk membantu strategi bisnis dan teknologi."
+      },
+      {
+        "title": "Aktuaris",
+        "description": "Menggunakan teori peluang, matematika keuangan, dan statistik untuk menghitung risiko serta premi asuransi dan pensiun."
+      },
+      {
+        "title": "Analis Keuangan (Financial Analyst)",
+        "description": "Menganalisis tren keuangan dan data numerik untuk membantu perusahaan mengambil keputusan investasi."
+      },
+      {
+        "title": "Dosen atau Pengajar Matematika",
+        "description": "Mengajar dan meneliti di bidang matematika di universitas, sekolah, atau lembaga pendidikan lainnya."
       }
     ]
   },
+
   {
     "id": 4,
     "category": "Matematika",
     "title": "Matica Bimbingan Belajar",
     "description": "Bimbingan belajar semi privat matematika untuk SD–SMA, sistem efektif agar siswa belajar mandiri dan memahami konsep.",
-    "rating": 4.8,
+    "rating": 5,
     "location": "Jakarta Selatan",
-    "lat": -6.2675,
-    "lng": 106.803,
+    "lat": -6.1612026896892935,
+    "lng": 106.76071388861295,
     "image": "/kursus/matematika/matica/berita.webp",
     "logo": "/kursus/matematika/matica/logo.webp",
     "whatsapp": "62816811718",
@@ -189,17 +212,24 @@
       "photo": "/kursus/matematika/matica/founder.webp"
     },
     "details": [
-      "Sistem semi‑privat (kelas kecil) untuk matematika SD, SMP, SMA",
-      "Metode belajar mandiri dan pemahaman mendalam",
-      "Kelas tambahan online tanpa biaya tambahan",
-      "Tersedia kurikulum internasional (IGCSE/IB) untuk matematika"
+      "Sistem semi-privat (kelas kecil) untuk matematika SD, SMP, SMA",
+      "Metode belajar mandiri dan pemahaman mendalam terhadap konsep matematika",
+      "Kelas tambahan online tanpa biaya tambahan untuk siswa aktif",
+      "Tersedia kurikulum internasional (IGCSE/IB) untuk siswa internasional dan bilingual",
+      "Pendekatan personal sesuai gaya belajar siswa"
     ],
     "testimonials": [
       {
-        "name": "Orang Tua Siswa A",
+        "name": "Orang Tua Siswa A",
         "role": "Orang Tua",
-        "message": "Anak saya jadi lebih percaya diri dalam matematika setelah ikut Matica.",
+        "message": "Anak saya jadi lebih percaya diri dalam matematika setelah ikut Matica. Sekarang nilai ujiannya selalu di atas 90!",
         "image": "/kursus/matematika/matica/testi1.webp"
+      },
+      {
+        "name": "Diana Kusuma",
+        "role": "Siswa SMA",
+        "message": "Guru-gurunya sabar dan penjelasannya mudah dipahami. Saya akhirnya tidak takut lagi dengan soal HOTS di sekolah.",
+        "image": "/kursus/matematika/matica/testi2.webp"
       }
     ],
     "careers": [
@@ -209,7 +239,211 @@
       },
       {
         "title": "Guru Matematika",
-        "description": "Mengajar matematika di sekolah atau perguruan tinggi."
+        "description": "Mengajar matematika di sekolah atau perguruan tinggi serta membantu siswa memahami konsep dengan cara menyenangkan."
+      },
+      {
+        "title": "Aktuaris",
+        "description": "Menggunakan teori peluang dan matematika keuangan untuk menganalisis risiko dan menentukan premi asuransi atau dana pensiun."
+      },
+      {
+        "title": "Data Scientist",
+        "description": "Membangun model prediktif dan menganalisis data besar menggunakan algoritma berbasis matematika dan statistik."
+      },
+      {
+        "title": "Peneliti Operasional",
+        "description": "Menerapkan metode matematis untuk mengoptimalkan proses bisnis dan sistem logistik perusahaan."
+      },
+      {
+        "title": "Dosen atau Peneliti Matematika",
+        "description": "Mengajar, menulis publikasi ilmiah, dan melakukan penelitian di bidang matematika murni atau terapan."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Bahasa Inggris",
+    "title": "Golden English Sudirman",
+    "description": "Now Everyone Can Speak English. Di sini, setiap orang punya kesempatan buat bisa bahasa Inggris.",
+    "rating": 5,
+    "location": "Jakarta Pusat",
+    "lat": -6.210970714560274,
+    "lng": 106.81612638540422,
+    "image": "/kursus/inggris/golden/golden.webp",
+    "logo": "/kursus/inggris/golden/logo.webp",
+    "whatsapp": "6285717353920",
+    "mentor": {
+      "name": "Aldo Rinaldy",
+      "position": "Founder",
+      "photo": "/kursus/inggris/golden/founder.webp"
+    },
+    "details": [
+      "Kelas semi-privat dengan jumlah siswa terbatas untuk fokus belajar maksimal",
+      "Metode pembelajaran komunikatif yang menekankan praktik berbicara dan pemahaman nyata",
+      "Akses kelas tambahan online tanpa biaya tambahan bagi semua peserta",
+      "Kurikulum fleksibel termasuk persiapan TOEFL, IELTS, dan kurikulum internasional lainnya"
+    ],
+    "testimonials": [
+      {
+        "name": "Putri Gina Earth",
+        "role": "IT profesional",
+        "message": "I feel a lot of improvement in effective word usage and learning new vocabulary. Golden English always provides creative ways to learn and keeps the class engaging.",
+        "image": "/kursus/inggris/golden/putri.webp"
+      },
+      {
+        "name": "Hakim Al-Habsyi",
+        "role": "Laywer (Pengacara)",
+        "message": "I really love learning English at Golden English, all teacher are smart, cool, dan friendly. GE has a good method for teaching students who want to improve their English.",
+        "image": "/kursus/inggris/golden/haakim.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah atau Interpreter",
+        "description": "Menerjemahkan dokumen, percakapan, dan materi presentasi dari dan ke Bahasa Inggris untuk kebutuhan bisnis, pendidikan, maupun pariwisata."
+      },
+      {
+        "title": "Guru atau Tutor Bahasa Inggris",
+        "description": "Mengajar Bahasa Inggris di sekolah, lembaga kursus, atau secara privat, baik untuk anak-anak maupun kalangan profesional."
+      },
+      {
+        "title": "Content Writer atau Copywriter Internasional",
+        "description": "Menulis artikel, konten website, dan materi promosi berbahasa Inggris untuk perusahaan global atau klien luar negeri."
+      },
+      {
+        "title": "Customer Service Internasional",
+        "description": "Memberikan layanan dan bantuan kepada pelanggan dari berbagai negara menggunakan Bahasa Inggris secara profesional."
+      },
+      {
+        "title": "Pemandu Wisata (Tour Guide)",
+        "description": "Mendampingi dan menjelaskan destinasi wisata kepada wisatawan mancanegara dengan komunikasi Bahasa Inggris yang efektif."
+      },
+      {
+        "title": "Digital Marketer Global",
+        "description": "Mempromosikan produk dan layanan ke pasar internasional melalui media sosial, kampanye iklan digital, dan strategi pemasaran berbahasa Inggris."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Bahasa Inggris",
+    "title": "Bertil Hult",
+    "description": "English 1 yang bertransformasi dari EF Kids & Teens telah menghadirkan pengalaman belajar Bahasa Inggris terbaik lebih dari 30 tahun dari generasi ke generasi",
+    "rating": 5,
+    "location": "Jakarta Selatan",
+    "lat": -6.241628459912131,
+    "lng": 106.84453097300973,
+    "image": "/kursus/inggris/bertil/english.webp",
+    "logo": "/kursus/inggris/bertil/logo.webp",
+    "whatsapp": "628551500553",
+    "mentor": {
+      "name": "Bertil Hult",
+      "position": "Founder",
+      "photo": "/kursus/inggris/bertil/founder.webp"
+    },
+    "details": [
+      "Kelas semi-privat dengan jumlah siswa terbatas untuk fokus belajar maksimal",
+      "Metode pembelajaran komunikatif yang menekankan praktik berbicara dan pemahaman nyata",
+      "Akses kelas tambahan online tanpa biaya tambahan bagi semua peserta",
+      "Kurikulum fleksibel termasuk persiapan TOEFL, IELTS, dan kurikulum internasional lainnya"
+    ],
+    "testimonials": [
+      {
+        "name": "Izah Zulaikhah ",
+        "role": "Ibu Rumah Tangga",
+        "message": "Anak saya sekarang bisa bahasa inggris di level TB 5 dan makin fasih",
+        "image": "/kursus/inggris/bertil/izah.webp"
+      },
+      {
+        "name": "Dr Asih",
+        "role": "Dokter)",
+        "message": "Setiap kali anak saya pulang dari kursus, selalu ada cerita seru yang dibawakannya",
+        "image": "/kursus/inggris/bertil/asih.webp"
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah atau Interpreter",
+        "description": "Menerjemahkan dokumen, percakapan, dan materi presentasi dari dan ke Bahasa Inggris untuk kebutuhan bisnis, pendidikan, maupun pariwisata."
+      },
+      {
+        "title": "Guru atau Tutor Bahasa Inggris",
+        "description": "Mengajar Bahasa Inggris di sekolah, lembaga kursus, atau secara privat, baik untuk anak-anak maupun kalangan profesional."
+      },
+      {
+        "title": "Content Writer atau Copywriter Internasional",
+        "description": "Menulis artikel, konten website, dan materi promosi berbahasa Inggris untuk perusahaan global atau klien luar negeri."
+      },
+      {
+        "title": "Customer Service Internasional",
+        "description": "Memberikan layanan dan bantuan kepada pelanggan dari berbagai negara menggunakan Bahasa Inggris secara profesional."
+      },
+      {
+        "title": "Pemandu Wisata (Tour Guide)",
+        "description": "Mendampingi dan menjelaskan destinasi wisata kepada wisatawan mancanegara dengan komunikasi Bahasa Inggris yang efektif."
+      },
+      {
+        "title": "Digital Marketer Global",
+        "description": "Mempromosikan produk dan layanan ke pasar internasional melalui media sosial, kampanye iklan digital, dan strategi pemasaran berbahasa Inggris."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Bahasa Inggris",
+    "title": "English Today Jakarta",
+    "description": "Lembaga kursus Bahasa Inggris profesional di Jakarta Selatan dengan pengalaman mengajar dewasa dan korporat.",
+    "rating": 5,
+    "location": "Jakarta Selatan",
+    "lat": -6.264981,
+    "lng": 106.799434,
+    "image": "/kursus/inggris/etoday/berita.webp",
+    "logo": "/kursus/inggris/etoday/logo.webp",
+    "whatsapp": "62818888887",
+    "mentor": {
+      "name": "Team Pengajar English Today",
+      "position": "Guru Profesional",
+      "photo": "/kursus/inggris/etoday/team.webp"
+    },
+    "details": [
+      "English Today selalu menyediakan guru bahasa Inggris native dan lokal yang berkualifikasi tinggi dan berpengalaman sehingga Anda dapat mencapai tujuan pembelajaran dengan lebih efektif",
+      "Di English Today, kami menggunakan metode belajar revolusioner dan efektif yang memungkinkan Anda berbicara bahasa Inggris dengan lebih lancar dan percaya diri. Di English Today, kami menggunakan metode belajar revolusioner dan efektif yang memungkinkan Anda berbicara bahasa Inggris dengan lebih lancar dan percaya diri."
+    ],
+    "testimonials": [
+      {
+        "name": "Muhammad Rizki Kurniawan",
+        "role": "Mahasiswa",
+        "message": "Good english course for company"
+      },
+      {
+        "name": "Retno Dwirestiani",
+        "role": "Mahasiswa",
+        "message": "The reference is mostly American English, but the teacher shared the difference. I have interactive sessions. The explanation about context of every theory was very clear."
+      }
+    ],
+    "careers": [
+      {
+        "title": "Penerjemah atau Interpreter",
+        "description": "Menerjemahkan dokumen, percakapan, dan materi presentasi dari dan ke Bahasa Inggris untuk kebutuhan bisnis, pendidikan, maupun pariwisata."
+      },
+      {
+        "title": "Guru atau Tutor Bahasa Inggris",
+        "description": "Mengajar Bahasa Inggris di sekolah, lembaga kursus, atau secara privat, baik untuk anak-anak maupun kalangan profesional."
+      },
+      {
+        "title": "Content Writer atau Copywriter Internasional",
+        "description": "Menulis artikel, konten website, dan materi promosi berbahasa Inggris untuk perusahaan global atau klien luar negeri."
+      },
+      {
+        "title": "Customer Service Internasional",
+        "description": "Memberikan layanan dan bantuan kepada pelanggan dari berbagai negara menggunakan Bahasa Inggris secara profesional."
+      },
+      {
+        "title": "Pemandu Wisata (Tour Guide)",
+        "description": "Mendampingi dan menjelaskan destinasi wisata kepada wisatawan mancanegara dengan komunikasi Bahasa Inggris yang efektif."
+      },
+      {
+        "title": "Digital Marketer Global",
+        "description": "Mempromosikan produk dan layanan ke pasar internasional melalui media sosial, kampanye iklan digital, dan strategi pemasaran berbahasa Inggris."
       }
     ]
   }
