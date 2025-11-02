@@ -113,7 +113,6 @@ edunara/
 ├── app/               # Struktur utama Next.js (routing & page)
 ├── components/        # Komponen UI (Navbar, Footer, Card, dll)
 ├── public/            # File statis (gambar, ikon, data GeoJSON)
-├── styles/            # Konfigurasi Tailwind dan global CSS
 ├── package.json       # Konfigurasi proyek & dependencies
 └── tsconfig.json      # Konfigurasi TypeScript
 ```
@@ -140,14 +139,14 @@ Jika kamu ingin menambahkan fitur baru atau memperbaiki bug:
 
 | Nama | Peran | Kontak |
 |------|--------|---------|
-| **Reynaldo** | Founder & Developer | [LinkedIn](#) |
-| **Dody Suprayogo** | Ide & Mentor Edukasi | [LinkedIn](#) |
+| **Bekhyun Aditya** | Leader $ UI UX Designer | [LinkedIn](http://linkedin.com/in/reynaldoyusellino) |
+| **Reynaldo** | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/bekhyun-aditya-45786930a/) |
+| **Afkar Sukmawan** | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/afkar-sukmawan-ahmad/) |
 
 ---
 
 ## 🏁 Lisensi
 
-Proyek ini dikembangkan untuk tujuan **pendidikan dan lomba inovasi digital**.  
 Dilarang menggunakan ulang kode untuk kepentingan komersial tanpa izin dari pengembang utama.  
 Lisensi: **MIT License**
 
