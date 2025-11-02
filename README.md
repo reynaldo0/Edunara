@@ -69,7 +69,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek **Edunara** di komputer l
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/username/edunara.git
+git clone https://github.com/reynaldo0/edunara.git
 ```
 
 ### 2️⃣ Masuk ke Folder Proyek
