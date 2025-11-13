@@ -141,7 +141,7 @@ export default function Kategori() {
                     <select
                         value={selectedDaerah}
                         onChange={(e) => setSelectedDaerah(e.target.value)}
-                        className="border border-gray-300 rounded-xl px-4 py-2 text-gray-700 focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none w-full sm:w-48"
+                        className="border border-gray-300 rounded-xl px-4 py-2 text-white focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-siswa-primary-100 w-full sm:w-48"
                     >
                         {daerahList.map((daerah) => (
                             <option key={daerah} value={daerah}>
@@ -155,7 +155,7 @@ export default function Kategori() {
                         onChange={(e) =>
                             setSelectedCategory(e.target.value as CategoryName)
                         }
-                        className="border border-gray-300 rounded-xl px-4 py-2 text-gray-700 focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none w-full sm:w-48"
+                        className="border border-gray-300 rounded-xl px-4 py-2 text-white focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-siswa-primary-100 w-full sm:w-48"
                     >
                         {categories.map((cat) => (
                             <option key={cat.name} value={cat.name}>
@@ -169,13 +169,13 @@ export default function Kategori() {
                 <div className="relative w-full sm:w-64">
                     <div className="relative w-full sm:w-64">
                         <form onSubmit={handleSearch}>
-                            <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" />
+                            <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-white" />
                             <input
                                 type="text"
                                 placeholder="Cari kursus..."
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-gray-700 focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none"
+                                className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-white focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-siswa-primary-100"
                             />
                         </form>
                     </div>

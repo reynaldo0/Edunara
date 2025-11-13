@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { FiArrowRight } from "react-icons/fi"; // ← import arrow icon
+import Link from "next/link";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Feature() {
     const layananList = [
@@ -8,21 +9,24 @@ export default function Feature() {
             title: "Chat Bot",
             desc: "Dapatkan bantuan instan untuk menemukan kursus yang cocok hanya dengan beberapa klik.",
             icon: "/icon/chatbot.svg",
+            link: "/siswa/chatbot",
         },
         {
             title: "Konsultasi Keahlian",
             desc: "Bicara langsung dengan ahli dan dapatkan saran profesional tentang jalur pembelajaranmu.",
             icon: "/icon/konsultasi.svg",
+            link: "/siswa/konsultasi",
         },
         {
             title: "Komunitas",
             desc: "Gabung dengan komunitas pembelajar aktif di Jakarta untuk berbagi dan berkembang bersama.",
             icon: "/icon/komunitas.svg",
+            link: "/siswa/komunitas",
         },
     ];
 
     return (
-        <section className="bg-linear-to-b from-siswa-primary-200 to-[#1DA1F2]/70 flex justify-center items-center min-h-screen px-6">
+        <section className="bg-gradient-to-b from-sky-100 via-white to-sky-50 flex justify-center items-center min-h-screen px-6 py-20">
             <div className="max-w-6xl mx-auto text-center">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -39,7 +43,9 @@ export default function Feature() {
                     {layananList.map((layanan, index) => (
                         <div
                             key={index}
-                            className="relative bg-white/90 backdrop-blur-sm border border-sky-100 rounded-3xl shadow-lg p-8 text-left hover:-translate-y-2 hover:shadow-2xl hover:border-sky-300 transition-all duration-300 ease-out w-full max-w-sm group"
+                            className="relative bg-white/90 backdrop-blur-sm border border-sky-100 rounded-3xl shadow-lg p-8 text-left 
+              hover:-translate-y-2 hover:shadow-2xl hover:border-sky-300 transition-all duration-300 ease-out 
+              w-full max-w-sm group"
                         >
                             {/* Icon & Title */}
                             <div className="flex items-center mb-5">
@@ -61,13 +67,20 @@ export default function Feature() {
                                 {layanan.desc}
                             </p>
 
-                            {/* Arrow */}
-                            <div className="flex justify-end">
-                                <FiArrowRight className="text-sky-500 text-2xl transform transition-transform duration-300 group-hover:translate-x-2" />
+                            {/* Action Button */}
+                            <div className="flex justify-between items-center mt-auto">
+                                <Link
+                                    href={layanan.link}
+                                    className="flex items-center gap-2 px-5 py-2 rounded-full bg-siswa-primary-100 text-white text-sm font-medium 
+                  hover:bg-siswa-primary-100/80 transition-all duration-300 shadow-sm hover:shadow-md"
+                                >
+                                    Kunjungi
+                                    <FiArrowRight className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
+                                </Link>
                             </div>
 
                             {/* Subtle gradient highlight */}
-                            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-sky-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>
                     ))}
                 </div>
