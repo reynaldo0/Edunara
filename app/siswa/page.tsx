@@ -2,6 +2,7 @@ import HeroSiswa from "../components/HeroSiswa";
 import NavbarSiswa from "../components/NavbarSiswa";
 import About from "./beranda/About";
 import Faq from "./beranda/Faq";
+import Feature from "./beranda/Feature";
 import Hero from "./beranda/Hero";
 import Kategori from "./beranda/Kategori";
 import Lokasi from "./beranda/lokasi";
@@ -24,7 +25,8 @@ export default function SiswaPage() {
                 <HeroSiswa />
                 <Hero />
                 <About />
-                <Lokasi />
+                <Feature/>
+                {/* <Lokasi /> */}
                 <Peta />
                 <Kategori />
                 <Program />

@@ -37,28 +37,37 @@ export default function Peta() {
     };
 
     return (
-        <section className="w-full min-h-screen flex flex-col items-center justify-center px-4">
-            <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
-                Kursus di Sekitar Kamu
-            </h2>
-
-            <div className="flex flex-wrap justify-center gap-3 mb-6">
-                {daerahList.map((daerah) => (
-                    <button
-                        key={daerah}
-                        onClick={() => handleSelectDaerah(daerah)}
-                        className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selected === daerah
-                            ? "bg-siswa-primary-100 text-white shadow-lg scale-105"
-                            : "bg-white text-[#1A202C] border border-gray-300 hover:bg-gray-100"
-                            }`}
-                    >
-                        {daerah}
-                    </button>
-                ))}
+        <section className="relative min-h-screen md:pt-20">
+            <div className="absolute top-0 w-full overflow-hidden leading-0 will-change-transform">
+                <img
+                    src="/illustrasi/wave/rounded.webp"
+                    alt="Wave"
+                    className="w-full h-full object-cover will-change-transform"
+                />
             </div>
+            <div className="w-full relative min-h-screen flex flex-col items-center justify-center px-4">
+                <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
+                    Kursus di Sekitar Kamu
+                </h2>
 
-            <div className="w-full max-w-5xl h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#CBD5E0]">
-                <MapSection selected={selected} />
+                <div className="flex flex-wrap justify-center gap-3 mb-6">
+                    {daerahList.map((daerah) => (
+                        <button
+                            key={daerah}
+                            onClick={() => handleSelectDaerah(daerah)}
+                            className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selected === daerah
+                                ? "bg-siswa-primary-100 text-white shadow-lg scale-105"
+                                : "bg-white text-[#1A202C] border border-gray-300 hover:bg-gray-100"
+                                }`}
+                        >
+                            {daerah}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="w-full max-w-5xl h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#CBD5E0]">
+                    <MapSection selected={selected} />
+                </div>
             </div>
         </section>
     );
