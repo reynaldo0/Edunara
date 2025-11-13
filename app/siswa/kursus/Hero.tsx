@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
-import HeroSiswa from "../../components/HeroSiswa";
-import Image from "next/image";
-import { useSiswa } from "@/app/context/SiswaContext";
+import HeroDefault from "@/app/components/HeroDefault";
 import NavbarSiswa from "@/app/components/NavbarSiswa";
-import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useSiswa } from "@/app/context/SiswaContext";
+import Image from "next/image";
 import { useRouter } from "next/navigation"; // ✅ router import
+import { useEffect, useMemo, useState } from "react";
+import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 
 type Course = {
     id: number;
@@ -104,7 +104,7 @@ export default function HeroKursus() {
                 <div className="absolute inset-0 bg-[#F0F9FF]/70 backdrop-blur-[1px]" />
 
                 <div className="relative z-10">
-                    <HeroSiswa />
+                    <HeroDefault />
 
                     <section className="py-16 px-6">
                         {filtered.length === 0 ? (

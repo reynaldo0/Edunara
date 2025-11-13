@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import HeroSiswa from "../../components/HeroSiswa";
 import Image from "next/image";
 import { useSiswa } from "@/app/context/SiswaContext";
 import NavbarSiswa from "@/app/components/NavbarSiswa";
 import { FaStar } from "react-icons/fa";
+import HeroDefault from "@/app/components/HeroDefault";
 
 type Course = {
     id: number;
@@ -68,7 +68,7 @@ export default function SearchPage() {
 
                 {/* Konten */}
                 <div className="relative z-10">
-                    <HeroSiswa />
+                    <HeroDefault />
                     <section className="py-16 px-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#003653]">
                             Hasil pencarian untuk:{" "}

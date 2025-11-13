@@ -1,12 +1,35 @@
 "use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function About() {
+    const pathname = usePathname();
+
+    // Fungsi untuk menentukan background linear
+    const getBackgroundClass = () => {
+        if (pathname.startsWith("/pemilik")) {
+            return "bg-linear-to-b from-[#2E6DA4] to-[#79C1FF]";
+        }
+        if (pathname.startsWith("/siswa")) {
+            return "bg-linear-to-b from-[#1DA1F2]/70 to-siswa-primary-200";
+        }
+        return "bg-linear-to-b from-gray-200/70 to-gray-100";
+    };
+    const getColorClass = () => {
+        if (pathname.startsWith("/pemilik")) {
+            return "text-white";
+        }
+        if (pathname.startsWith("/siswa")) {
+            return "text-pemilik-primary-200";
+        }
+        return "bg-linear-to-b from-gray-200/70 to-gray-100";
+    };
+
     return (
-        <section className="bg-linear-to-b from-[#1DA1F2]/70 to-siswa-primary-200 relative pb-10" id="tentang">
+        <section className={`${getBackgroundClass()} relative pb-10`} id="tentang">
             <div className="px-6 text-center">
                 {/* Judul */}
-                <h2 className="text-3xl md:text-5xl font-bold text-pemilik-primary-200 mb-10 py-20 md:mb-20">
+                <h2 className={`text-3xl md:text-5xl font-bold ${getColorClass()} mb-10 py-20 md:mb-20`}>
                     Kami Membawa Ide Menjadi Nyata
                 </h2>
 

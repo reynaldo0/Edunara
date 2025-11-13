@@ -24,7 +24,7 @@ const Hero = () => {
         <section className="relative overflow-hidden min-h-screen flex items-center pb-32">
             <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
                 <img
-                    src="/illustrasi/wave/bottom.webp"
+                    src="/illustrasi/pemilik/bottom.webp"
                     alt="Wave"
                     className="w-full h-full object-cover"
                 />
