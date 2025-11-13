@@ -125,7 +125,7 @@ export default function PetaClient({ selected }: Props) {
             <div className="absolute top-4 left-4 z-1000 bg-white/90 backdrop-blur-md shadow-lg rounded-xl p-4 w-64 border border-gray-200">
                 <div className="flex flex-row items-center space-x-4">
                     {/* Gambar */}
-                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 shrink-0">
                         <Image
                             src={ilustrasiFile}
                             alt={selected}

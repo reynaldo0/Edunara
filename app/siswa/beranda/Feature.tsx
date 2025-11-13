@@ -22,7 +22,7 @@ export default function Feature() {
     ];
 
     return (
-        <section className="bg-gradient-to-b from-siswa-primary-200 to-[#1DA1F2]/70 flex justify-center items-center min-h-screen px-6">
+        <section className="bg-linier-to-b from-siswa-primary-200 to-[#1DA1F2]/70 flex justify-center items-center min-h-screen px-6">
             <div className="max-w-6xl mx-auto text-center">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -67,7 +67,7 @@ export default function Feature() {
                             </div>
 
                             {/* Subtle gradient highlight */}
-                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-sky-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>
                     ))}
                 </div>

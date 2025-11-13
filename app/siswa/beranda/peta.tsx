@@ -46,7 +46,7 @@ export default function Peta() {
                 />
             </div>
             <div className="w-full relative min-h-screen flex flex-col items-center justify-center px-4">
-                <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
+                <h2 className="text-2xl md:text-5xl font-bold text-center text-pemilik-primary-200 mb-10">
                     Kursus di Sekitar Kamu
                 </h2>
 

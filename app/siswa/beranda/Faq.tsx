@@ -35,7 +35,7 @@ export default function Faq() {
     return (
         <section className="py-16 px-6 flex justify-center">
             <div className="w-full max-w-5xl">
-                <h2 className="text-2xl md:text-5xl font-bold text-center text-[#003653] mb-10">
+                <h2 className="text-2xl md:text-5xl font-bold text-center text-pemilik-primary-200 mb-10">
                     Pertanyaan yang sering ditanyakan
                 </h2>
                 <div className="space-y-4">
