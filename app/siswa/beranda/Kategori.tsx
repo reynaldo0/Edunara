@@ -121,7 +121,7 @@ export default function Kategori() {
         text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
 
     return (
-        <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
+        <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden" id="kursus">
             {/* Background wave */}
             <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
                 <img
@@ -141,7 +141,7 @@ export default function Kategori() {
                     <select
                         value={selectedDaerah}
                         onChange={(e) => setSelectedDaerah(e.target.value)}
-                        className="border border-gray-300 rounded-xl px-4 py-2 text-white focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-siswa-primary-100 w-full sm:w-48"
+                        className="border border-gray-300 rounded-xl px-4 py-2 text-black focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-gray-200 w-full sm:w-48"
                     >
                         {daerahList.map((daerah) => (
                             <option key={daerah} value={daerah}>
@@ -155,7 +155,7 @@ export default function Kategori() {
                         onChange={(e) =>
                             setSelectedCategory(e.target.value as CategoryName)
                         }
-                        className="border border-gray-300 rounded-xl px-4 py-2 text-white focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-siswa-primary-100 w-full sm:w-48"
+                        className="border border-gray-300 rounded-xl px-4 py-2 text-black focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-gray-200 w-full sm:w-48"
                     >
                         {categories.map((cat) => (
                             <option key={cat.name} value={cat.name}>
@@ -169,13 +169,13 @@ export default function Kategori() {
                 <div className="relative w-full sm:w-64">
                     <div className="relative w-full sm:w-64">
                         <form onSubmit={handleSearch}>
-                            <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-white" />
+                            <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-black" />
                             <input
                                 type="text"
                                 placeholder="Cari kursus..."
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-white focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-siswa-primary-100"
+                                className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-black focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-gray-200"
                             />
                         </form>
                     </div>
@@ -226,7 +226,7 @@ export default function Kategori() {
                                             />
                                         </div>
 
-                                        <p className="text-sm font-semibold text-siswa-primary-100 mt-3 mb-1">
+                                        <p className="text-sm font-semibold text-gray-200 mt-3 mb-1">
                                             {course.location}
                                         </p>
                                         <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
@@ -245,7 +245,7 @@ export default function Kategori() {
 
                                         <button
                                             onClick={() => handleExplore(course.id, course.title)}
-                                            className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition"
+                                            className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-siswa-primary-100/80 active:scale-95 transition"
                                         >
                                             Jelajahi
                                         </button>
@@ -269,7 +269,7 @@ export default function Kategori() {
                 <div className="flex justify-center mt-10 z-10">
                     <button
                         onClick={() => router.push("/siswa/kursus")}
-                        className="bg-siswa-primary-100 text-white px-6 py-2.5 rounded-full font-medium hover:bg-sky-600 active:scale-95 transition-all shadow-md"
+                        className="bg-gray-200 text-white px-6 py-2.5 rounded-full font-medium hover:bg-sky-600 active:scale-95 transition-all shadow-md"
                     >
                         Lihat Semua
                     </button>

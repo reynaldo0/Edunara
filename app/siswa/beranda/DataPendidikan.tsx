@@ -69,7 +69,7 @@ export default function DataPendidikan() {
     };
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-siswa-primary-200 to-[#1DA1F2]/70 px-6 py-16">
+        <section className="relative min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-siswa-primary-200 to-[#1DA1F2]/70 px-6 py-16" id="data">
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#003653] text-center mb-12">
                 Indikator Pendidikan Tahun 2020 – 2024
             </h2>

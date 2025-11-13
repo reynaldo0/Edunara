@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from 'next/link';
+import Image from "next/image";
 
 interface MenuItem {
     name: string;
@@ -13,10 +14,11 @@ const NavbarSiswa: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const menuItems: MenuItem[] = [
-        { name: "Beranda", path: "/siswa" },
-        { name: "Kursus", path: "/siswa/kursus" },
-        { name: "Tentang", path: "/siswa/tentang" },
-        { name: "Komunitas", path: "/siswa/komunitas" },
+        { name: "Beranda", path: "/siswa/#" },
+        { name: "Tentang", path: "/siswa/#tentang" },
+        { name: "Kursus", path: "/siswa/#kursus" },
+        { name: "Data", path: "/siswa/#data" },
+        { name: "FAQ", path: "/siswa/#faq" },
     ];
 
     return (
@@ -32,7 +34,15 @@ const NavbarSiswa: React.FC = () => {
             >
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
-                    <img src="/illustrasi/logo.webp" alt="Logo" className="w-26 h-12 object-contain" />
+                    <Link href="/">
+                        <Image
+                            src="/illustrasi/logo.webp"
+                            alt="Logo"
+                            width={104}   // width sesuai prop
+                            height={48}   // height sesuai prop
+                            className="object-contain"
+                        />
+                    </Link>
                 </div>
 
                 {/* Menu Desktop */}

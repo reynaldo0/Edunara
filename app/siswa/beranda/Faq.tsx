@@ -44,7 +44,7 @@ export default function Faq() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 py-16">
+        <section className="relative min-h-screen flex items-center justify-center px-6 py-16" id="faq">
             {/* Wave Background */}
             <div className="absolute top-0 w-full overflow-hidden leading-[0]">
                 <img

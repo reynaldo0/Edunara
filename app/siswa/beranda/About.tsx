@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function About() {
     return (
-        <section className="bg-linear-to-b from-[#1DA1F2]/70 to-siswa-primary-200 relative pb-10">
+        <section className="bg-linear-to-b from-[#1DA1F2]/70 to-siswa-primary-200 relative pb-10" id="tentang">
             <div className="px-6 text-center">
                 {/* Judul */}
                 <h2 className="text-3xl md:text-5xl font-bold text-pemilik-primary-200 mb-10 py-20 md:mb-20">
-                    Tentang <span className="text-white">Edunara</span>
+                    Kami Membawa Ide Menjadi Nyata
                 </h2>
 
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 md:gap-36">
