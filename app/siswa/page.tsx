@@ -5,7 +5,6 @@ import Faq from "./beranda/Faq";
 import Feature from "./beranda/Feature";
 import Hero from "./beranda/Hero";
 import Kategori from "./beranda/Kategori";
-import Lokasi from "./beranda/lokasi";
 import Peta from "./beranda/peta";
 import Program from "./beranda/Program";
 
@@ -26,7 +25,6 @@ export default function SiswaPage() {
                 <Hero />
                 <About />
                 <Feature/>
-                {/* <Lokasi /> */}
                 <Peta />
                 <Kategori />
                 <Program />
