@@ -1,6 +1,8 @@
 import HeroSiswa from "../components/HeroSiswa";
 import NavbarSiswa from "../components/NavbarSiswa";
+import About from "./beranda/About";
 import Faq from "./beranda/Faq";
+import Hero from "./beranda/Hero";
 import Kategori from "./beranda/Kategori";
 import Lokasi from "./beranda/lokasi";
 import Peta from "./beranda/peta";
@@ -20,6 +22,8 @@ export default function SiswaPage() {
             <div className="relative z-10">
                 <NavbarSiswa />
                 <HeroSiswa />
+                <Hero />
+                <About />
                 <Lokasi />
                 <Peta />
                 <Kategori />
