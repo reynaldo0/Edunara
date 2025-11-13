@@ -71,12 +71,12 @@ Semangat terus! Dunia butuh orang dengan semangat seperti kamu 🚀
     };
 
     return (
-        <div className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-sky-50 via-white to-sky-100 text-gray-800 px-4">
+        <div className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-br py-44 from-sky-50 via-white to-sky-100 text-gray-800 px-4">
             {/* Tombol kembali pojok kanan atas */}
             <NavbarSiswa/>
             <button
                 onClick={() => router.back()}
-                className="absolute top-42 left-20 flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-sky-600 rounded-full shadow-sm border border-sky-100 font-medium transition"
+                className="absolute top-32 md:top-42 left-5 md:left-20 flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-sky-600 rounded-full shadow-sm border border-sky-100 font-medium transition"
             >
                 <FaArrowLeft /> Kembali
             </button>

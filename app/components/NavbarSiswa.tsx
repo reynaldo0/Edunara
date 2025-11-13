@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from 'next/link';
 import Image from "next/image";
@@ -12,6 +12,8 @@ interface MenuItem {
 
 const NavbarSiswa: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [showNavbar, setShowNavbar] = useState<boolean>(true); // kontrol navbar
+    const [lastScrollY, setLastScrollY] = useState<number>(0);   // untuk deteksi arah scroll
 
     const menuItems: MenuItem[] = [
         { name: "Beranda", path: "/siswa/#" },
@@ -21,16 +23,33 @@ const NavbarSiswa: React.FC = () => {
         { name: "FAQ", path: "/siswa/#faq" },
     ];
 
+    // Efek scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 50) {
+                // scroll ke bawah → sembunyikan navbar
+                setShowNavbar(false);
+            } else {
+                // scroll ke atas → tampilkan navbar
+                setShowNavbar(true);
+            }
+            setLastScrollY(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY]);
+
     return (
         <nav
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-999999 w-[90%] md:w-[80%]"
+            className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[80%] transition-transform duration-300 ease-in-out
+        ${showNavbar ? "translate-y-0" : "-translate-y-32"}`}
             data-aos="zoom-in-down"
             data-aos-duration="1500"
         >
-            <div
-                className="flex items-center justify-between 
-        bg-white/80 backdrop-blur-lg
-        rounded-2xl shadow-lg px-6 py-3 transition-all duration-300 border-siswa-primary-100 border-b-20"
+            <div className="relative flex items-center justify-between 
+          bg-white/80 backdrop-blur-lg
+          rounded-2xl shadow-lg px-4 md:px-6 py-3 transition-all duration-300 border-siswa-primary-100 border-b-30"
             >
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
@@ -38,8 +57,8 @@ const NavbarSiswa: React.FC = () => {
                         <Image
                             src="/illustrasi/logo.webp"
                             alt="Logo"
-                            width={104}   // width sesuai prop
-                            height={48}   // height sesuai prop
+                            width={124}
+                            height={48}
                             className="object-contain"
                         />
                     </Link>
@@ -62,14 +81,16 @@ const NavbarSiswa: React.FC = () => {
                     ))}
                 </ul>
 
+                {/* Tombol Buat Akun Desktop */}
                 <Link
                     href="/register"
-                    className="hidden md:inline bg-siswa-primary-100 hover:bg-siswa-primary-100/80 text-white hover:text-white font-bold 
-            px-5 py-2 rounded-full transition duration-300 shadow-md"
+                    className="hidden md:inline bg-siswa-primary-100 hover:bg-siswa-primary-100/90 text-white font-bold 
+              px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun
                 </Link>
 
+                {/* Hamburger Button (Mobile) */}
                 <button
                     onClick={() => setIsOpen((prev) => !prev)}
                     className="md:hidden w-8 h-8 flex items-center justify-center text-gray-900 focus:outline-none"
@@ -80,13 +101,20 @@ const NavbarSiswa: React.FC = () => {
                         <Bars3Icon className="h-7 w-7 text-siswa-primary-100 transition duration-300" />
                     )}
                 </button>
+
+                {/* PESAN MAINTENANCE */}
+                <span className="absolute -bottom-4 md:-bottom-6 left-1/2 -translate-x-1/2 
+            text-white text-xs sm:text-sm text-center whitespace-nowrap overflow-hidden overflow-ellipsis">
+                    Temukan Kursus Terbaik Bersama Edunara!
+                </span>
             </div>
 
+            {/* Mobile Menu */}
             <div
                 className={`md:hidden fixed top-20 right-4 w-56 bg-white/80 backdrop-blur-md 
-        shadow-lg rounded-xl px-6 py-4 flex flex-col items-center space-y-4 
-        transition-all duration-300 transform origin-top-right
-        ${isOpen
+            shadow-lg rounded-xl px-6 py-4 flex flex-col items-center space-y-4 
+            transition-all duration-300 transform origin-top-right
+            ${isOpen
                         ? "opacity-100 scale-100 translate-y-0"
                         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                     }`}
@@ -102,12 +130,12 @@ const NavbarSiswa: React.FC = () => {
                     </Link>
                 ))}
 
-                {/* Tombol Dashboard (Mobile) */}
+                {/* Tombol Buat Akun Mobile */}
                 <Link
                     href="/register"
                     onClick={() => setIsOpen(false)}
                     className="bg-siswa-primary-100 hover:bg-siswa-primary-100/80 text-white font-bold 
-            px-5 py-2 rounded-full transition duration-300 shadow-md"
+              px-5 py-2 rounded-full transition duration-300 shadow-md"
                 >
                     Buat Akun
                 </Link>

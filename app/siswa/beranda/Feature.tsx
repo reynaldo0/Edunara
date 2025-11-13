@@ -80,7 +80,7 @@ export default function Feature() {
                             </div>
 
                             {/* Subtle gradient highlight */}
-                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-sky-100/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>
                     ))}
                 </div>

@@ -44,16 +44,16 @@ export default function Faq() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 py-16" id="faq">
+        <section className="relative min-h-screen flex items-center justify-center px-6 py-20 md:py-44" id="faq">
             {/* Wave Background */}
-            <div className="absolute top-0 w-full overflow-hidden leading-[0]">
+            <div className="absolute top-0 w-full overflow-hidden leading-0">
                 <img
                     src="/illustrasi/wave/top.webp"
                     alt="Wave"
                     className="w-full h-full object-cover"
                 />
             </div>
-            <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+            <div className="absolute bottom-0 w-full overflow-hidden leading-0">
                 <img
                     src="/illustrasi/wave/rounded-b.webp"
                     alt="Wave"

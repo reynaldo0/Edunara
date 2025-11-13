@@ -37,7 +37,7 @@ export default function Peta() {
     };
 
     return (
-        <section className="relative min-h-screen md:pt-20">
+        <section className="relative min-h-screen pt-20 md:pt-36">
             <div className="absolute top-0 w-full overflow-hidden leading-0 will-change-transform">
                 <img
                     src="/illustrasi/wave/rounded.webp"

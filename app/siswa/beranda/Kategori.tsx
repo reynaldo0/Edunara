@@ -123,7 +123,7 @@ export default function Kategori() {
     return (
         <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden" id="kursus">
             {/* Background wave */}
-            <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+            <div className="absolute bottom-0 w-full overflow-hidden leading-0">
                 <img
                     src="/illustrasi/wave/rounded-b.webp"
                     alt="Wave"
@@ -269,7 +269,7 @@ export default function Kategori() {
                 <div className="flex justify-center mt-10 z-10">
                     <button
                         onClick={() => router.push("/siswa/kursus")}
-                        className="bg-gray-200 text-white px-6 py-2.5 rounded-full font-medium hover:bg-sky-600 active:scale-95 transition-all shadow-md"
+                        className="bg-siswa-primary-100 text-white px-6 py-2.5 rounded-full font-medium hover:bg-siswa-primary-100/80 active:scale-95 transition-all shadow-md"
                     >
                         Lihat Semua
                     </button>

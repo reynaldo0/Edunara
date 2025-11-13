@@ -106,8 +106,14 @@ const ForumSection: React.FC = () => {
     };
 
     return (
-        <section className="relative py-20 min-h-screen mx-auto ">
-
+        <section className="relative py-20 min-h-screen mx-auto pb-12">
+            <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+                <img
+                    src="/illustrasi/wave/rounded-b.webp"
+                    alt="Wave"
+                    className="w-full h-full object-cover"
+                />
+            </div>
             <div className="max-w-5xl mx-auto relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#003B5C]">
                     Forum Diskusi Kursus DKI Jakarta

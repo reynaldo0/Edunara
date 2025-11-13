@@ -21,7 +21,7 @@ export default function HeroSiswa() {
     };
 
     const getTitle = () => {
-        if (pathname === "/siswa") return "Cari Kursus lebih mudah dengan UMKMAcademy";
+        if (pathname === "/siswa") return "Cari Kursus lebih mudah dengan Edunara";
         if (pathname === "/siswa/komunitas") return "Bergabunglah bersama komunitas, cari teman seperjuanganmu!!";
         if (pathname === "/siswa/tentang") return "Latar Belakang Pembuatan Website UMKMAcademy";
         if (pathname === "/siswa/kursus") return "Jelajahi kursus menarik untuk Berkembang";
@@ -79,7 +79,7 @@ export default function HeroSiswa() {
             </div>
 
             {/* Judul dinamis */}
-            <h1 className="mt-16 md:mt-20 text-center text-lg sm:text-2xl md:text-6xl font-bold text-pemilik-primary-200 leading-snug px-6">
+            <h1 className="mt-16 md:mt-20 text-center text-3xl sm:text-2xl md:text-6xl font-bold text-pemilik-primary-200 leading-snug px-6">
                 {getTitle()}
             </h1>
         </main>
