@@ -7,17 +7,17 @@ export default function Feature() {
         {
             title: "Chat Bot",
             desc: "Dapatkan bantuan instan untuk menemukan kursus yang cocok hanya dengan beberapa klik.",
-            icon: "/icons/chatbot.png",
+            icon: "/icon/chatbot.svg",
         },
         {
             title: "Konsultasi Keahlian",
             desc: "Bicara langsung dengan ahli dan dapatkan saran profesional tentang jalur pembelajaranmu.",
-            icon: "/icons/konsultasi.png",
+            icon: "/icon/konsultasi.svg",
         },
         {
             title: "Komunitas",
             desc: "Gabung dengan komunitas pembelajar aktif di Jakarta untuk berbagi dan berkembang bersama.",
-            icon: "/icons/komunitas.png",
+            icon: "/icon/komunitas.svg",
         },
     ];
 
