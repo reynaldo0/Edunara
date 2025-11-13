@@ -1,6 +1,8 @@
+import Footer from "../components/Footer";
 import HeroSiswa from "../components/HeroSiswa";
 import NavbarSiswa from "../components/NavbarSiswa";
 import About from "./beranda/About";
+import DataPendidikan from "./beranda/DataPendidikan";
 import Faq from "./beranda/Faq";
 import Feature from "./beranda/Feature";
 import Hero from "./beranda/Hero";
@@ -23,10 +25,12 @@ export default function SiswaPage() {
                 <HeroSiswa />
                 <Hero />
                 <About />
-                <Feature/>
+                <Feature />
                 <Peta />
                 <Kategori />
+                <DataPendidikan />
                 <Faq />
+                <Footer />
             </div>
         </main>
     );

@@ -22,7 +22,7 @@ export default function Feature() {
     ];
 
     return (
-        <section className="bg-linier-to-b from-siswa-primary-200 to-[#1DA1F2]/70 flex justify-center items-center min-h-screen px-6">
+        <section className="bg-linear-to-b from-siswa-primary-200 to-[#1DA1F2]/70 flex justify-center items-center min-h-screen px-6">
             <div className="max-w-6xl mx-auto text-center">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">

@@ -9,7 +9,7 @@ const Hero = () => {
 
     useEffect(() => {
         const typed = new Typed(typedRef.current, {
-            strings: ["Timur", "Utara", "Selatan", "Timur", "Pusat"], 
+            strings: ["Timur", "Utara", "Selatan", "Timur", "Pusat"],
             typeSpeed: 100,
             backSpeed: 60,
             loop: true,
@@ -22,6 +22,13 @@ const Hero = () => {
 
     return (
         <section className="relative overflow-hidden min-h-screen flex items-center pb-32">
+            <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+                <img
+                    src="/illustrasi/wave/bottom.webp"
+                    alt="Wave"
+                    className="w-full h-full object-cover"
+                />
+            </div>
             <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 md:py-20 lg:flex-row lg:justify-between relative z-10">
                 {/* TEKS */}
                 <div className="flex flex-col justify-center text-center p-6 rounded-sm lg:max-w-3xl md:text-left">
@@ -62,15 +69,6 @@ const Hero = () => {
                         priority
                     />
                 </div>
-            </div>
-
-            {/* BACKGROUND WAVE */}
-            <div className="absolute bottom-0 w-full overflow-hidden leading-0 will-change-transform">
-                <img
-                    src="/illustrasi/wave/bottom.webp"
-                    alt="Wave"
-                    className="w-full h-full object-cover will-change-transform"
-                />
             </div>
         </section>
     );
