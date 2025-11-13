@@ -6,6 +6,7 @@ import {
     ChevronLeftIcon,
     ChevronRightIcon,
     StarIcon,
+    MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 import { useSiswa } from "../../context/SiswaContext";
@@ -16,6 +17,14 @@ const categories = [
     { name: "Bahasa Jepang" },
     { name: "Bahasa Korea" },
     { name: "Pemrograman" },
+] as const;
+
+const daerahList = [
+    "Jakarta Pusat",
+    "Jakarta Selatan",
+    "Jakarta Timur",
+    "Jakarta Barat",
+    "Jakarta Utara",
 ] as const;
 
 type CategoryName = typeof categories[number]["name"];
@@ -37,8 +46,12 @@ export default function Kategori() {
     const [courses, setCourses] = useState<Course[]>([]);
     const [selectedCategory, setSelectedCategory] =
         useState<CategoryName>("Bahasa Inggris");
+    const [selectedDaerah, setSelectedDaerah] = useState("Jakarta Selatan");
+    const [searchQuery] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
+    const [input, setInput] = useState("");
+    const { setSearchTerm } = useSiswa();
 
     useEffect(() => {
         fetch("/data/courses.json")
@@ -67,9 +80,11 @@ export default function Kategori() {
     }, []);
 
     const filteredCourses = courses.filter(
-        (course) => course.category === selectedCategory
+        (course) =>
+            course.category === selectedCategory &&
+            course.location === selectedDaerah &&
+            course.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
 
     const maxIndex = Math.max(0, filteredCourses.length - itemsPerSlide);
     const nextSlide = () =>
@@ -81,14 +96,21 @@ export default function Kategori() {
         const stars = Array.from({ length: 5 }, (_, i) => (
             <StarIcon
                 key={i}
-                className={`w-5 h-5 ${i < Math.round(rating)
-                    ? "text-yellow-400"
-                    : "text-gray-300"
+                className={`w-5 h-5 ${i < Math.round(rating) ? "text-yellow-400" : "text-gray-300"
                     }`}
             />
         ));
         return <div className="flex items-center">{stars}</div>;
     };
+
+    const handleSearch = (e?: React.FormEvent) => {
+        e?.preventDefault();
+        if (input.trim()) {
+            setSearchTerm(input);    // pastikan kamu punya state searchTerm atau replacenya
+            router.push("/siswa/search");
+        }
+    };
+
 
     const handleExplore = (id: number, title: string) => {
         const slug = toSlug(title);
@@ -98,45 +120,75 @@ export default function Kategori() {
     const toSlug = (text: string) =>
         text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
 
-
     return (
         <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden">
             <h2 className="text-2xl md:text-5xl font-bold text-center text-pemilik-primary-200 mb-10">
-                Kategori
+                Kategori Kursus
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-5 mb-10">
-                {categories.map((cat) => (
-                    <button
-                        key={cat.name}
-                        onClick={() => {
-                            setSelectedCategory(cat.name);
-                            setCurrentIndex(0);
-                        }}
-                        className={`px-5 py-2 sm:px-6 sm:py-2.5 rounded-full font-medium shadow-md transition-all duration-300 ${selectedCategory === cat.name
-                            ? `bg-siswa-primary-200 text-black scale-105`
-                            : "bg-white border-2 border-siswa-primary-200 text-gray-600 hover:bg-gray-100"
-                            }`}
+            {/* Filter Bar */}
+            <div className="w-full max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
+                {/* Dropdown Kiri */}
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <select
+                        value={selectedDaerah}
+                        onChange={(e) => setSelectedDaerah(e.target.value)}
+                        className="border border-gray-300 rounded-xl px-4 py-2 text-gray-700 focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none w-full sm:w-48"
                     >
-                        {cat.name}
-                    </button>
-                ))}
+                        {daerahList.map((daerah) => (
+                            <option key={daerah} value={daerah}>
+                                {daerah}
+                            </option>
+                        ))}
+                    </select>
+
+                    <select
+                        value={selectedCategory}
+                        onChange={(e) =>
+                            setSelectedCategory(e.target.value as CategoryName)
+                        }
+                        className="border border-gray-300 rounded-xl px-4 py-2 text-gray-700 focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none w-full sm:w-48"
+                    >
+                        {categories.map((cat) => (
+                            <option key={cat.name} value={cat.name}>
+                                {cat.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                {/* Search Bar */}
+                <div className="relative w-full sm:w-64">
+                    <div className="relative w-full sm:w-64">
+                        <form onSubmit={handleSearch}>
+                            <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" />
+                            <input
+                                type="text"
+                                placeholder="Cari kursus..."
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)}
+                                className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-gray-700 focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none"
+                            />
+                        </form>
+                    </div>
+
+                </div>
+
             </div>
 
+            {/* Hasil Kursus */}
             {filteredCourses.length === 0 ? (
                 <p className="text-gray-600 text-lg font-medium text-center">
                     Tidak ada kursus untuk kategori{" "}
-                    <span className="font-semibold">{selectedCategory}</span>
-                    {siswa.lokasi && ` di ${siswa.lokasi}`} .
+                    <span className="font-semibold">{selectedCategory}</span> di{" "}
+                    <span className="font-semibold">{selectedDaerah}</span>.
                 </p>
             ) : (
                 <div className="relative w-full max-w-6xl flex items-center justify-center">
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
-                        className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex === 0
-                            ? "opacity-50 cursor-not-allowed"
-                            : ""
+                        className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         <ChevronLeftIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
@@ -166,7 +218,6 @@ export default function Kategori() {
                                             />
                                         </div>
 
-
                                         <p className="text-sm font-semibold text-siswa-primary-100 mt-3 mb-1">
                                             {course.location}
                                         </p>
@@ -184,7 +235,6 @@ export default function Kategori() {
                                             </span>
                                         </div>
 
-                                        {/* Tombol Jelajahi berdasarkan title */}
                                         <button
                                             onClick={() => handleExplore(course.id, course.title)}
                                             className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-sky-600 active:scale-95 transition"
@@ -200,15 +250,24 @@ export default function Kategori() {
                     <button
                         onClick={nextSlide}
                         disabled={currentIndex >= maxIndex}
-                        className={`absolute -right-3 sm:-right-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex >= maxIndex
-                            ? "opacity-50 cursor-not-allowed"
-                            : ""
+                        className={`absolute -right-3 sm:-right-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex >= maxIndex ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         <ChevronRightIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
                     </button>
                 </div>
             )}
+            {filteredCourses.length > 0 && (
+                <div className="flex justify-center mt-10">
+                    <button
+                        onClick={() => router.push("/siswa/kursus")}
+                        className="bg-siswa-primary-100 text-white px-6 py-2.5 rounded-full font-medium hover:bg-sky-600 active:scale-95 transition-all shadow-md"
+                    >
+                        Lihat Semua
+                    </button>
+                </div>
+            )}
+
         </section>
     );
 }
