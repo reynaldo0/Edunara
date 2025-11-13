@@ -4,6 +4,7 @@ import Jembatan from "./Jembatan";
 import Diskusi from "./Diskusi";
 import ForumSection from "./Forum";
 import ForumTanya from "./ForumTanya";
+import Footer from "@/app/components/Footer";
 
 export default function SiswaPage() {
     return (
@@ -16,11 +17,10 @@ export default function SiswaPage() {
             <div className="absolute inset-0 bg-[#F0F9FF]/70 backdrop-blur-[1px]" />
             <div className="relative z-10">
                 <NavbarSiswa />
-                <HeroSiswa />
-                <Jembatan />
                 <Diskusi />
                 <ForumTanya />
                 <ForumSection />
+                <Footer/>
             </div>
         </main>
     );

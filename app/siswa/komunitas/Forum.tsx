@@ -106,16 +106,11 @@ const ForumSection: React.FC = () => {
     };
 
     return (
-        <section className="relative py-20 min-h-screen">
-            {/* Background */}
-            <div
-                className="absolute inset-0 bg-[url('/wave/komunitas.png')] bg-cover bg-center opacity-10"
-                style={{ backgroundAttachment: "fixed" }}
-            />
+        <section className="relative py-20 min-h-screen mx-auto ">
 
             <div className="max-w-5xl mx-auto relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#003B5C]">
-                    Forum Diskusi Budaya
+                    Forum Diskusi Kursus DKI Jakarta
                 </h2>
 
                 {/* Form Komentar */}

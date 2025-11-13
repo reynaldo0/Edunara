@@ -68,7 +68,7 @@ const ForumTanya: React.FC = () => {
     };
 
     return (
-        <section className="min-h-screen flex flex-col items-center justify-start py-32">
+        <section className="min-h-screen flex flex-col items-center justify-start py-32 mx-5 md:mx-0" id="diskusi">
             <div className="w-full max-w-3xl bg-white/60 backdrop-blur-md rounded-3xl shadow-md border-4 border-[#BCE0FD] p-6">
                 <h2 className="text-center text-2xl md:text-3xl font-bold text-[#003B5C] mb-6">
                     Tanyakan pertanyaanmu disini

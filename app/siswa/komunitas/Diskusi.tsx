@@ -2,10 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Diskusi: React.FC = () => {
     return (
-        <section className=" flex justify-center items-center py-24 px-6">
+        <section className=" flex justify-center items-center py-32 px-6">
             <div className="bg-white rounded-4xl shadow-lg w-full max-w-6xl flex flex-col md:flex-row justify-between items-center p-8 md:px-12 md:py-4 gap-8">
 
                 {/* Bagian teks */}
@@ -13,9 +14,9 @@ const Diskusi: React.FC = () => {
                     <h2 className="text-[#003B5C] font-bold text-3xl md:text-5xl leading-tight">
                         Diskusikan <br /> pertanyaanmu
                     </h2>
-                    <button className="bg-[#AEE3FF] hover:bg-[#9AD8F5] text-[#003B5C] font-semibold px-8 py-3 rounded-full text-base md:text-lg transition-transform transform hover:scale-105">
+                    <Link href="/siswa/komunitas/#diskusi" passHref className="bg-[#AEE3FF] hover:bg-[#9AD8F5] text-[#003B5C] font-semibold px-8 py-3 rounded-full text-base md:text-lg transition-transform transform hover:scale-105">
                         Jelajahi
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Bagian gambar */}
