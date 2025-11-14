@@ -33,7 +33,7 @@ const Hero = () => {
                 {/* TEKS */}
                 <div className="flex flex-col justify-center text-center p-6 rounded-sm lg:max-w-3xl md:text-left">
                     <h1 className="text-5xl font-bold leading-tight sm:text-6xl text-pemilik-primary-200">
-                        Temukan Kursus Terbaik di Jakarta{" "}
+                        Hadirkan Kursus Terbaik di Jakarta{" "}
                         <span
                             ref={typedRef}
                             className="text-siswa-primary-100"

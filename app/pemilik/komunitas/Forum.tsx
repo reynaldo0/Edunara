@@ -115,7 +115,7 @@ const ForumSection: React.FC = () => {
 
             <div className="max-w-5xl mx-auto relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#003B5C]">
-                    Forum Diskusi Budaya
+                    Forum Diskusi Kursus di DKI Jakarta
                 </h2>
 
                 {/* Form Komentar */}

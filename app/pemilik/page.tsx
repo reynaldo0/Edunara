@@ -20,7 +20,6 @@ export default function SiswaPage() {
             <About />
             <Feature />
             <Daftar />
-            <Program />
             <Strategy />
             <Panduan />
         </main>

@@ -5,13 +5,13 @@ import Image from "next/image";
 
 const Diskusi: React.FC = () => {
     return (
-        <section className=" flex justify-center items-center py-24 px-6">
+        <section className=" flex justify-center items-center py-44 px-6">
             <div className="bg-white rounded-4xl shadow-lg w-full max-w-6xl flex flex-col md:flex-row justify-between items-center p-8 md:px-12 md:py-4 gap-8">
 
                 {/* Bagian teks */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2 space-y-6">
                     <h2 className="text-[#003B5C] font-bold text-3xl md:text-5xl leading-tight">
-                        Diskusikan <br /> pertanyaanmu
+                        Diskusikan <br /> pertanyaa Siswa
                     </h2>
                     <button className="bg-pemilik-primary-100 hover:bg-pemilik-primary-100/80 text-white font-semibold px-8 py-3 rounded-full text-base md:text-lg transition-transform transform hover:scale-105">
                         Jelajahi
