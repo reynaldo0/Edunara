@@ -11,7 +11,7 @@ type Mentor = {
 type MentorSectionProps = {
     logo?: string;
     mentor?: Mentor;
-    title: string; // ✅ Wajib dikirim dari DetailKursusPage
+    title: string;
 };
 
 export default function MentorSection({ logo, mentor, title }: MentorSectionProps) {

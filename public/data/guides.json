@@ -1,41 +1,197 @@
 [
   {
-    "slug": "cara-memilih-fasilitas",
-    "title": "Cara memilih fasilitas yang baik",
-    "description": "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
-    "progress": 60,
+    "title": "Meningkatkan kualitas pelayanan ",
+    "description": "Kualitas pelayanan yang baik menjadi poin plus terhadap tempat kursus. Pastikan kamu meningkatkannya !!",
+    "progress": 20,
     "category": "Fasilitas",
-    "image": "/images/fasilitas-1.jpg",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
     "details": [
-      "Pastikan ruangan bersih dan nyaman",
-      "Gunakan peralatan yang memadai",
-      "Pertimbangkan pencahayaan dan ventilasi"
+      "Fokus pada pelayanan ",
+      "Manfaatkan Teknologi",
+      "Tingkatkan Interaksi dengan siswa",
+      "Tetapkan Standar dan Ukur Kinerja ",
+      "Miliki Call Center atau Red Desk"
     ]
   },
   {
-    "slug": "menata-ruang-belajar",
-    "title": "Menata ruang belajar yang nyaman",
-    "description": "Ruang belajar yang bersih, terang, dan terorganisir akan meningkatkan fokus dan kenyamanan siswa.",
-    "progress": 75,
+    "title": "Materi belajar yang baik ",
+    "description": "Pemilihan materi untuk pembelajaran siswa merupakan salah satu hal krusial untuk siswa dalam memahami konsep materi tertentu.",
+    "progress": 20,
     "category": "Fasilitas",
-    "image": "/images/fasilitas-2.jpg",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
     "details": [
-      "Gunakan meja dan kursi ergonomis",
-      "Tambahkan dekorasi yang menenangkan",
-      "Sediakan papan tulis atau media interaktif"
+      "Pahami audiens Anda ",
+      "Susun kerangka yang jelas",
+      "Sederhanakan bahasa ",
+      "Gunakan referensi beragam",
+      "Gunakan visualisasi"
     ]
   },
   {
-    "slug": "peralatan-modern",
-    "title": "Peralatan modern untuk kursus",
-    "description": "Gunakan alat dan teknologi terbaru agar proses pembelajaran lebih interaktif dan efisien.",
-    "progress": 40,
+    "title": " Memilih fasilitas yang baik",
+    "description": "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
+    "progress": 20,
     "category": "Fasilitas",
-    "image": "/images/fasilitas-3.jpg",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
     "details": [
-      "Laptop atau komputer untuk peserta",
-      "Proyektor atau layar interaktif",
-      "Software pembelajaran terbaru"
+      "Merancang ruang belajar yang optimal",
+      "Menyediakan peralatan dan teknologi yang lengkap ",
+      "Menciptakan lingkungan yang nyaman dan kondusif",
+      "Memanfaatkan area luar ruangan",
+      "Fleksibilitas dalam penggunaan ruang "
+    ]
+  },
+  {
+    "title": "Mulai dengan tujuan dan audiens ",
+    "description": "Tentukan hasil spesifik dan terukur yang ingin dicapai peserta didik setelah menyelesaikan kursus.",
+    "progress": 20,
+    "category": "Kurikulum",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "Tentukan audiens",
+      "Tentukan tujuan",
+      "Susun kurikulum",
+      "Tentukan hasil akhir tujuan dan audiens",
+      "evaluasi mendalam"
+    ]
+  },
+  {
+    "title": "Rancang struktur dan konten kursus",
+    "description": "Atur konten kursus ke dalam urutan yang masuk akal, sering kali dimulai dari tujuan pembelajaran",
+    "progress": 20,
+    "category": "Kurikulum",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "Membuat struktur kursus",
+      "Membuat Konten kursus",
+      "Menganalisis kebutuhan",
+      "Pertimbangan tambahan",
+      "Seimbangkan teori dan praktik"
+    ]
+  },
+  {
+    "title": "Gunakan metode pengajaran interaktif",
+    "description": "Gabungkan ceramah, diskusi, studi kasus, simulasi, atau blended learning untuk menjaga keterlibatan.",
+    "progress": 20,
+    "category": "Kurikulum",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "Membuat program Diskusi dan kerja kelompok",
+      "Membuat Konten kursus",
+      "Latihan dan aktivitas langsung",
+      "Pembelajaran berbasis proyek",
+      "Memfasilitasi refleksi"
+    ]
+  },
+  {
+    "title": "Persiapan dan perencanaan",
+    "description": "Tentukan hasil spesifik dan terukur yang ingin dicapai peserta didik setelah menyelesaikan kursus.",
+    "progress": 20,
+    "category": "Tips Mengajar",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "Tentukan audiens",
+      "Tentukan tujuan",
+      "Susun kurikulum",
+      "Tentukan hasil akhir tujuan dan audiens",
+      "evaluasi mendalam"
+    ]
+  },
+  {
+    "title": "Metode mengajar yang interaktif",
+    "description": "Sederhanakan materi sulit dengan memberikan contoh soal yang bertahap dari yang mudah hingga kompleks, serta gunakan perumpamaan yang realistis.",
+    "progress": 20,
+    "category": "Tips Mengajar",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "Membuat struktur kursus",
+      "Membuat Konten kursus",
+      "Menganalisis kebutuhan",
+      "Pertimbangan tambahan",
+      "Seimbangkan teori dan praktik"
+    ]
+  },
+  {
+    "title": "Menjaga konsistensi",
+    "description": "Ulangi materi pelajaran sebelumnya secara berkala untuk memperkuat pemahaman siswa.",
+    "progress": 20,
+    "category": "Tips Mengajar",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "membuat kurikulum yang membuat siswa konsisten",
+      "pahami apa yang diinginkan siswa",
+      "membuat jadwal khusus untuk siswa",
+      "menyertakan jadwal istirahat singkat",
+      "membuat siswa fokus dari tahap awal"
+    ]
+  },
+  {
+    "title": "Promosi Media Sosial",
+    "description": "Promosi Melalui Media Sosial Gunakan kekuatan platform digital untuk memperluas jangkauan audiens dan membangun kepercayaan publik.",
+    "progress": 20,
+    "category": "Tips Promosi",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "promosi-media-sosial",
+    "details": [
+      "Buat konten rutin di Instagram, TikTok, dan YouTube Shorts",
+      "Tampilkan testimoni peserta dan hasil belajar nyata",
+      "Gunakan hashtag relevan dan lokasi kursus",
+      "Buat tantangan atau mini-challenge berhadiah",
+      "Gunakan fitur Reels atau Live untuk interaksi langsung"
+    ]
+  },
+  {
+    "title": "Promosi Berbasis Komunitas",
+    "description": "Promosi Berbasis Komunitas Bangun hubungan langsung dengan lingkungan sekitar untuk meningkatkan kehadiran kursus secara organik.",
+    "progress": 20,
+    "category": "Tips Promosi",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "promosi-berbasis-komunitas",
+    "details": [
+      "Kerja sama dengan sekolah, kampus, atau organisasi lokal",
+      "Adakan seminar gratis atau kelas perkenalan (trial class)",
+      "Sebarkan brosur digital melalui grup WhatsApp dan Telegram",
+      "Libatkan alumni kursus sebagai duta promosi",
+      "Hadir di acara pameran pendidikan atau bazar lokal"
+    ]
+  },
+  {
+    "title": "Promosi Digital Terarah",
+    "description": "Promosi Digital Terarah Manfaatkan strategi pemasaran digital yang lebih terukur agar promosi berjalan efisien dan tepat sasaran.",
+    "progress": 20,
+    "category": "Tips Promosi",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "promosi-digital-terarah",
+    "details": [
+      "Gunakan iklan berbayar di Google Ads dan Meta Ads",
+      "Optimalkan profil bisnis di Google Maps",
+      "Buat situs web sederhana dengan formulir pendaftaran",
+      "Analisis hasil kampanye menggunakan data insight",
+      "Buat newsletter rutin dengan tips belajar dan promo menarik"
+    ]
+  },
+  {
+    "title": "Menjaga konsistensi",
+    "description": "Bangun Identitas Visual yang Konsisten Pastikan setiap elemen visual kursus mencerminkan nilai dan kepribadian brand",
+    "progress": 20,
+    "category": "Branding",
+    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "slug": "mengenal-fasilitas",
+    "details": [
+      "Pilih warna utama dan font yang mudah dikenali",
+      "Gunakan logo yang sederhana dan bermakna",
+      "Terapkan gaya desain yang konsisten di semua media",
+      "Buat template visual untuk promosi dan materi belajar",
+      "Gunakan foto/grafis berkualitas tinggi"
     ]
   }
 ]
