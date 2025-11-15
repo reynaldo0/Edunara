@@ -1,10 +1,8 @@
-import HeroSiswa from "@/app/components/HeroSiswa";
+import Footer from "@/app/components/Footer";
 import NavbarSiswa from "@/app/components/NavbarSiswa";
-import Jembatan from "./Jembatan";
 import Diskusi from "./Diskusi";
 import ForumSection from "./Forum";
 import ForumTanya from "./ForumTanya";
-import Footer from "@/app/components/Footer";
 
 export default function SiswaPage() {
     return (
