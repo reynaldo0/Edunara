@@ -25,19 +25,45 @@ const ForumSection: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([
         {
             id: 1,
-            author: "Andi",
-            content: "Budaya gotong royong harus selalu kita jaga agar tetap hidup.",
-            likes: 3,
+            author: "Sinta",
+            content:
+                "Saya sedang mencari kursus Desain Grafis yang cocok untuk pemula. Apakah ada rekomendasi lembaga pelatihan di Jakarta Timur yang punya mentor berpengalaman?",
+            likes: 12,
             replies: [
                 {
                     id: 1,
-                    author: "Budi",
-                    content: "Setuju banget! Itu ciri khas kita.",
-                    likes: 1,
+                    author: "Rudi",
+                    content:
+                        "Coba cek kursus Desain Grafis di LKP Kreativa. Mentor-nya bagus dan materinya mudah dipahami.",
+                    likes: 4,
+                },
+                {
+                    id: 2,
+                    author: "Maya",
+                    content:
+                        "Di Jakarta Timur ada juga Program Pelatihan Berbasis Kompetensi. Gratis dan bersertifikat.",
+                    likes: 7,
+                },
+            ],
+        },
+        {
+            id: 2,
+            author: "Dewi",
+            content:
+                "Apakah kursus Digital Marketing di DKI Jakarta menyediakan sertifikat resmi yang bisa dipakai untuk melamar kerja?",
+            likes: 8,
+            replies: [
+                {
+                    id: 1,
+                    author: "Fajar",
+                    content:
+                        "Iya, sebagian besar lembaga sudah terakreditasi dan sertifikatnya berlaku secara nasional.",
+                    likes: 2,
                 },
             ],
         },
     ]);
+
 
     const [newPost, setNewPost] = useState<string>("");
     const [replyContent, setReplyContent] = useState<Record<number, string>>({});
@@ -116,7 +142,7 @@ const ForumSection: React.FC = () => {
             </div>
             <div className="max-w-5xl mx-auto relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#003B5C]">
-                    Forum Diskusi Kursus DKI Jakarta
+                    Forum Diskusi & Tanya Jawab Kursus DKI Jakarta
                 </h2>
 
                 {/* Form Komentar */}
@@ -124,7 +150,7 @@ const ForumSection: React.FC = () => {
                     <textarea
                         className="w-full border border-gray-200 rounded-xl p-3 focus:ring-2 focus:ring-siswa-primary-100 outline-none bg-white resize-none"
                         rows={3}
-                        placeholder="Tulis pendapatmu..."
+                        placeholder="Tanyakan pengalamanmu atau diskusikan seputar kursus di DKI Jakarta..."
                         value={newPost}
                         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                             setNewPost(e.target.value)
@@ -206,7 +232,7 @@ const ForumSection: React.FC = () => {
                                     <textarea
                                         className="w-full border rounded-xl p-2 text-sm focus:ring-2 focus:ring-siswa-primary-100 outline-none bg-white resize-none"
                                         rows={2}
-                                        placeholder="Tulis balasanmu..."
+                                        placeholder="Tambahkan jawaban atau pengalamanmu di sini..."
                                         value={replyContent[post.id] || ""}
                                         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                                             setReplyContent({

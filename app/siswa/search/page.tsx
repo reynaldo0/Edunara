@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useSiswa } from "@/app/context/SiswaContext";
 import NavbarSiswa from "@/app/components/NavbarSiswa";
 import { FaStar } from "react-icons/fa";
@@ -19,15 +20,24 @@ type Course = {
 
 export default function SearchPage() {
     const { searchTerm } = useSiswa();
+    const router = useRouter();
+
     const [courses, setCourses] = useState<Course[]>([]);
 
-    // Ambil data
+    // Fetch data
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
             .then((data) => setCourses(data))
             .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
+
+    // Generate slug dari title
+    const createSlug = (text: string) =>
+        text
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^\w-]+/g, "");
 
     const filtered = useMemo(() => {
         if (!searchTerm.trim()) return courses;
@@ -45,13 +55,16 @@ export default function SearchPage() {
         const stars = Array.from({ length: 5 }, (_, i) => (
             <FaStar
                 key={i}
-                className={`${i < Math.round(rating)
-                    ? "text-yellow-400"
-                    : "text-gray-300"
-                    }`}
+                className={`${i < Math.round(rating) ? "text-yellow-400" : "text-gray-300"}`}
             />
         ));
         return <div className="flex items-center space-x-1">{stars}</div>;
+    };
+
+    // Handler tombol: Lihat Detail & Daftar
+    const goToDetail = (id: number, title: string) => {
+        const slug = createSlug(title);
+        router.push(`/siswa/kursus/${slug}?id=${id}`);
     };
 
     return (
@@ -69,6 +82,7 @@ export default function SearchPage() {
                 {/* Konten */}
                 <div className="relative z-10">
                     <HeroDefault />
+
                     <section className="py-16 px-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#003653]">
                             Hasil pencarian untuk:{" "}
@@ -97,9 +111,13 @@ export default function SearchPage() {
                                                 height={250}
                                                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                                             />
+
                                             {/* Overlay hover */}
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                                <button className="bg-white border-2 border-siswa-primary-100 text-siswa-primary-100 px-5 py-2 rounded-full font-semibold text-sm hover:bg-siswa-primary-100 hover:text-white transition-all duration-300 shadow-md">
+                                                <button
+                                                    onClick={() => goToDetail(course.id, course.title)}
+                                                    className="bg-white border-2 border-siswa-primary-100 text-siswa-primary-100 px-5 py-2 rounded-full font-semibold text-sm hover:bg-siswa-primary-100 hover:text-white transition-all duration-300 shadow-md"
+                                                >
                                                     Lihat Detail
                                                 </button>
                                             </div>
@@ -131,7 +149,11 @@ export default function SearchPage() {
                                                         {course.rating}/5
                                                     </span>
                                                 </div>
-                                                <button className="bg-siswa-primary-100 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-siswa-primary-200 hover:text-black transition-all duration-300 hover:scale-105">
+
+                                                <button
+                                                    onClick={() => goToDetail(course.id, course.title)}
+                                                    className="bg-siswa-primary-100 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-siswa-primary-200 hover:text-black transition-all duration-300 hover:scale-105"
+                                                >
                                                     Daftar Sekarang
                                                 </button>
                                             </div>

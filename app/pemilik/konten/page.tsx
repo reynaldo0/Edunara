@@ -3,7 +3,7 @@
 import NavbarPemilik from "@/app/components/NavbarPemilik";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { FaArrowLeft, FaPaperPlane, FaRobot } from "react-icons/fa";
+import { FaArrowLeft, FaPaperPlane, FaRobot, FaImage } from "react-icons/fa";
 
 export default function AiKontenWizardInteractive() {
     const router = useRouter();
@@ -13,7 +13,9 @@ export default function AiKontenWizardInteractive() {
         topik: "",
         detail: "",
     });
+
     const [generatedContent, setGeneratedContent] = useState("");
+    const [generatedImage, setGeneratedImage] = useState<string | null>(null);
     const [isTyping, setIsTyping] = useState(false);
     const [done, setDone] = useState(false);
 
@@ -33,11 +35,35 @@ export default function AiKontenWizardInteractive() {
         if (step > 1) setStep(step - 1);
     };
 
+    // 🟦 Generate Dummy Feed Image
+    const generateDummyImage = (title: string) => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 1080;
+        canvas.height = 1350; // ukuran portrait feed IG
+
+        const ctx = canvas.getContext("2d")!;
+        const bgColors = ["#3B82F6", "#6366F1", "#EF4444", "#10B981", "#F59E0B"];
+        const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+
+        // Background
+        ctx.fillStyle = randomColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Text
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 80px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText(title, canvas.width / 2, canvas.height / 2);
+
+        return canvas.toDataURL("image/png");
+    };
+
+    // 🟧 Generate caption + script + dummy image
     const handleGenerate = () => {
         setDone(true);
         setIsTyping(true);
 
-        const response = `
+        const result = `
 🎯 Konten untuk kursus ${answers.kursus} (Topik: ${answers.topik}):
 
 📌 Caption:
@@ -46,16 +72,21 @@ export default function AiKontenWizardInteractive() {
 🎬 Script Video:
 ${answers.detail}
 
-✨ Semoga konten ini membantu mempromosikan kursus Anda secara efektif!
-    `;
+✨ Gambar Dummy telah dibuat secara otomatis!
+        `;
 
+        // typing animation
         let index = 0;
         const typing = setInterval(() => {
-            setGeneratedContent(response.slice(0, index));
+            setGeneratedContent(result.slice(0, index));
             index++;
-            if (index > response.length) {
+            if (index > result.length) {
                 clearInterval(typing);
                 setIsTyping(false);
+
+                // generate gambar dummy
+                const img = generateDummyImage(answers.topik);
+                setGeneratedImage(img);
             }
         }, 20);
     };
@@ -64,26 +95,30 @@ ${answers.detail}
         setStep(1);
         setAnswers({ kursus: "", topik: "", detail: "" });
         setGeneratedContent("");
+        setGeneratedImage(null);
         setDone(false);
     };
 
     return (
         <div className="max-w-3xl mx-auto p-6 bg-white rounded-3xl shadow-lg gap-6 relative min-h-screen flex flex-col justify-center items-center py-44">
             <NavbarPemilik />
+
+            {/* Tombol kembali */}
             <button
                 onClick={() => router.back()}
-                className="absolute top-32 md:top-42 left-5 md:left-20 flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-sky-600 cursor-pointer rounded-full shadow-sm border border-sky-100 font-medium transition"
+                className="absolute top-32 left-5 md:left-20 flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-sky-600 cursor-pointer rounded-full shadow-sm border border-sky-100 font-medium transition"
             >
                 <FaArrowLeft /> Kembali
             </button>
 
-            <h2 className="text-2xl font-bold text-sky-700 text-center">AI Konten Otomatis</h2>
+            <h2 className="text-2xl font-bold text-sky-700 text-center">Buat Postingan Konten
+            </h2>
             <p className="text-gray-600 text-center mb-4">
-                Buat caption dan script video untuk feeds, reels, atau postingan kursus dengan cepat!
+                Buat caption, script video, dan dummy gambar feed posting otomatis!
             </p>
 
             {/* Stepper */}
-            <div className="flex justify-between mb-6">
+            <div className="flex justify-between mb-6 w-full px-6">
                 {[1, 2, 3].map((s) => (
                     <div
                         key={s}
@@ -93,23 +128,25 @@ ${answers.detail}
                 ))}
             </div>
 
-            {/* Card utama */}
+            {/* Kartu utama */}
             {!done ? (
-                <div className="w-full bg-white/80 backdrop-blur-lg border border-sky-100 rounded-2xl shadow-lg p-6 transition-all duration-500 animate-fade-in">
-                    {/* Step Question */}
-                    <h3 className="text-lg md:text-xl font-semibold text-sky-700 mb-3">
+                <div className="w-full bg-white/80 backdrop-blur-lg border border-sky-100 rounded-2xl shadow-lg p-6 animate-fade-in">
+
+                    {/* Judul pertanyaan */}
+                    <h3 className="text-lg font-semibold text-sky-700 mb-3">
                         {step === 1 && "Pilih jenis kursus"}
                         {step === 2 && "Masukkan topik konten"}
                         {step === 3 && "Jelaskan detail konten"}
                     </h3>
 
+                    {/* Step 1 */}
                     {step === 1 && (
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                             {kursusList.map((k) => (
                                 <button
                                     key={k}
                                     onClick={() => handleChange("kursus", k)}
-                                    className={`px-4 py-2 rounded-xl border font-medium text-sm sm:text-base transition-all duration-200 ${answers.kursus === k
+                                    className={`px-4 py-2 rounded-xl border font-medium text-sm transition ${answers.kursus === k
                                         ? "bg-sky-600 text-white border-sky-600"
                                         : "bg-white text-gray-700 border-sky-200 hover:border-sky-400"
                                         }`}
@@ -120,30 +157,28 @@ ${answers.detail}
                         </div>
                     )}
 
+                    {/* Step 2 & 3 */}
                     {(step === 2 || step === 3) && (
                         <textarea
                             value={step === 2 ? answers.topik : answers.detail}
                             onChange={(e) => handleChange(step === 2 ? "topik" : "detail", e.target.value)}
                             rows={step === 2 ? 3 : 5}
-                            placeholder={
-                                step === 2
-                                    ? "Tulis topik konten..."
-                                    : "Jelaskan detail konten: target audiens, tone, durasi video..."
-                            }
-                            className="w-full border border-sky-200 rounded-xl p-4 focus:ring-2 focus:ring-sky-400 outline-none text-gray-700 transition min-h-[100px] animate-fade-in"
+                            placeholder={step === 2 ? "Tulis topik konten..." : "Jelaskan detail konten..."}
+                            className="w-full border border-sky-200 rounded-xl p-4 focus:ring-2 focus:ring-sky-400 outline-none text-gray-700"
                         />
                     )}
 
-                    {/* Navigation Buttons */}
+                    {/* Tombol navigasi */}
                     <div className="flex justify-between mt-6">
                         {step > 1 && (
                             <button
                                 onClick={handleBack}
-                                className="px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-600 font-medium flex items-center gap-2 transition"
+                                className="px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-600 font-medium"
                             >
                                 Kembali
                             </button>
                         )}
+
                         <button
                             onClick={handleNext}
                             disabled={
@@ -151,38 +186,54 @@ ${answers.detail}
                                 (step === 2 && !answers.topik.trim()) ||
                                 (step === 3 && !answers.detail.trim())
                             }
-                            className={`px-6 py-2 rounded-full text-white font-medium flex items-center gap-2 shadow-md 
-                ${step === 3 ? "bg-orange-500 hover:bg-orange-600" : "bg-sky-500 hover:bg-sky-600"} 
-                disabled:opacity-50 disabled:cursor-not-allowed transition-all`}
+                            className={`px-6 py-2 rounded-full text-white font-medium shadow-md 
+                                ${step === 3 ? "bg-orange-500 hover:bg-orange-600" : "bg-sky-500 hover:bg-sky-600"}
+                                disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2`}
                         >
                             {step === 3 ? "Generate" : "Lanjut"} <FaPaperPlane />
                         </button>
                     </div>
                 </div>
             ) : (
-                <div className="w-full bg-white/80 backdrop-blur-lg border border-sky-100 rounded-2xl shadow-lg p-6 transition-all duration-500 animate-fade-in">
+                /* HASIL AI */
+                <div className="w-full bg-white/80 backdrop-blur-lg border border-sky-100 rounded-2xl shadow-lg p-6 animate-fade-in">
+
+                    {/* Judul */}
                     <div className="flex items-center gap-3 mb-4">
-                        <FaRobot className="text-sky-500 text-2xl" />
-                        <h3 className="text-lg md:text-xl font-semibold text-sky-700">Konten AI</h3>
+                        <h3 className="text-xl font-semibold text-sky-700">Hasil Gambar Postingan Konten</h3>
                     </div>
 
-                    <div className="whitespace-pre-wrap leading-relaxed text-gray-700 bg-sky-50 border border-sky-100 rounded-xl p-4 shadow-inner min-h-[150px]">
-                        {generatedContent || (isTyping ? "AI sedang menulis konten..." : "")}
+                    {/* Gambar Dummy */}
+                    {generatedImage && (
+                        <div className="w-full mb-5">
+                            <img
+                                src={generatedImage}
+                                alt="Dummy Feed"
+                                className="w-full rounded-xl border shadow"
+                            />
+                        </div>
+                    )}
+
+                    {/* Konten Teks */}
+                    <div className="whitespace-pre-wrap leading-relaxed text-gray-700 bg-sky-50 border border-sky-100 rounded-xl p-4 min-h-[150px]">
+                        {generatedContent || (isTyping ? "AI sedang menulis..." : "")}
                     </div>
 
+                    {/* Indicator typing */}
                     {isTyping && (
                         <div className="mt-3 flex items-center gap-2 text-sky-400">
                             <span className="w-2 h-2 bg-sky-400 rounded-full animate-bounce"></span>
-                            <span className="w-2 h-2 bg-sky-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                            <span className="w-2 h-2 bg-sky-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                            <span className="w-2 h-2 bg-sky-400 rounded-full animate-bounce delay-200"></span>
+                            <span className="w-2 h-2 bg-sky-400 rounded-full animate-bounce delay-400"></span>
                             <p className="text-sm">AI sedang mengetik...</p>
                         </div>
                     )}
 
+                    {/* Tombol reset */}
                     <div className="flex justify-center mt-6">
                         <button
                             onClick={reset}
-                            className="px-6 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-full shadow font-medium transition"
+                            className="px-6 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-full shadow font-medium"
                         >
                             Buat Konten Lagi
                         </button>

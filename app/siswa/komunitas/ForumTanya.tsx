@@ -22,16 +22,26 @@ const ForumTanya: React.FC = () => {
     const [questions, setQuestions] = useState<Question[]>([
         {
             id: 1,
-            author: "Andi",
-            content: "Apa arti gotong royong di masyarakat modern?",
-            time: "8 menit yang lalu",
+            author: "Rina",
+            content:
+                "Bagaimana cara meningkatkan minat belajar siswa yang cepat bosan saat belajar di kelas?",
+            time: "12 menit yang lalu",
             image: null,
         },
         {
             id: 2,
-            author: "Asep",
-            content: "Bagaimana cara menjaga budaya lokal di era digital?",
-            time: "17 menit yang lalu",
+            author: "Budi",
+            content:
+                "Metode apa yang paling efektif untuk mengajar matematika agar siswa tidak takut angka?",
+            time: "28 menit yang lalu",
+            image: null,
+        },
+        {
+            id: 3,
+            author: "Lestari",
+            content:
+                "Saya baru membuka kursus bahasa Inggris, bagaimana cara promosi yang paling efektif untuk pemula?",
+            time: "1 jam yang lalu",
             image: null,
         },
     ]);
@@ -55,7 +65,7 @@ const ForumTanya: React.FC = () => {
 
         const newEntry: Question = {
             id: questions.length + 1,
-            author: "Guest",
+            author: "Pengguna Baru",
             content: newQuestion,
             time: "Baru saja",
             image: previewUrl,
@@ -68,17 +78,26 @@ const ForumTanya: React.FC = () => {
     };
 
     return (
-        <section className="min-h-screen flex flex-col items-center justify-start py-32 mx-5 md:mx-0" id="diskusi">
+        <section
+            className="min-h-screen flex flex-col items-center justify-start py-32 mx-5 md:mx-0"
+            id="diskusi"
+        >
             <div className="w-full max-w-3xl bg-white/60 backdrop-blur-md rounded-3xl shadow-md border-4 border-[#BCE0FD] p-6">
                 <h2 className="text-center text-2xl md:text-3xl font-bold text-[#003B5C] mb-6">
-                    Tanyakan pertanyaanmu disini
+                    Forum Tanya Mentor, Belajar Langsung dari Praktisi
                 </h2>
+
+                <p className="text-center text-gray-600 mb-6 text-sm md:text-base">
+                    Tanyakan apa saja seputar pembelajaran, pengajaran, metode belajar,
+                    hingga cara mengembangkan kursus. Pertanyaanmu akan dijawab oleh mentor
+                    dan instruktur profesional.
+                </p>
 
                 {/* Input pertanyaan */}
                 <div className="flex items-center gap-3 bg-white border border-[#BCE0FD] rounded-full px-4 py-2 shadow-sm mb-3">
                     <input
                         type="text"
-                        placeholder="Ketik pertanyaanmu disini !!"
+                        placeholder="Tulis pertanyaan terbaikmu di sini..."
                         value={newQuestion}
                         onChange={(e) => setNewQuestion(e.target.value)}
                         className="grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
@@ -134,6 +153,7 @@ const ForumTanya: React.FC = () => {
 
                             <div className="bg-gray-100 rounded-xl min-h-20 flex flex-col items-center justify-center text-gray-600 p-4">
                                 <p>{q.content}</p>
+
                                 {q.image && (
                                     <div className="relative w-full max-h-64 aspect-video mt-3 border border-gray-200 rounded-lg overflow-hidden">
                                         <Image

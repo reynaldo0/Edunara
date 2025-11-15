@@ -99,7 +99,7 @@ export default function SectionPanduan() {
         }
 
         return (
-            <div className="flex justify-center items-center gap-2 mt-10">
+            <div className="flex justify-center items-center gap-2 mt-10" id="panduan">
                 {pages.map((p, idx) =>
                     typeof p === "number" ? (
                         <button
@@ -123,7 +123,7 @@ export default function SectionPanduan() {
     };
 
     return (
-        <section className="min-h-screen bg-sky-50 p-10 flex flex-col items-center relative pb-20 md:pb-40">
+        <section className="min-h-screen bg-sky-50 p-10 flex flex-col items-center relative pb-20 md:pb-40" id="panduan">
             <div className="absolute bottom-0 w-full overflow-hidden leading-0">
                 <img
                     src="/illustrasi/pemilik/bottom.webp"

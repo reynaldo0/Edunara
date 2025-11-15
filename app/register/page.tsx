@@ -84,7 +84,7 @@ const Register: React.FC = () => {
 
                         <button
                             type="submit"
-                            className="mt-2 bg-[#1E90FF] text-white py-2 rounded-lg hover:bg-[#0074B7] transition-colors"
+                            className="mt-2 bg-siswa-primary-100 text-white py-2 rounded-lg hover:bg-siswa-primary-100/80 transition-colors"
                         >
                             Masuk
                         </button>

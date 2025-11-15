@@ -5,36 +5,37 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqs = [
     {
-        question: "#Bagaimana cara mencari kursus yang sesuai?",
+        question: "#Bagaimana cara mendaftarkan lembaga atau kursus saya di Edunara?",
         answer:
-            "Gunakan fitur pencarian di halaman utama dan filter berdasarkan kategori, lokasi, atau tingkat keahlian untuk menemukan kursus yang paling sesuai dengan kebutuhanmu.",
+            "Anda dapat membuat akun Pemilik Kursus terlebih dahulu. Setelah itu, masuk ke dashboard pemilik dan isi profil lembaga, lalu tambahkan kelas atau program yang ingin ditampilkan.",
     },
     {
-        question: "#Apakah saya bisa mendaftar langsung melalui website Edunara?",
+        question: "#Apakah saya bisa mengedit informasi kursus setelah dipublikasikan?",
         answer:
-            "Tentu! Setelah menemukan kursus yang kamu minati, klik tombol 'Daftar Sekarang' dan kamu akan diarahkan ke halaman pendaftaran resmi lembaga tersebut.",
+            "Ya, Anda dapat memperbarui harga, deskripsi, foto, durasi, serta jadwal kursus kapan saja melalui menu 'Kelola Kursus' di dashboard pemilik.",
     },
     {
-        question: "#Apakah kursus di Edunara semuanya berbayar?",
+        question: "#Bagaimana cara menarik lebih banyak siswa ke kursus saya?",
         answer:
-            "Tidak semua. Beberapa lembaga menawarkan kursus gratis, sedangkan yang lain menyediakan program berbayar dengan fasilitas tambahan seperti sertifikat dan bimbingan mentor.",
+            "Edunara menyediakan fitur optimasi profil, rekomendasi otomatis, serta promosi melalui halaman utama. Pastikan Anda mengunggah foto menarik, deskripsi lengkap, dan ulasan siswa.",
     },
     {
-        question: "#Bagaimana cara mengetahui reputasi lembaga kursus?",
+        question: "#Apakah Edunara menyediakan tools promosi otomatis?",
         answer:
-            "Setiap lembaga di Edunara memiliki profil lengkap beserta ulasan dari peserta sebelumnya, sehingga kamu bisa menilai kualitas dan kredibilitas lembaga sebelum mendaftar.",
+            "Ya! Anda dapat menggunakan AI Content Generator untuk membuat caption, script video, dan materi promosi lainnya hanya dengan beberapa klik.",
     },
     {
-        question: "#Apakah saya bisa mendapatkan rekomendasi kursus otomatis?",
+        question: "#Bagaimana cara mengelola pendaftaran siswa?",
         answer:
-            "Ya! Setelah kamu memilih minat dan bidang yang diinginkan, sistem kami akan memberikan rekomendasi kursus yang relevan dengan profil dan preferensimu.",
+            "Setiap pendaftaran yang masuk akan muncul di dashboard Anda. Anda bisa melihat data siswa, mengonfirmasi pendaftaran, atau menghubungi mereka langsung.",
     },
     {
-        question: "#Apakah Edunara menyediakan dukungan pengguna?",
+        question: "#Apakah saya dapat mengetahui performa kursus saya?",
         answer:
-            "Ya, tim kami siap membantu. Kamu dapat menghubungi kami melalui halaman kontak jika mengalami kendala dalam menggunakan platform.",
+            "Tentu. Edunara menyediakan data analitik seperti jumlah kunjungan, klik daftar, dan performa setiap kursus untuk membantu Anda memahami minat siswa.",
     },
 ];
+
 
 export default function Faq() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);

@@ -80,7 +80,6 @@ export default function DetailKursusPage() {
 
                 {course && (
                     <>
-                        <MentorSection logo={course.logo} mentor={course.mentor} title={course.title} />
                         <DeskripsiKursusSection
                             title={course.title}
                             image={course.image}

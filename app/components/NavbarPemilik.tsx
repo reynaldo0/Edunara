@@ -17,9 +17,10 @@ const NavbarPemilik: React.FC = () => {
 
     const menuItems: MenuItem[] = [
         { name: "Beranda", path: "/pemilik" },
-        { name: "Mentor", path: "/pemilik/mentor" },
-        { name: "Tentang", path: "/pemilik/tentang" },
-        { name: "Komunitas", path: "/pemilik/komunitas" },
+        { name: "Tentang", path: "/pemilik/#tentang" },
+        { name: "Daftar", path: "/pemilik/#daftar" },
+        { name: "Panduan", path: "/pemilik/#panduan" },
+        { name: "FAQ", path: "/pemilik/#faq" },
     ];
 
     // Efek scroll

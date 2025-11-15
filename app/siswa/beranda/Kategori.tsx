@@ -47,12 +47,11 @@ export default function Kategori() {
     const [selectedCategory, setSelectedCategory] =
         useState<CategoryName>("Bahasa Inggris");
     const [selectedDaerah, setSelectedDaerah] = useState("Jakarta Selatan");
-    const [searchQuery] = useState("");
+    const [input, setInput] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
-    const [input, setInput] = useState("");
-    const { setSearchTerm } = useSiswa();
 
+    // LOAD COURSES JSON
     useEffect(() => {
         fetch("/data/courses.json")
             .then((res) => res.json())
@@ -60,6 +59,7 @@ export default function Kategori() {
             .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
 
+    // SET CATEGORY FROM CONTEXT
     useEffect(() => {
         if (siswa.kategori && categories.some((c) => c.name === siswa.kategori)) {
             queueMicrotask(() => {
@@ -68,6 +68,7 @@ export default function Kategori() {
         }
     }, [siswa.kategori]);
 
+    // RESPONSIVE SLIDES
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) setItemsPerSlide(1);
@@ -79,50 +80,56 @@ export default function Kategori() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const filteredCourses = courses.filter(
-        (course) =>
-            course.category === selectedCategory &&
-            course.location === selectedDaerah &&
-            course.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // FILTER KURSUS
+    const filteredCourses = courses.filter((course) => {
+        const matchCategory = course.category === selectedCategory;
+        const matchDaerah = course.location === selectedDaerah;
+
+        const matchSearch =
+            course.title.toLowerCase().includes(input.toLowerCase()) ||
+            course.description.toLowerCase().includes(input.toLowerCase());
+
+        return matchCategory && matchDaerah && matchSearch;
+    });
 
     const maxIndex = Math.max(0, filteredCourses.length - itemsPerSlide);
+
     const nextSlide = () =>
         setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : prev));
+
     const prevSlide = () =>
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
 
     const RatingStars = ({ rating }: { rating: number }) => {
-        const stars = Array.from({ length: 5 }, (_, i) => (
-            <StarIcon
-                key={i}
-                className={`w-5 h-5 ${i < Math.round(rating) ? "text-yellow-400" : "text-gray-300"
-                    }`}
-            />
-        ));
-        return <div className="flex items-center">{stars}</div>;
+        return (
+            <div className="flex items-center">
+                {Array.from({ length: 5 }, (_, i) => (
+                    <StarIcon
+                        key={i}
+                        className={`w-5 h-5 ${i < Math.round(rating)
+                                ? "text-yellow-400"
+                                : "text-gray-300"
+                            }`}
+                    />
+                ))}
+            </div>
+        );
     };
-
-    const handleSearch = (e?: React.FormEvent) => {
-        e?.preventDefault();
-        if (input.trim()) {
-            setSearchTerm(input);    // pastikan kamu punya state searchTerm atau replacenya
-            router.push("/siswa/search");
-        }
-    };
-
 
     const handleExplore = (id: number, title: string) => {
-        const slug = toSlug(title);
+        const slug = title
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^\w-]+/g, "");
+
         router.push(`/siswa/kursus/${slug}?id=${id}`);
     };
 
-    const toSlug = (text: string) =>
-        text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
-
     return (
-        <section className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden" id="kursus">
-            {/* Background wave */}
+        <section
+            className="min-h-screen flex flex-col items-center py-12 px-6 sm:px-10 relative overflow-hidden"
+            id="kursus"
+        >
             <div className="absolute bottom-0 w-full overflow-hidden leading-0">
                 <img
                     src="/illustrasi/wave/rounded-b.webp"
@@ -130,23 +137,21 @@ export default function Kategori() {
                     className="w-full h-full object-cover"
                 />
             </div>
+
             <h2 className="text-2xl md:text-5xl font-bold text-center text-pemilik-primary-200 mb-10">
                 Kategori Kursus
             </h2>
 
-            {/* Filter Bar */}
+            {/* FILTER BAR */}
             <div className="w-full max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
-                {/* Dropdown Kiri */}
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <select
                         value={selectedDaerah}
                         onChange={(e) => setSelectedDaerah(e.target.value)}
-                        className="border border-gray-300 rounded-xl px-4 py-2 text-black focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-gray-200 w-full sm:w-48"
+                        className="border border-gray-300 rounded-xl px-4 py-2 bg-gray-200 w-full sm:w-48"
                     >
-                        {daerahList.map((daerah) => (
-                            <option key={daerah} value={daerah}>
-                                {daerah}
-                            </option>
+                        {daerahList.map((d) => (
+                            <option key={d}>{d}</option>
                         ))}
                     </select>
 
@@ -155,53 +160,47 @@ export default function Kategori() {
                         onChange={(e) =>
                             setSelectedCategory(e.target.value as CategoryName)
                         }
-                        className="border border-gray-300 rounded-xl px-4 py-2 text-black focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-gray-200 w-full sm:w-48"
+                        className="border border-gray-300 rounded-xl px-4 py-2 bg-gray-200 w-full sm:w-48"
                     >
                         {categories.map((cat) => (
-                            <option key={cat.name} value={cat.name}>
-                                {cat.name}
-                            </option>
+                            <option key={cat.name}>{cat.name}</option>
                         ))}
                     </select>
                 </div>
 
-                {/* Search Bar */}
+                {/* SEARCH */}
                 <div className="relative w-full sm:w-64">
-                    <div className="relative w-full sm:w-64">
-                        <form onSubmit={handleSearch}>
-                            <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-black" />
-                            <input
-                                type="text"
-                                placeholder="Cari kursus..."
-                                value={input}
-                                onChange={(e) => setInput(e.target.value)}
-                                className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 text-black focus:ring-2 focus:ring-siswa-primary-200 focus:outline-none bg-gray-200"
-                            />
-                        </form>
-                    </div>
-
+                    <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5 text-black" />
+                    <input
+                        type="text"
+                        placeholder="Cari kursus..."
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2 bg-gray-200"
+                    />
                 </div>
-
             </div>
 
-            {/* Hasil Kursus */}
+            {/* HASIL */}
             {filteredCourses.length === 0 ? (
                 <p className="text-gray-600 text-lg font-medium text-center">
-                    Tidak ada kursus untuk kategori{" "}
-                    <span className="font-semibold">{selectedCategory}</span> di{" "}
-                    <span className="font-semibold">{selectedDaerah}</span>.
+                    Tidak ada kursus yang cocok dengan pencarian.
                 </p>
             ) : (
                 <div className="relative w-full max-w-6xl flex items-center justify-center">
+                    {/* PREV */}
                     <button
                         onClick={prevSlide}
                         disabled={currentIndex === 0}
-                        className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+                        className={`absolute -left-3 sm:-left-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition ${currentIndex === 0
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
                             }`}
                     >
-                        <ChevronLeftIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
+                        <ChevronLeftIcon className="w-6 h-6 text-slate-800" />
                     </button>
 
+                    {/* SLIDER */}
                     <div className="overflow-hidden w-full">
                         <div
                             className="flex transition-transform duration-500 ease-in-out"
@@ -215,24 +214,26 @@ export default function Kategori() {
                                     key={course.id}
                                     className="w-full sm:w-1/2 md:w-1/3 shrink-0 p-3"
                                 >
-                                    <div className="bg-white rounded-3xl shadow-lg p-5 sm:p-6 hover:scale-[1.03] transition-transform duration-300 cursor-pointer group h-full flex flex-col">
+                                    <div className="bg-white rounded-3xl shadow-lg p-5 hover:scale-[1.03] transition cursor-pointer group h-full flex flex-col">
                                         <div className="overflow-hidden rounded-2xl">
                                             <Image
                                                 src={course.image}
                                                 alt={course.title}
                                                 width={400}
                                                 height={300}
-                                                className="w-full h-48 sm:h-52 object-cover object-top rounded-2xl group-hover:scale-110 transition-transform duration-500"
+                                                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
                                         </div>
 
-                                        <p className="text-sm font-semibold text-gray-200 mt-3 mb-1">
+                                        <p className="text-sm font-semibold text-gray-400 mt-3">
                                             {course.location}
                                         </p>
-                                        <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
+
+                                        <h3 className="text-lg font-semibold text-gray-800">
                                             {course.title}
                                         </h3>
-                                        <p className="text-sm text-gray-600 mt-1 leading-relaxed flex-1">
+
+                                        <p className="text-sm text-gray-600 mt-1 flex-1">
                                             {course.description}
                                         </p>
 
@@ -244,8 +245,10 @@ export default function Kategori() {
                                         </div>
 
                                         <button
-                                            onClick={() => handleExplore(course.id, course.title)}
-                                            className="mt-5 bg-siswa-primary-100 text-white px-5 py-2 rounded-full text-sm hover:bg-siswa-primary-100/80 active:scale-95 transition"
+                                            onClick={() =>
+                                                handleExplore(course.id, course.title)
+                                            }
+                                            className="mt-5 cursor-pointer bg-siswa-primary-100 text-white px-5 py-2 rounded-full hover:bg-siswa-primary-100/80 transition"
                                         >
                                             Jelajahi
                                         </button>
@@ -255,27 +258,30 @@ export default function Kategori() {
                         </div>
                     </div>
 
+                    {/* NEXT */}
                     <button
                         onClick={nextSlide}
                         disabled={currentIndex >= maxIndex}
-                        className={`absolute -right-3 sm:-right-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition-all z-10 ${currentIndex >= maxIndex ? "opacity-50 cursor-not-allowed" : ""
+                        className={`absolute -right-3 sm:-right-8 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-200 transition ${currentIndex >= maxIndex
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
                             }`}
                     >
-                        <ChevronRightIcon className="w-6 h-6 sm:w-7 sm:h-7 text-slate-800" />
+                        <ChevronRightIcon className="w-6 h-6 text-slate-800" />
                     </button>
                 </div>
             )}
+
             {filteredCourses.length > 0 && (
                 <div className="flex justify-center mt-10 z-10">
                     <button
                         onClick={() => router.push("/siswa/kursus")}
-                        className="bg-siswa-primary-100 text-white px-6 py-2.5 rounded-full font-medium hover:bg-siswa-primary-100/80 active:scale-95 transition-all shadow-md"
+                        className="bg-siswa-primary-100 text-white px-6 py-2.5 rounded-full font-medium hover:bg-siswa-primary-100/80"
                     >
                         Lihat Semua
                     </button>
                 </div>
             )}
-
         </section>
     );
 }

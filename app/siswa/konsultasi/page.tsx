@@ -76,7 +76,7 @@ Semangat terus! Dunia butuh orang dengan semangat seperti kamu 🚀
             <NavbarSiswa/>
             <button
                 onClick={() => router.back()}
-                className="absolute top-32 md:top-42 left-5 md:left-20 flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-sky-600 rounded-full shadow-sm border border-sky-100 font-medium transition"
+                className="absolute cursor-pointer top-32 md:top-42 left-5 md:left-20 flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-sky-600 rounded-full shadow-sm border border-sky-100 font-medium transition"
             >
                 <FaArrowLeft /> Kembali
             </button>

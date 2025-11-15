@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Daftar: React.FC = () => {
     return (
-        <section className="flex flex-col items-center justify-center py-16 px-6 bg-[#EAF7FF] relative pt-36">
+        <section className="flex flex-col items-center justify-center py-16 px-6 bg-[#EAF7FF] relative pt-20 md:pt-52" id="daftar">
             <div className="absolute top-0 w-full overflow-hidden leading-0">
                 <img
                     src="/illustrasi/pemilik/rounded-t.webp"
