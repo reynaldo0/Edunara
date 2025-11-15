@@ -29,10 +29,10 @@ export default function Feature() {
         <section className="bg-linear-to-b from-[#79C1FF] to-[#2E6DA4]/70 flex justify-center items-center min-h-screen px-6 py-20">
             <div className="max-w-6xl mx-auto text-center">
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Layanan Kami
                 </h2>
-                <p className="text-gray-700 max-w-2xl mx-auto mb-12 text-base md:text-lg">
+                <p className="text-gray-50 max-w-2xl mx-auto mb-12 text-base md:text-lg">
                     Temukan berbagai layanan digital yang membantu kamu dalam perjalanan
                     belajar di kursus Jakarta — dari konsultasi, komunitas, hingga asisten
                     pintar yang siap membantu kapan saja.

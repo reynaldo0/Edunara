@@ -20,7 +20,7 @@ export default function Home() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/illustrasi/bg.png" // letakkan file gambar di public/bg-login.png
+          src="/illustrasi/bg.png"
           alt="Background"
           fill
           className="object-cover object-center"
@@ -28,26 +28,29 @@ export default function Home() {
         />
       </div>
 
-      {/* Overlay transparan lembut biar teks tetap terbaca */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-0"></div>
 
-      {/* Card utama */}
+      {/* Card */}
       <div className="relative z-10 bg-white rounded-3xl shadow-2xl px-8 py-10 md:px-16 md:py-14 max-w-3xl w-[90%] text-center border border-[#CBE8FF]/60">
         <h1 className="text-3xl md:text-4xl font-bold text-[#003B5C] mb-3">
-          Selamat Datang
+          Mulai Perjalananmu di Sini
         </h1>
+
         <p className="text-zinc-600 text-lg mb-10 font-medium">
-          Silahkan memilih!
+          Pilih peranmu dan temukan pengalaman yang sudah kami siapkan khusus
+          untuk membantu kamu berkembang. Siap untuk melanjutkan?
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16">
           {/* Siswa */}
           <button
             onClick={() => handleSelect("siswa")}
-            className={`group flex flex-col items-center justify-center bg-white border-[6px] rounded-2xl p-6 md:p-8 w-52 hover:scale-105 transition-all duration-300 ${selected === "siswa"
+            className={`group flex flex-col items-center justify-center bg-white border-[6px] rounded-2xl p-6 md:p-8 w-52 hover:scale-105 transition-all duration-300 ${
+              selected === "siswa"
                 ? "border-[#4DB7FF] shadow-lg"
                 : "border-[#AEE3FF] hover:border-[#72C9FF]"
-              }`}
+            }`}
           >
             <div className="relative w-20 h-20 mb-4">
               <Image
@@ -57,7 +60,9 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
-            <span className="text-xl font-semibold text-[#003B5C]">Siswa</span>
+            <span className="text-xl font-semibold text-[#003B5C]">
+              Saya Siswa
+            </span>
           </button>
 
           <span className="text-lg font-semibold text-[#003B5C]">atau</span>
@@ -65,10 +70,11 @@ export default function Home() {
           {/* Pemilik Kursus */}
           <button
             onClick={() => handleSelect("pemilik")}
-            className={`group flex flex-col items-center justify-center bg-white border-[6px] rounded-2xl p-6 md:p-8 w-52 hover:scale-105 transition-all duration-300 ${selected === "pemilik"
+            className={`group flex flex-col items-center justify-center bg-white border-[6px] rounded-2xl p-6 md:p-8 w-52 hover:scale-105 transition-all duration-300 ${
+              selected === "pemilik"
                 ? "border-pemilik-primary-200 shadow-lg"
                 : "border-[#BFD4FF] hover:border-[#1E2F6E]"
-              }`}
+            }`}
           >
             <div className="relative w-20 h-20 mb-4">
               <Image
@@ -79,7 +85,7 @@ export default function Home() {
               />
             </div>
             <span className="text-xl font-semibold text-[#003B5C]">
-              Pemilik Kursus
+              Saya Pemilik Kursus
             </span>
           </button>
         </div>

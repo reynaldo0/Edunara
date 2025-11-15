@@ -19,7 +19,7 @@
     "description": "Pemilihan materi untuk pembelajaran siswa merupakan salah satu hal krusial untuk siswa dalam memahami konsep materi tertentu.",
     "progress": 20,
     "category": "Fasilitas",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/fasilitas/materi.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Pahami audiens Anda ",
@@ -34,7 +34,7 @@
     "description": "Fasilitas memiliki pengaruh signifikan terhadap kursus karena membantu memperlancar proses belajar dan meningkatkan motivasi siswa.",
     "progress": 20,
     "category": "Fasilitas",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/fasilitas/memilih.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Merancang ruang belajar yang optimal",
@@ -49,7 +49,7 @@
     "description": "Tentukan hasil spesifik dan terukur yang ingin dicapai peserta didik setelah menyelesaikan kursus.",
     "progress": 20,
     "category": "Kurikulum",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/kurikulum/mulai.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Tentukan audiens",
@@ -64,7 +64,7 @@
     "description": "Atur konten kursus ke dalam urutan yang masuk akal, sering kali dimulai dari tujuan pembelajaran",
     "progress": 20,
     "category": "Kurikulum",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/kurikulum/rancangan.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Membuat struktur kursus",
@@ -79,7 +79,7 @@
     "description": "Gabungkan ceramah, diskusi, studi kasus, simulasi, atau blended learning untuk menjaga keterlibatan.",
     "progress": 20,
     "category": "Kurikulum",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/kurikulum/gunakan.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Membuat program Diskusi dan kerja kelompok",
@@ -94,7 +94,7 @@
     "description": "Tentukan hasil spesifik dan terukur yang ingin dicapai peserta didik setelah menyelesaikan kursus.",
     "progress": 20,
     "category": "Tips Mengajar",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/mengajar/persiapan.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Tentukan audiens",
@@ -109,7 +109,7 @@
     "description": "Sederhanakan materi sulit dengan memberikan contoh soal yang bertahap dari yang mudah hingga kompleks, serta gunakan perumpamaan yang realistis.",
     "progress": 20,
     "category": "Tips Mengajar",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/mengajar/metode.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "Membuat struktur kursus",
@@ -124,7 +124,7 @@
     "description": "Ulangi materi pelajaran sebelumnya secara berkala untuk memperkuat pemahaman siswa.",
     "progress": 20,
     "category": "Tips Mengajar",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/mengajar/menjaga.webp",
     "slug": "mengenal-fasilitas",
     "details": [
       "membuat kurikulum yang membuat siswa konsisten",
@@ -139,7 +139,7 @@
     "description": "Promosi Melalui Media Sosial Gunakan kekuatan platform digital untuk memperluas jangkauan audiens dan membangun kepercayaan publik.",
     "progress": 20,
     "category": "Tips Promosi",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/promosi/media.webp",
     "slug": "promosi-media-sosial",
     "details": [
       "Buat konten rutin di Instagram, TikTok, dan YouTube Shorts",
@@ -154,7 +154,7 @@
     "description": "Promosi Berbasis Komunitas Bangun hubungan langsung dengan lingkungan sekitar untuk meningkatkan kehadiran kursus secara organik.",
     "progress": 20,
     "category": "Tips Promosi",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/promosi/komunitas.webp",
     "slug": "promosi-berbasis-komunitas",
     "details": [
       "Kerja sama dengan sekolah, kampus, atau organisasi lokal",
@@ -169,7 +169,7 @@
     "description": "Promosi Digital Terarah Manfaatkan strategi pemasaran digital yang lebih terukur agar promosi berjalan efisien dan tepat sasaran.",
     "progress": 20,
     "category": "Tips Promosi",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
+    "image": "/images/panduan/promosi/digital.webp",
     "slug": "promosi-digital-terarah",
     "details": [
       "Gunakan iklan berbayar di Google Ads dan Meta Ads",
@@ -177,21 +177,6 @@
       "Buat situs web sederhana dengan formulir pendaftaran",
       "Analisis hasil kampanye menggunakan data insight",
       "Buat newsletter rutin dengan tips belajar dan promo menarik"
-    ]
-  },
-  {
-    "title": "Menjaga konsistensi",
-    "description": "Bangun Identitas Visual yang Konsisten Pastikan setiap elemen visual kursus mencerminkan nilai dan kepribadian brand",
-    "progress": 20,
-    "category": "Branding",
-    "image": "/images/panduan/fasilitas/meningkatkan.webp",
-    "slug": "mengenal-fasilitas",
-    "details": [
-      "Pilih warna utama dan font yang mudah dikenali",
-      "Gunakan logo yang sederhana dan bermakna",
-      "Terapkan gaya desain yang konsisten di semua media",
-      "Buat template visual untuk promosi dan materi belajar",
-      "Gunakan foto/grafis berkualitas tinggi"
     ]
   }
 ]

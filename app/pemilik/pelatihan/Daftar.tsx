@@ -1,10 +1,18 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Daftar: React.FC = () => {
     return (
-        <section className="flex flex-col items-center justify-center py-16 px-6 bg-[#EAF7FF]">
+        <section className="flex flex-col items-center justify-center py-16 px-6 bg-[#EAF7FF] relative pt-36">
+            <div className="absolute top-0 w-full overflow-hidden leading-0">
+                <img
+                    src="/illustrasi/pemilik/rounded-t.webp"
+                    alt="Wave"
+                    className="w-full h-full object-cover"
+                />
+            </div>
             {/* Title */}
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#003B5C] mb-10">
                 Daftarkan Kursus kamu, di maps kami
@@ -18,9 +26,9 @@ const Daftar: React.FC = () => {
                         Segera daftarkan kursusmu disini
                     </h3>
 
-                    <a href="/pemilik/daftar" className="bg-pemilik-primary-100 hover:bg-pemilik-primary-100/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
+                    <Link href="/pemilik/daftar" className="bg-pemilik-primary-100 hover:bg-pemilik-primary-100/90 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
                         Daftar Sekarang
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Image Section */}
