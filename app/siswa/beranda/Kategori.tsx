@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { useSiswa } from "../../context/SiswaContext";
 
 const categories = [
+    { name: "Semua" },
     { name: "Matematika" },
     { name: "Bahasa Inggris" },
     { name: "Bahasa Jepang" },
@@ -20,6 +21,7 @@ const categories = [
 ] as const;
 
 const daerahList = [
+    "Semua",
     "Jakarta Pusat",
     "Jakarta Selatan",
     "Jakarta Timur",
@@ -45,8 +47,9 @@ export default function Kategori() {
 
     const [courses, setCourses] = useState<Course[]>([]);
     const [selectedCategory, setSelectedCategory] =
-        useState<CategoryName>("Bahasa Inggris");
-    const [selectedDaerah, setSelectedDaerah] = useState("Jakarta Selatan");
+        useState<CategoryName>("Semua");
+    const [selectedDaerah, setSelectedDaerah] = useState("Semua");
+
     const [input, setInput] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
@@ -59,9 +62,12 @@ export default function Kategori() {
             .catch((err) => console.error("Gagal memuat data:", err));
     }, []);
 
-    // SET CATEGORY FROM CONTEXT
+    // APPLY CONTEXT CATEGORY
     useEffect(() => {
-        if (siswa.kategori && categories.some((c) => c.name === siswa.kategori)) {
+        if (
+            siswa.kategori &&
+            categories.some((c) => c.name === siswa.kategori)
+        ) {
             queueMicrotask(() => {
                 setSelectedCategory(siswa.kategori as CategoryName);
             });
@@ -80,14 +86,23 @@ export default function Kategori() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // FILTER KURSUS
+    // 🔥 FILTER ALL DATA
     const filteredCourses = courses.filter((course) => {
-        const matchCategory = course.category === selectedCategory;
-        const matchDaerah = course.location === selectedDaerah;
+        const q = input.toLowerCase();
 
         const matchSearch =
-            course.title.toLowerCase().includes(input.toLowerCase()) ||
-            course.description.toLowerCase().includes(input.toLowerCase());
+            course.title.toLowerCase().includes(q) ||
+            course.description.toLowerCase().includes(q) ||
+            course.category.toLowerCase().includes(q) ||
+            course.location.toLowerCase().includes(q);
+
+        const matchCategory =
+            selectedCategory === "Semua" ||
+            course.category === selectedCategory;
+
+        const matchDaerah =
+            selectedDaerah === "Semua" ||
+            course.location === selectedDaerah;
 
         return matchCategory && matchDaerah && matchSearch;
     });
@@ -100,21 +115,19 @@ export default function Kategori() {
     const prevSlide = () =>
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
 
-    const RatingStars = ({ rating }: { rating: number }) => {
-        return (
-            <div className="flex items-center">
-                {Array.from({ length: 5 }, (_, i) => (
-                    <StarIcon
-                        key={i}
-                        className={`w-5 h-5 ${i < Math.round(rating)
-                                ? "text-yellow-400"
-                                : "text-gray-300"
-                            }`}
-                    />
-                ))}
-            </div>
-        );
-    };
+    const RatingStars = ({ rating }: { rating: number }) => (
+        <div className="flex items-center">
+            {Array.from({ length: 5 }, (_, i) => (
+                <StarIcon
+                    key={i}
+                    className={`w-5 h-5 ${i < Math.round(rating)
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                />
+            ))}
+        </div>
+    );
 
     const handleExplore = (id: number, title: string) => {
         const slug = title
@@ -145,6 +158,7 @@ export default function Kategori() {
             {/* FILTER BAR */}
             <div className="w-full max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    {/* FILTER DAERAH */}
                     <select
                         value={selectedDaerah}
                         onChange={(e) => setSelectedDaerah(e.target.value)}
@@ -155,6 +169,7 @@ export default function Kategori() {
                         ))}
                     </select>
 
+                    {/* FILTER CATEGORY */}
                     <select
                         value={selectedCategory}
                         onChange={(e) =>
@@ -246,7 +261,10 @@ export default function Kategori() {
 
                                         <button
                                             onClick={() =>
-                                                handleExplore(course.id, course.title)
+                                                handleExplore(
+                                                    course.id,
+                                                    course.title
+                                                )
                                             }
                                             className="mt-5 cursor-pointer bg-siswa-primary-100 text-white px-5 py-2 rounded-full hover:bg-siswa-primary-100/80 transition"
                                         >
