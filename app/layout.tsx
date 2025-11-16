@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Growlab",
+  title: "Edunara",
   description: "Platform Kursus Interaktif",
+  icons: {
+    icon: "/illustrasi/logos.webp", 
+  },
 };
 
 export default function RootLayout({

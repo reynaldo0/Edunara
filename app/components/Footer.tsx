@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiPhone, FiMail } from "react-icons/fi";
+import Link from "next/link";
 
 export default function Footer() {
     const router = useRouter();
@@ -117,9 +118,9 @@ export default function Footer() {
 
                 {/* Button Row */}
                 <div className="flex justify-end mt-6">
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-full transition-transform duration-300 hover:scale-105">
+                    <Link href='/' className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-full transition-transform duration-300 hover:scale-105">
                         Kembali
-                    </button>
+                    </Link>
                 </div>
 
                 <hr className="border-gray-100 mt-6 mb-4" />

@@ -135,7 +135,7 @@ const ForumSection: React.FC = () => {
         <section className="relative py-20 min-h-screen mx-auto pb-12">
             <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
                 <img
-                    src="/illustrasi/wave/rounded-b.webp"
+                    src="/illustrasi/wave/footer.webp"
                     alt="Wave"
                     className="w-full h-full object-cover"
                 />
