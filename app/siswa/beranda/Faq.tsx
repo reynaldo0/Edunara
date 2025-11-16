@@ -55,7 +55,7 @@ export default function Faq() {
             </div>
             <div className="absolute bottom-0 w-full overflow-hidden leading-0">
                 <img
-                    src="/illustrasi/wave/rounded-b.webp"
+                    src="/illustrasi/wave/footer.webp"
                     alt="Wave"
                     className="w-full h-full object-cover"
                 />
