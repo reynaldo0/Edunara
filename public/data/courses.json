@@ -8,7 +8,7 @@
     "location": "Jakarta Selatan",
     "lat": -6.279469462122016,
     "lng": 106.85937053504863,
-    "image": "/kursus/matematika/lesprivate/berita.webp",
+    "image": "/images/kursus/matematika/lesprivate/berita.webp",
     "logo": "/kursus/matematika/lesprivate/logo.webp",
     "whatsapp": "62895384435283",
     "website": "https://www.gurulesprivate.co.id/",
@@ -28,13 +28,13 @@
         "name": "Siti Roimah",
         "role": "Ibu Rumah Tangga",
         "message": "Anak saya bisa belajar matematika dengan lebih baik, semenjak bergabung dengan Gurulesprivate.",
-        "image": "/kursus/matematika/lesprivate/siti.webp"
+        "image": "/images/kursus/matematika/lesprivate/siti.webp"
       },
       {
         "name": "Nilam",
         "role": "Ibu Rumah Tangga",
         "message": "Guru-gurunya sabar dan menjelaskan sampai anak saya benar-benar paham.",
-        "image": "/kursus/matematika/lesprivate/nilam.webp"
+        "image": "/images/kursus/matematika/lesprivate/nilam.webp"
       }
     ],
     "careers": [
@@ -70,10 +70,10 @@
     "title": "Sakamoto Matemathics",
     "description": "Teruji Sudah 20 tahun di Indonesia Membuat Anak Senang, Bisa, dan Paham Matematika",
     "rating": 5,
-    "location": "Jakarta Barat",
+  "location": "Jakarta Barat",
     "lat": -6.1831205243450675,
     "lng": 106.7864672269903,
-    "image": "/kursus/matematika/sakamoto/berita.webp",
+    "image": "/images/kursus/matematika/sakamoto/berita.webp",
     "logo": "/kursus/matematika/sakamoto/logo.webp",
     "whatsapp": "6287889190808",
     "mentor": {
@@ -92,13 +92,13 @@
         "name": "Alan Baker",
         "role": "Alumni Prodi Matematika 2018",
         "message": "Nilai rapor anak saya naik drastis setelah ikut bimbingan di Kursus Sakamoto Mathematics.",
-        "image": "/kursus/matematika/sakamoto/alan.webp"
+        "image": "/images/kursus/matematika/sakamoto/alan.webp"
       },
       {
         "name": "Naufal",
         "role": "Alumni Prodi Matematika 2020",
         "message": "Awalnya anak saya malas belajar, tapi sekarang jadi semangat setiap kali jadwal kursus.",
-        "image": "/kursus/matematika/sakamoto/naufal.webp"
+        "image": "/images/kursus/matematika/sakamoto/naufal.webp"
       }
     ],
     "careers": [
@@ -138,7 +138,7 @@
     "location": "Jakarta Barat",
     "lat": -6.2146,
     "lng": 106.8451,
-    "image": "/kursus/matematika/gurumatematika/berita.webp",
+    "image": "/images/kursus/matematika/gurumatematika/berita.webp",
     "logo": "/kursus/matematika/gurumatematika/logo.webp",
     "whatsapp": "6287799122273",
     "mentor": {
@@ -158,13 +158,13 @@
         "name": "Siswa Alumni A",
         "role": "Alumni",
         "message": "Melalui GuruMatematika, saya berhasil masuk kampus impian dengan bantuan materi matematika intensif.",
-        "image": "/kursus/matematika/gurumatematika/testi1.webp"
+        "image": "/images/kursus/matematika/gurumatematika/testi1.webp"
       },
       {
         "name": "Budi Santoso",
         "role": "Orang Tua Siswa SMP",
         "message": "Anak saya yang dulu kurang percaya diri dalam pelajaran matematika kini mampu mendapat nilai 95 di sekolah. Terima kasih GuruMatematika!",
-        "image": "/kursus/matematika/gurumatematika/testi2.webp"
+        "image": "/images/kursus/matematika/gurumatematika/testi2.webp"
       }
     ],
     "careers": [
@@ -204,7 +204,7 @@
     "location": "Jakarta Selatan",
     "lat": -6.1612026896892935,
     "lng": 106.76071388861295,
-    "image": "/kursus/matematika/matica/berita.webp",
+    "image": "/images/kursus/matematika/matica/berita.webp",
     "logo": "/kursus/matematika/matica/logo.webp",
     "whatsapp": "62816811718",
     "mentor": {
@@ -224,13 +224,13 @@
         "name": "Orang Tua Siswa A",
         "role": "Orang Tua",
         "message": "Anak saya jadi lebih percaya diri dalam matematika setelah ikut Matica. Sekarang nilai ujiannya selalu di atas 90!",
-        "image": "/kursus/matematika/matica/testi1.webp"
+        "image": "/images/kursus/matematika/matica/testi1.webp"
       },
       {
         "name": "Diana Kusuma",
         "role": "Siswa SMA",
         "message": "Guru-gurunya sabar dan penjelasannya mudah dipahami. Saya akhirnya tidak takut lagi dengan soal HOTS di sekolah.",
-        "image": "/kursus/matematika/matica/testi2.webp"
+        "image": "/images/kursus/matematika/matica/testi2.webp"
       }
     ],
     "careers": [
@@ -269,7 +269,7 @@
     "location": "Jakarta Pusat",
     "lat": -6.210970714560274,
     "lng": 106.81612638540422,
-    "image": "/kursus/inggris/golden/golden.webp",
+    "image": "/images/kursus/inggris/golden/golden.webp",
     "logo": "/kursus/inggris/golden/logo.webp",
     "whatsapp": "6285717353920",
     "mentor": {
@@ -288,13 +288,13 @@
         "name": "Putri Gina Earth",
         "role": "IT profesional",
         "message": "I feel a lot of improvement in effective word usage and learning new vocabulary. Golden English always provides creative ways to learn and keeps the class engaging.",
-        "image": "/kursus/inggris/golden/putri.webp"
+        "image": "/images/kursus/inggris/golden/putri.webp"
       },
       {
         "name": "Hakim Al-Habsyi",
         "role": "Laywer (Pengacara)",
         "message": "I really love learning English at Golden English, all teacher are smart, cool, dan friendly. GE has a good method for teaching students who want to improve their English.",
-        "image": "/kursus/inggris/golden/haakim.webp"
+        "image": "/images/kursus/inggris/golden/haakim.webp"
       }
     ],
     "careers": [
@@ -333,7 +333,7 @@
     "location": "Jakarta Selatan",
     "lat": -6.241628459912131,
     "lng": 106.84453097300973,
-    "image": "/kursus/inggris/bertil/english.webp",
+    "image": "/images/kursus/inggris/bertil/english.webp",
     "logo": "/kursus/inggris/bertil/logo.webp",
     "whatsapp": "628551500553",
     "mentor": {
@@ -352,13 +352,13 @@
         "name": "Izah Zulaikhah ",
         "role": "Ibu Rumah Tangga",
         "message": "Anak saya sekarang bisa bahasa inggris di level TB 5 dan makin fasih",
-        "image": "/kursus/inggris/bertil/izah.webp"
+        "image": "/images/kursus/inggris/bertil/izah.webp"
       },
       {
         "name": "Dr Asih",
         "role": "Dokter)",
         "message": "Setiap kali anak saya pulang dari kursus, selalu ada cerita seru yang dibawakannya",
-        "image": "/kursus/inggris/bertil/asih.webp"
+        "image": "/images/kursus/inggris/bertil/asih.webp"
       }
     ],
     "careers": [
@@ -397,7 +397,7 @@
     "location": "Jakarta Selatan",
     "lat": -6.264981,
     "lng": 106.799434,
-    "image": "/kursus/inggris/etoday/berita.webp",
+    "image": "/images/kursus/inggris/etoday/berita.webp",
     "logo": "/kursus/inggris/etoday/logo.webp",
     "whatsapp": "62818888887",
     "mentor": {
@@ -457,7 +457,7 @@
     "location": "Jakarta Barat",
     "lat": -6.1579700237364285,
     "lng": 106.72663798123436,
-    "image": "/kursus/jepang/kanrin/berita.webp",
+    "image": "/images/kursus/jepang/kanrin/berita.webp",
     "logo": "/kursus/jepang/kanrin/logo.webp",
     "whatsapp": "6282227023023",
     "website": "https://www.youtube.com/@kanrin.edu.indonesia",
@@ -477,13 +477,13 @@
         "name": "Ken Takura",
         "role": "Pelajar Bahasa Jepang",
         "message": "Semenjak saya les di Kanrin Edukasi Indonesia, saya lebih mudah untuk berbicara kepada orang Jepang",
-        "image": "/kursus/jepang/kanrin/ken.webp"
+        "image": "/images/kursus/jepang/kanrin/ken.webp"
       },
       {
         "name": "Ali Habsihtiani",
         "role": "Mahasiswa",
         "message": "Kanrin Edukasi Indonesia benar benar membantu saya dalam mencari pekerjaan di Jepang",
-        "image": "/kursus/jepang/kanrin/ali.webp"
+        "image": "/images/kursus/jepang/kanrin/ali.webp"
       }
     ],
     "careers": [
@@ -522,7 +522,7 @@
     "location": "Jakarta Utara",
     "lat": -6.136983589767282,
     "lng": 106.78378245033986,
-    "image": "/kursus/jepang/daruma/berita.webp",
+    "image": "/images/kursus/jepang/daruma/berita.webp",
     "logo": "/kursus/jepang/daruma/logo.webp",
     "whatsapp": "622166678836",
     "website": "https://www.darumanihongokoshu.com/",
@@ -542,13 +542,13 @@
         "name": "Risa Sarah",
         "role": "Pelajar",
         "message": "Keinginan saya untuk masuk ke Universitas Jepang tercapai dan bisa berkomunikasi dengan orang Jepang disana",
-        "image": "/kursus/jepang/daruma/risa.webp"
+        "image": "/images/kursus/jepang/daruma/risa.webp"
       },
       {
         "name": "Melvin Marzuki",
         "role": "Developer",
         "message": "Mengikuti program sekolah bahasa Jepang selama 3 bulan, membuat saya fasih berbahasa jepang",
-        "image": "/kursus/jepang/daruma/melvin.webp"
+        "image": "/images/kursus/jepang/daruma/melvin.webp"
       }
     ],
     "careers": [
@@ -588,7 +588,7 @@
     "location": "Jakarta Barat",
     "lat": -6.177095998215521,
     "lng": 106.78323896254396,
-    "image": "/kursus/jepang/yoko/kelas.webp",
+    "image": "/images/kursus/jepang/yoko/kelas.webp",
     "logo": "/kursus/jepang/yoko/logo.webp",
     "whatsapp": "62811862918",
     "website": "https://www.yokonihongo.com/",
@@ -651,7 +651,7 @@
     "location": "Jakarta Pusat",
     "lat": -6.15852939699486,
     "lng": 106.83648883868936,
-    "image": "/kursus/jepang/evergreen/berita.webp",
+    "image": "/images/kursus/jepang/evergreen/berita.webp",
     "logo": "/kursus/jepang/evergreen/logo.webp",
     "whatsapp": "6287888666692",
     "website": "https://www.kursus-jepang-evergreen.com/",
@@ -671,13 +671,13 @@
         "name": "Rina Lestari",
         "role": "Calon Mahasiswa Jepang",
         "message": "Evergreen sangat membantu persiapan saya ke Jepang – modul, simulasi, dan dukungan sangat lengkap.",
-        "image": "/kursus/jepang/evergreen/testi1.webp"
+        "image": "/images/kursus/jepang/evergreen/testi1.webp"
       },
       {
         "name": "Bambang Suharto",
         "role": "Karyawan Multinasional",
         "message": "Dengan kursus di Evergreen saya sudah bisa melakukan presentasi dalam Bahasa Jepang di perusahaan global.",
-        "image": "/kursus/jepang/evergreen/testi2.webp"
+        "image": "/images/kursus/jepang/evergreen/testi2.webp"
       }
     ],
     "careers": [
@@ -716,7 +716,7 @@
     "location": "Jakarta Barat",
     "lat": -6.154332760985776,
     "lng": 106.82717017917479,
-    "image": "/kursus/korea/palem/berita.webp",
+    "image": "/images/kursus/korea/palem/berita.webp",
     "logo": "/kursus/korea/palem/logo.webp",
     "whatsapp": "6282260222287",
     "website": "https://pendaftaran.lkppalem.com/",
@@ -738,13 +738,13 @@
         "name": "Lilis Dewi",
         "role": "Mahasiswa",
         "message": "Saya menjadi lebih siap untuk mengadapi Ujian EPS Topik Korean.",
-        "image": "/kursus/korea/palem/lilis.webp"
+        "image": "/images/kursus/korea/palem/lilis.webp"
       },
       {
         "name": "Bayu Setiawan",
         "role": "Karyawan",
         "message": "Bahasa Korea yang awalnya asing bagi saya, sekarang sudah terdengar familiar bagi saya",
-        "image": "/kursus/korea/palem/bayu.webp"
+        "image": "/images/kursus/korea/palem/bayu.webp"
       }
     ],
     "careers": [
@@ -783,7 +783,7 @@
     "location": "Jakarta Barat",
     "lat": -6.111882939462485,
     "lng": 106.74718186199031,
-    "image": "/kursus/korea/hanguko/berita.webp",
+    "image": "/images/kursus/korea/hanguko/berita.webp",
     "logo": "/kursus/korea/hanguko/logo.webp",
     "whatsapp": "6287780000952",
     "website": "https://hanguko.com/",
@@ -805,13 +805,13 @@
         "name": "Rizqia Bunga Amalia",
         "role": "Mahasiswa",
         "message": "Ini pertama kalinya saya belajar bahasa Kora secara resmi dan pengealaman saya bareng Hanguko luar biasa banget!",
-        "image": "/kursus/korea/hanguko/rizkia.webp"
+        "image": "/images/kursus/korea/hanguko/rizkia.webp"
       },
       {
         "name": "Mustika Sari",
         "role": "Mahasiswa",
         "message": "Tempat terbaik buat belajar bahasa Korea di Jakarta versi aku. Aku sudah mulai belajar dari 2018 dan rencananya mau terus kursus disini.",
-        "image": "/kursus/korea/hanguko/mustika.webp"
+        "image": "/images/kursus/korea/hanguko/mustika.webp"
       }
     ],
     "careers": [
@@ -850,7 +850,7 @@
     "location": "Jakarta Selatan",
     "lat": -6.298290646612539,
     "lng": 106.82072119325241,
-    "image": "/kursus/korea/oppa/berita.webp",
+    "image": "/images/kursus/korea/oppa/berita.webp",
     "logo": "/kursus/korea/oppa/logo.webp",
     "whatsapp": "6281399779742",
     "website": "https://www.oppaakademi.com/",
@@ -913,7 +913,7 @@
     "location": "Jakarta Selatan",
     "lat": -6.2168511166923865,
     "lng": 106.81880416014565,
-    "image": "/kursus/korea/namsan/berita.webp",
+    "image": "/images/kursus/korea/namsan/berita.webp",
     "logo": "/kursus/korea/namsan/logo.webp",
     "whatsapp": "6285106123684",
     "website": "https://www.namsankoreancourse.com/",
@@ -977,7 +977,7 @@
     "location": "Jakarta Barat",
     "lat": -6.146715628246467,
     "lng": 106.71407227805841,
-    "image": "/kursus/pemrograman/one/berita.webp",
+    "image": "/images/kursus/pemrograman/one/berita.webp",
     "logo": "/kursus/pemrograman/one/logo.webp",
     "whatsapp": "6282182838889",
     "website": "https://onetwocode.id/kursus/",
@@ -999,13 +999,13 @@
         "name": "Dzikri Mansyursyah",
         "role": "Peserta Kelas Intro to Programming",
         "message": "Untuk kelas intro to programming, enak fun, belajarnya juga jadi mudah dipahami, cocok buat yang baru atau lagi kuliah, dan cocok juga buat yang mau mulai perjalanan karir menuju programmer.",
-        "image": "/kursus/pemrograman/one/dzikri.webp"
+        "image": "/images/kursus/pemrograman/one/dzikri.webp"
       },
       {
         "name": "Zikri Akbar",
         "role": "Alumni",
         "message": "Pengalaman training yang sangat menyenangkan dan dipandu oleh trainer yang berpengalaman di bidangnya.",
-        "image": "/kursus/pemrograman/one/zikri.webp"
+        "image": "/images/kursus/pemrograman/one/zikri.webp"
       }
     ],
     "careers": [
@@ -1044,7 +1044,7 @@
     "location": "Jakarta Barat",
     "lat": -6.1362457502576975,
     "lng": 106.71002882699028,
-    "image": "/kursus/pemrograman/sekolah/berita.webp",
+    "image": "/images/kursus/pemrograman/sekolah/berita.webp",
     "logo": "/kursus/pemrograman/sekolah/logo.webp",
     "whatsapp": "6282182838889",
     "website": "https://sekolahprogrammingindonesia.com/",
@@ -1066,13 +1066,13 @@
         "name": "Orang tua Kenward",
         "role": "Orang Tua",
         "message": "Sudah 2 tahunan Kenward belajar robotic di SPI. Kesan yang di dapat selama belajar adalah sangat senang, dimana anak-anak dapat berkreatifitas sesuai keinginan sendiri membuat robot dan bisa mengoperasikan robotnya sendiri.",
-        "image": "/kursus/pemrograman/one/dzikri.webp"
+        "image": "/images/kursus/pemrograman/one/dzikri.webp"
       },
       {
         "name": "Orang Tua Clarisse Nicolee",
         "role": "Orang Tua",
         "message": "Terima kasih SPI,berkat les di SPI anak-anak menjadi lebih kreatif dalam berbagai hal,guru-guru di spi juga sangat sabar dalam mengajar,sehingga anak-anak mudah dalam memahami teori yang di berikan oleh guru.",
-        "image": "/kursus/pemrograman/one/zikri.webp"
+        "image": "/images/kursus/pemrograman/one/zikri.webp"
       }
     ],
     "careers": [
@@ -1111,7 +1111,7 @@
     "location": "Jakarta Utara",
     "lat": -6.15561905958954,
     "lng": 106.898184358301,
-    "image": "/kursus/pemrograman/timedoor/berita.webp",
+    "image": "/images/kursus/pemrograman/timedoor/berita.webp",
     "logo": "/kursus/pemrograman/timedoor/logo.webp",
     "whatsapp": "6285159774292",
     "website": "https://timedooracademy.com/",
@@ -1132,13 +1132,13 @@
         "name": "Orang tua Kenward",
         "role": "Orang Tua",
         "message": "Sudah 2 tahunan Kenward belajar robotic di SPI. Kesan yang di dapat selama belajar adalah sangat senang, dimana anak-anak dapat berkreatifitas sesuai keinginan sendiri membuat robot dan bisa mengoperasikan robotnya sendiri.",
-        "image": "/kursus/pemrograman/one/dzikri.webp"
+        "image": "/images/kursus/pemrograman/one/dzikri.webp"
       },
       {
         "name": "Orang Tua Clarisse Nicolee",
         "role": "Orang Tua",
         "message": "Terima kasih SPI,berkat les di SPI anak-anak menjadi lebih kreatif dalam berbagai hal,guru-guru di spi juga sangat sabar dalam mengajar,sehingga anak-anak mudah dalam memahami teori yang di berikan oleh guru.",
-        "image": "/kursus/pemrograman/one/zikri.webp"
+        "image": "/images/kursus/pemrograman/one/zikri.webp"
       }
     ],
     "careers": [
