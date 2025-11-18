@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
-    StarIcon,
     MagnifyingGlassIcon,
+    StarIcon,
 } from "@heroicons/react/24/solid";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useSiswa } from "../../context/SiswaContext";
 
 const categories = [

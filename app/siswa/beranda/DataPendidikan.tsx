@@ -16,6 +16,7 @@ import {
     BarElement,
     Tooltip,
     Legend,
+    type ChartOptions
 } from "chart.js";
 import Image from "next/image";
 
@@ -26,9 +27,6 @@ export default function DataPendidikan() {
 
     useEffect(() => setIsClient(true), []);
 
-    // =========================
-    //     DATA DARI BPS
-    // =========================
     const labels = ["2020", "2021", "2022", "2023", "2024"];
 
     const datasets = [
@@ -61,7 +59,7 @@ export default function DataPendidikan() {
 
     const data = { labels, datasets };
 
-    const options = {
+    const options: ChartOptions<"bar"> = {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
@@ -82,7 +80,7 @@ export default function DataPendidikan() {
                 stacked: true,
                 ticks: {
                     color: "#0F172A",
-                    callback: (v: number) => `${v}%`,
+                   callback: (v: string | number) => `${v}%`,
                 },
             },
         },
