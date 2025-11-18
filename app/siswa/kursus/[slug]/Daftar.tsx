@@ -28,7 +28,7 @@ export default function DaftarKursusSection({
             <div className="bg-siswa-primary-200 rounded-3xl shadow-sm px-8 sm:px-16 py-10 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
                 <div className="flex justify-center md:justify-start md:w-1/2 mb-8 md:mb-0">
                     <Image
-                        src="/kursus/daftar.webp"
+                        src="/images/kursus/daftar.webp"
                         alt={title}
                         width={400}
                         height={300}
